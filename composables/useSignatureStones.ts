@@ -97,7 +97,7 @@ const SIGNATURE_STONES: GalleryStone[] = [
   },
   {
     name: 'Calacatta Viola',
-    src: '/img/CalacattaViola.jpeg',
+    src: '/img/CalacattaViola.jpg',
     aspect: 'aspect-[4/5]',
   },
   {
