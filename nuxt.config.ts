@@ -1,5 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  // Use project root as srcDir so `pages/`, `components/`, and `composables/` at the repo root are picked up.
+  // Otherwise Nuxt 4 defaults `srcDir` to `./app/` when `app/app.vue` exists, and only `app/pages/` would register routes.
+  srcDir: '.',
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   modules: ['@nuxtjs/tailwindcss'],
