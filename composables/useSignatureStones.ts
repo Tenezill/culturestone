@@ -22,12 +22,12 @@ const SIGNATURE_STONES: GalleryStone[] = [
   },
   {
     name: 'Statuario Imperial',
-    src: '/img/StatuarioImperial.jpg',
+    src: '/img/StatuarioImperial.webp',
     aspect: 'aspect-square',
   },
   {
     name: 'Arabescato Vagli',
-    src: '/img/ArabescatoVagli.jpg',
+    src: '/img/ArabescatoVagli.webp',
     aspect: 'aspect-[2/3]',
   },
   {
