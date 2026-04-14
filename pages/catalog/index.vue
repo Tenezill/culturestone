@@ -32,24 +32,29 @@
               :key="stone.name"
               class="group"
             >
-              <figure class="m-0">
-                <div class="overflow-hidden bg-editorial-charcoal/[0.03]">
-                  <img
-                    :src="stone.src"
-                    :alt="stone.name"
-                    class="aspect-square w-full object-cover transition duration-700 ease-out group-hover:scale-[1.02] group-hover:opacity-[0.92]"
-                    width="600"
-                    height="750"
-                    loading="lazy"
-                    decoding="async"
+              <NuxtLink
+                :to="`/catalog/${signatureStoneSlug(stone.name)}`"
+                class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-editorial-charcoal"
+              >
+                <figure class="m-0">
+                  <div class="overflow-hidden bg-editorial-charcoal/[0.03]">
+                    <img
+                      :src="stone.src"
+                      :alt="stone.name"
+                      class="aspect-square w-full object-cover transition duration-700 ease-out group-hover:scale-[1.02] group-hover:opacity-[0.92]"
+                      width="600"
+                      height="750"
+                      loading="lazy"
+                      decoding="async"
+                    >
+                  </div>
+                  <figcaption
+                    class="mt-6 font-sans text-xs font-normal uppercase tracking-widest text-editorial-charcoal/55 transition-colors duration-500 group-hover:text-editorial-charcoal"
                   >
-                </div>
-                <figcaption
-                  class="mt-6 font-sans text-xs font-normal uppercase tracking-widest text-editorial-charcoal/55 transition-colors duration-500 group-hover:text-editorial-charcoal"
-                >
-                  {{ stone.name }}
-                </figcaption>
-              </figure>
+                    {{ stone.name }}
+                  </figcaption>
+                </figure>
+              </NuxtLink>
             </article>
           </div>
         </div>

@@ -1,8 +1,15 @@
+import {
+  SIGNATURE_STONE_PAGE_DETAILS,
+  type SignatureStonePageDetail,
+} from '~/data/signatureStonePageDetails'
+
 export type GalleryStone = {
   name: string
   src: string
   aspect: string
 }
+
+export type { SignatureStonePageDetail }
 
 const SIGNATURE_STONES: GalleryStone[] = [
   {
@@ -106,6 +113,49 @@ const SIGNATURE_STONES: GalleryStone[] = [
     aspect: 'aspect-[5/6]',
   },
 ]
+
+export function signatureStoneSlug(name: string): string {
+  return name
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/\p{M}/gu, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+}
+
+function defaultPageDetail(stone: GalleryStone): SignatureStonePageDetail {
+  return {
+    origin: 'Provenance on request',
+    subhead: 'Signature Gallery Stone',
+    description: `A curated ${stone.name} selection from our Signature Gallery, sourced for tone, structure, and long-term performance. Lot imagery and technical sheets are available for specification.`,
+    specs: {
+      finish: 'Finish per lot',
+      thickness: '2 cm and 3 cm typical',
+      applications: 'Flooring, cladding, bespoke surfaces',
+    },
+  }
+}
+
+export function resolveSignatureStonePage(
+  stone: GalleryStone,
+  slug: string,
+): { stone: GalleryStone; detail: SignatureStonePageDetail } {
+  const detail = SIGNATURE_STONE_PAGE_DETAILS[slug] ?? defaultPageDetail(stone)
+  return { stone, detail }
+}
+
+export function findSignatureStonePage(
+  slug: string,
+): { stone: GalleryStone; detail: SignatureStonePageDetail } | null {
+  if (!slug) {
+    return null
+  }
+  const stone = SIGNATURE_STONES.find((s) => signatureStoneSlug(s.name) === slug)
+  if (!stone) {
+    return null
+  }
+  return resolveSignatureStonePage(stone, slug)
+}
 
 export function useSignatureStones(): readonly GalleryStone[] {
   return SIGNATURE_STONES
