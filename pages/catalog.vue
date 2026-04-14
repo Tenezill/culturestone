@@ -1,8 +1,6 @@
 <template>
   <div>
-    <header
-      class="border-b border-editorial-charcoal/10 px-6 py-12 sm:px-10 sm:py-14 md:px-14 md:py-16 lg:px-20 lg:py-20"
-    >
+    <header class="border-b border-editorial-charcoal/10 px-4 py-10 md:px-8 md:py-12 lg:px-12 lg:py-14">
       <div
         class="mx-auto flex max-w-[1600px] flex-col gap-8 sm:flex-row sm:items-baseline sm:justify-between sm:gap-12"
       >
@@ -19,10 +17,7 @@
     </header>
 
     <main>
-      <section
-        class="px-6 pb-32 pt-20 sm:px-10 sm:pb-40 sm:pt-24 md:px-14 md:pb-48 md:pt-28 lg:px-20 lg:pb-56 lg:pt-32 xl:px-28 xl:pb-64 xl:pt-36"
-        aria-labelledby="catalog-gallery-heading"
-      >
+      <section class="px-4 py-24 md:px-8 md:py-32 lg:px-12 lg:py-36" aria-labelledby="catalog-gallery-heading">
         <div class="mx-auto max-w-[1600px]">
           <h1
             id="catalog-gallery-heading"
@@ -31,23 +26,18 @@
             The Signature Gallery
           </h1>
 
-          <div
-            class="columns-2 gap-x-10 gap-y-0 md:columns-3 md:gap-x-12 lg:columns-4 [column-fill:_balance]"
-          >
+          <div class="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-6 lg:grid-cols-4">
             <article
               v-for="stone in signatureStones"
               :key="stone.name"
-              class="group mb-10 break-inside-avoid md:mb-12"
+              class="group"
             >
               <figure class="m-0">
                 <div class="overflow-hidden bg-editorial-charcoal/[0.03]">
                   <img
                     :src="stone.src"
                     :alt="stone.name"
-                    :class="[
-                      'w-full object-cover transition-opacity duration-700 ease-out group-hover:opacity-[0.92]',
-                      stone.aspect,
-                    ]"
+                    class="aspect-square w-full object-cover transition duration-700 ease-out group-hover:scale-[1.02] group-hover:opacity-[0.92]"
                     width="600"
                     height="750"
                     loading="lazy"

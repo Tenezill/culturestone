@@ -10,13 +10,10 @@
         height="1333"
         fetchpriority="high"
       >
-      <div
-        class="absolute inset-0 bg-gradient-to-b from-black/35 via-transparent to-black/50"
-        aria-hidden="true"
-      />
+      <div class="absolute inset-0 bg-gradient-to-b from-black/55 via-black/30 to-black/65" aria-hidden="true" />
 
       <div
-        class="relative z-10 flex min-h-[100dvh] flex-col justify-between px-6 pb-16 pt-10 sm:px-10 md:px-14 lg:px-20"
+        class="relative z-10 flex min-h-[100dvh] flex-col justify-between px-4 pb-12 pt-8 md:px-8 md:pb-16 lg:px-12"
       >
         <NuxtLink
           to="/"
@@ -25,15 +22,13 @@
           Culture Stone
         </NuxtLink>
 
-        <div class="max-w-xl md:max-w-2xl">
+        <div class="max-w-xl rounded bg-black/40 p-6 backdrop-blur-sm md:max-w-2xl md:p-8">
           <h1
             class="font-serif text-4xl font-medium leading-[1.08] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
           >
             Stone, considered.
           </h1>
-          <p
-            class="mt-10 max-w-sm font-sans text-sm font-light leading-relaxed text-white/85 sm:mt-14 sm:text-base md:max-w-md"
-          >
+          <p class="mt-8 max-w-lg font-sans text-lg font-light leading-relaxed text-white/95 sm:text-xl md:text-2xl">
             Bespoke slabs and architectural surfaces for discerning studios.
           </p>
         </div>
@@ -43,7 +38,7 @@
     <main>
       <!-- 2. The Editor's Letter -->
       <section
-        class="px-6 py-32 sm:px-10 sm:py-40 md:px-14 md:py-44 lg:px-24 lg:py-52 xl:px-32 xl:py-60"
+        class="px-4 py-24 md:px-8 md:py-32 lg:px-12 lg:py-36"
         aria-labelledby="editors-letter-heading"
       >
         <div class="mx-auto max-w-4xl">
@@ -55,13 +50,13 @@
           </p>
 
           <blockquote
-            class="mb-16 font-serif text-3xl font-normal leading-snug tracking-tight text-editorial-charcoal sm:mb-20 sm:text-4xl md:mb-28 md:text-5xl lg:text-[2.75rem] lg:leading-[1.2] xl:text-[3.25rem]"
+            class="mb-16 font-serif text-4xl font-normal leading-tight tracking-tight text-editorial-charcoal sm:mb-20 md:mb-24 lg:text-[60px] lg:leading-[60px]"
           >
             &ldquo;We believe material truth begins in the quarry&mdash;and ends in the quiet confidence of a room
             perfectly resolved.&rdquo;
           </blockquote>
 
-          <div class="max-w-xl space-y-10 font-sans text-base font-light leading-[1.85] text-editorial-charcoal/80 sm:text-lg sm:leading-[1.9] md:max-w-2xl md:text-xl md:leading-[1.88]">
+          <div class="max-w-3xl space-y-10 font-sans text-base font-light leading-[1.85] text-editorial-charcoal/80 sm:text-lg sm:leading-[1.9] md:text-xl md:leading-[1.88]">
             <p>
               For over a generation, we have partnered with architects and interior designers who treat stone not as
               decoration, but as structure, atmosphere, and permanence. Our mandate is singular: to source and finish
@@ -79,7 +74,7 @@
 
       <!-- 3. The Feature Spread -->
       <section
-        class="border-t border-editorial-charcoal/[0.06] px-6 py-32 sm:px-10 sm:py-36 md:px-14 md:py-40 lg:px-20 lg:py-44 xl:px-28"
+        class="border-t border-editorial-charcoal/[0.06] px-4 py-24 md:px-8 md:py-32 lg:px-12 lg:py-36"
         aria-labelledby="feature-spread-heading"
       >
         <div class="mx-auto max-w-[1400px]">
@@ -121,10 +116,10 @@
               </figure>
 
               <div
-                class="mt-16 max-w-md font-sans text-sm font-light leading-[1.9] text-editorial-charcoal/75 sm:mt-20 sm:text-base lg:mt-24 lg:ml-2 xl:ml-6 xl:max-w-sm"
+                class="mt-16 max-w-2xl font-sans text-sm font-light leading-[1.9] text-editorial-charcoal/75 sm:mt-20 sm:text-base lg:mt-24 lg:ml-2 xl:ml-6"
               >
                 <p class="mb-6 font-serif text-2xl font-normal leading-snug text-editorial-charcoal md:text-3xl">
-                  From bedrock to brief.
+                  From bedrock to brief
                 </p>
                 <p>
                   We work directly with quarry partners across Europe and beyond, tracing each block from extraction
@@ -139,7 +134,7 @@
 
       <!-- 4. The Lookbook -->
       <section
-        class="border-t border-editorial-charcoal/[0.06] px-6 py-32 sm:px-10 sm:py-40 md:px-14 md:py-44 lg:px-20 lg:py-52 xl:px-28"
+        class="border-t border-editorial-charcoal/[0.06] px-4 py-24 md:px-8 md:py-32 lg:px-12 lg:py-36"
         aria-labelledby="lookbook-heading"
       >
         <div class="mx-auto max-w-[1400px]">
@@ -169,7 +164,7 @@
                   >
                 </figure>
               </div>
-              <div class="lg:col-span-4 lg:col-start-9 lg:pl-4">
+              <div class="max-w-2xl lg:col-span-4 lg:col-start-9 lg:pl-4">
                 <p class="font-sans text-[0.65rem] uppercase tracking-[0.3em] text-editorial-charcoal/45">
                   I &mdash; Nero Marquina
                 </p>
@@ -184,7 +179,7 @@
             </li>
 
             <li class="grid grid-cols-1 items-center gap-16 lg:grid-cols-12 lg:gap-x-16 xl:gap-x-20">
-              <div class="order-2 lg:order-1 lg:col-span-4 lg:col-start-1 lg:pr-4">
+              <div class="order-2 max-w-2xl lg:order-1 lg:col-span-4 lg:col-start-1 lg:pr-4">
                 <p class="font-sans text-[0.65rem] uppercase tracking-[0.3em] text-editorial-charcoal/45">
                   II &mdash; Calacatta Oro
                 </p>
@@ -223,7 +218,7 @@
                   >
                 </figure>
               </div>
-              <div class="lg:col-span-4 lg:col-start-9 lg:pl-4">
+              <div class="max-w-2xl lg:col-span-4 lg:col-start-9 lg:pl-4">
                 <p class="font-sans text-[0.65rem] uppercase tracking-[0.3em] text-editorial-charcoal/45">
                   III &mdash; Caledonia
                 </p>
