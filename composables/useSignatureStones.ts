@@ -11,107 +11,143 @@ export type GalleryStone = {
 
 export type { SignatureStonePageDetail }
 
+// Placeholder imagery sourced from Pexels (free license, see
+// public/img/LICENSES.md). Each active entry below uses a unique placeholder;
+// stones that would have repeated an image already in use are commented out
+// until the Strapi-managed product photography is connected and can supply a
+// distinct photograph per stone.
+const PLACEHOLDER_LIGHT = '/img/pexels-light-marble.jpg'
+const PLACEHOLDER_DARK = '/img/pexels-dark-marble.jpg'
+const PLACEHOLDER_VEINED = '/img/pexels-veined-stone.jpg'
+const PLACEHOLDER_CRACKED = '/img/pexels-cracked-stone.jpg'
+const PLACEHOLDER_ROCK = '/img/pexels-rock-formation.jpg'
+const PLACEHOLDER_WALL = '/img/pexels-stone-wall.jpg'
+const PLACEHOLDER_PINK = '/img/pexels-pink-marble.jpg'
+const PLACEHOLDER_BLUE_CORAL = '/img/pexels-blue-coral.jpg'
+const PLACEHOLDER_PURPLE = '/img/pexels-purple-marble.jpg'
+const PLACEHOLDER_BLUE_GREEN = '/img/pexels-blue-green.jpg'
+
 const SIGNATURE_STONES: GalleryStone[] = [
   {
     name: 'Carrara Fantastico',
-    src: '/img/CarraraFantastico.jpg',
+    src: PLACEHOLDER_LIGHT,
     aspect: 'aspect-[3/4]',
   },
   {
     name: 'Nero Antico',
-    src: '/img/NeroAntico.jpg',
+    src: PLACEHOLDER_DARK,
     aspect: 'aspect-[5/4]',
   },
   {
     name: 'Calacatta Oro',
-    src: '/img/CalacattaOro.jpg',
+    src: PLACEHOLDER_VEINED,
     aspect: 'aspect-[4/5]',
   },
+  /* Statuario Imperial — would duplicate PLACEHOLDER_LIGHT (Carrara Fantastico)
   {
     name: 'Statuario Imperial',
-    src: '/img/StatuarioImperial.webp',
+    src: PLACEHOLDER_LIGHT,
     aspect: 'aspect-square',
   },
+  */
+  /* Arabescato Vagli — would duplicate PLACEHOLDER_VEINED (Calacatta Oro)
   {
     name: 'Arabescato Vagli',
-    src: '/img/ArabescatoVagli.webp',
+    src: PLACEHOLDER_VEINED,
     aspect: 'aspect-[2/3]',
   },
+  */
   {
     name: 'Pietra Grey',
-    src: '/img/PietraGrey.webp',
+    src: PLACEHOLDER_ROCK,
     aspect: 'aspect-[5/6]',
   },
+  /* Bianco Lasa — would duplicate PLACEHOLDER_LIGHT (Carrara Fantastico)
   {
     name: 'Bianco Lasa',
-    src: '/img/BiancoLasa.jpg',
+    src: PLACEHOLDER_LIGHT,
     aspect: 'aspect-[4/3]',
   },
+  */
+  /* Emperador Dark — would duplicate PLACEHOLDER_DARK (Nero Antico)
   {
     name: 'Emperador Dark',
-    src: '/img/EmperadorDark.jpg',
+    src: PLACEHOLDER_DARK,
     aspect: 'aspect-[3/5]',
   },
+  */
+  /* Volakas White — would duplicate PLACEHOLDER_LIGHT (Carrara Fantastico)
   {
     name: 'Volakas White',
-    src: '/img/VolakasWhite.jpg',
+    src: PLACEHOLDER_LIGHT,
     aspect: 'aspect-[5/4]',
   },
+  */
+  /* Sivec Premium — would duplicate PLACEHOLDER_LIGHT (Carrara Fantastico)
   {
     name: 'Sivec Premium',
-    src: '/img/SivecPremium.jpg',
+    src: PLACEHOLDER_LIGHT,
     aspect: 'aspect-[3/4]',
   },
+  */
+  /* Portoro Extra — would duplicate PLACEHOLDER_DARK (Nero Antico)
   {
     name: 'Portoro Extra',
-    src: '/img/PortoroExtra.jpg',
+    src: PLACEHOLDER_DARK,
     aspect: 'aspect-[4/5]',
   },
+  */
   {
     name: 'Amazonite Gold',
-    src: '/img/AmazoniteGold.webp',
+    src: PLACEHOLDER_WALL,
     aspect: 'aspect-[5/3]',
   },
+  /* Thassos Snow — would duplicate PLACEHOLDER_LIGHT (Carrara Fantastico)
   {
     name: 'Thassos Snow',
-    src: '/img/ThassosSnow.webp',
+    src: PLACEHOLDER_LIGHT,
     aspect: 'aspect-square',
   },
+  */
   {
     name: 'Verde Alpi',
-    src: '/img/VerdeAlpi.jpeg',
+    src: PLACEHOLDER_BLUE_GREEN,
     aspect: 'aspect-[3/4]',
   },
   {
     name: 'Travertino Romano',
-    src: '/img/TravertinoRomano.jpeg',
+    src: PLACEHOLDER_CRACKED,
     aspect: 'aspect-[4/3]',
   },
   {
     name: 'Onice Fantastico',
-    src: '/img/OniceFantastico.jpg',
+    src: PLACEHOLDER_BLUE_CORAL,
     aspect: 'aspect-[2/3]',
   },
+  /* Azul Macaubas — would duplicate PLACEHOLDER_BLUE_CORAL (Onice Fantastico)
   {
     name: 'Azul Macaubas',
-    src: '/img/AzulMacaubas.jpg',
+    src: PLACEHOLDER_BLUE_CORAL,
     aspect: 'aspect-[5/4]',
   },
+  */
   {
     name: 'Rosso Lepanto',
-    src: '/img/RossoLepanto.jpg',
+    src: PLACEHOLDER_PINK,
     aspect: 'aspect-[3/5]',
   },
   {
     name: 'Calacatta Viola',
-    src: '/img/CalacattaViola.jpg',
+    src: PLACEHOLDER_PURPLE,
     aspect: 'aspect-[4/5]',
   },
+  /* Macchia Vecchia — would duplicate PLACEHOLDER_CRACKED (Travertino Romano)
   {
     name: 'Macchia Vecchia',
-    src: '/img/MacchiaVecchia.jpg',
+    src: PLACEHOLDER_CRACKED,
     aspect: 'aspect-[5/6]',
   },
+  */
 ]
 
 export function signatureStoneSlug(name: string): string {

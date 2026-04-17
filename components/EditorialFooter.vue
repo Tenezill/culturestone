@@ -37,6 +37,16 @@
           &middot;
           <a href="#" class="underline decoration-editorial-charcoal/30 underline-offset-4 transition hover:decoration-editorial-charcoal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-editorial-charcoal">Milan</a>
           <span class="mx-2 text-editorial-charcoal/25">|</span>
+          <NuxtLink
+            to="/legal"
+            class="underline decoration-editorial-charcoal/30 underline-offset-4 transition hover:decoration-editorial-charcoal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-editorial-charcoal"
+          >Legal notice</NuxtLink>
+          &middot;
+          <NuxtLink
+            to="/privacy"
+            class="underline decoration-editorial-charcoal/30 underline-offset-4 transition hover:decoration-editorial-charcoal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-editorial-charcoal"
+          >Privacy</NuxtLink>
+          <span class="mx-2 text-editorial-charcoal/25">|</span>
           <a
             href="mailto:studio@culturestone.example"
             class="border-b border-editorial-charcoal/20 transition-colors hover:border-editorial-charcoal/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-editorial-charcoal"

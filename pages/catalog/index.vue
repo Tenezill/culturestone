@@ -26,7 +26,7 @@
             The Signature Gallery
           </h1>
 
-          <div class="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-6 lg:grid-cols-4">
+          <div class="grid grid-cols-2 gap-4 md:grid-cols-5 md:gap-6 lg:grid-cols-5">
             <article
               v-for="stone in signatureStones"
               :key="stone.name"

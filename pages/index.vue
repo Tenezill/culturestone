@@ -3,7 +3,7 @@
     <!-- 1. The Cover -->
     <header class="relative h-screen min-h-[100dvh] w-full overflow-hidden">
       <img
-        src="https://images.unsplash.com/photo-1573156667488-5c0cec674762?q=80&w=2000&auto=format&fit=crop"
+        src="/img/pexels-bathroom-marble.jpg"
         alt="Luxury marble interior"
         class="absolute inset-0 h-screen w-full object-cover"
         width="2000"

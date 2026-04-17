@@ -5,24 +5,19 @@ export default defineNuxtConfig({
   srcDir: '.',
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['@nuxtjs/tailwindcss'],
-  app: {
-    head: {
-      link: [
-        {
-          rel: 'preconnect',
-          href: 'https://fonts.googleapis.com',
-        },
-        {
-          rel: 'preconnect',
-          href: 'https://fonts.gstatic.com',
-          crossorigin: '',
-        },
-        {
-          rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap',
-        },
-      ],
+  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/google-fonts'],
+  googleFonts: {
+    // Download font files at build time and self-host them to avoid leaking
+    // visitor IPs to Google servers (GDPR / LG München I, Az. 3 O 17493/20).
+    download: true,
+    inject: true,
+    display: 'swap',
+    families: {
+      Inter: [300, 400, 500, 600],
+      'Playfair Display': {
+        wght: [400, 500, 600, 700],
+        ital: [400],
+      },
     },
   },
 })
