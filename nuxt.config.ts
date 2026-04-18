@@ -5,7 +5,16 @@ export default defineNuxtConfig({
   srcDir: '.',
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/google-fonts'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/google-fonts', '@nuxtjs/strapi'],
+  strapi: {
+    // Base URL of the Strapi backend (no trailing slash, no /api).
+    url: process.env.STRAPI_URL || 'http://localhost:1337',
+    prefix: '/api',
+    // Local Strapi is v5 (flat responses, documentId). Keep in sync with backend.
+    version: 'v5',
+    cookie: {},
+    cookieName: 'strapi_jwt',
+  },
   googleFonts: {
     // Download font files at build time and self-host them to avoid leaking
     // visitor IPs to Google servers (GDPR / LG München I, Az. 3 O 17493/20).

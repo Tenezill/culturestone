@@ -26,21 +26,37 @@
             The Signature Gallery
           </h1>
 
-          <div class="grid grid-cols-2 gap-4 md:grid-cols-5 md:gap-6 lg:grid-cols-5">
+          <p
+            v-if="pending"
+            class="font-sans text-[0.65rem] uppercase tracking-[0.35em] text-editorial-charcoal/45"
+          >
+            Loading the collection…
+          </p>
+          <p
+            v-else-if="error"
+            class="font-sans text-sm text-editorial-charcoal/70"
+          >
+            The catalog is temporarily unavailable. Please try again shortly.
+          </p>
+
+          <div
+            v-else
+            class="grid grid-cols-2 gap-4 md:grid-cols-5 md:gap-6 lg:grid-cols-5"
+          >
             <article
-              v-for="stone in signatureStones"
-              :key="stone.name"
+              v-for="stone in stones"
+              :key="stone.slug"
               class="group"
             >
               <NuxtLink
-                :to="`/catalog/${signatureStoneSlug(stone.name)}`"
+                :to="`/catalog/${stone.slug}`"
                 class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-editorial-charcoal"
               >
                 <figure class="m-0">
                   <div class="overflow-hidden bg-editorial-charcoal/[0.03]">
                     <img
-                      :src="stone.src"
-                      :alt="stone.name"
+                      :src="pickMediaUrl(stone.image, 'medium')"
+                      :alt="stone.image?.alternativeText ?? stone.name"
                       class="aspect-square w-full object-cover transition duration-700 ease-out group-hover:scale-[1.02] group-hover:opacity-[0.92]"
                       width="600"
                       height="750"
@@ -66,7 +82,24 @@
 </template>
 
 <script setup lang="ts">
-const signatureStones = useSignatureStones()
+import { pickMediaUrl, type StrapiStone } from '~/composables/useSignatureStones'
+
+const { find } = useStrapi()
+
+// Strapi v5 responses are flat (no `.attributes` wrapper). Relations/media
+// are NOT populated by default in v5, so we pass `populate: ['image']`.
+const { data, pending, error } = await useAsyncData('catalog-stones', () =>
+  find<StrapiStone>('stones', {
+    sort: ['name:asc'],
+    populate: ['image'],
+    pagination: { pageSize: 100 },
+  }),
+)
+
+const stones = computed<StrapiStone[]>(() => {
+  const raw = data.value?.data
+  return Array.isArray(raw) ? raw : []
+})
 
 useHead({
   title: 'Catalog — The Signature Gallery',

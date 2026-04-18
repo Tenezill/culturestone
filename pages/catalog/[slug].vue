@@ -22,11 +22,11 @@
 
         <section class="relative min-h-[60vh] w-full overflow-hidden md:min-h-[70vh]" aria-label="Stone hero">
           <img
-            :src="page.stone.src"
-            :alt="page.stone.name"
+            :src="heroUrl"
+            :alt="page.image?.alternativeText ?? page.name"
             class="absolute inset-0 h-full w-full object-cover"
-            width="1600"
-            height="1200"
+            :width="page.image?.width ?? 1600"
+            :height="page.image?.height ?? 1200"
             fetchpriority="high"
           >
           <div class="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-black/10" aria-hidden="true" />
@@ -39,16 +39,16 @@
                 <p
                   class="font-sans text-[0.65rem] font-normal uppercase tracking-widest text-editorial-charcoal/45"
                 >
-                  {{ page.detail.subhead }}
+                  {{ page.subhead }}
                 </p>
                 <h1
                   :id="headingId"
                   class="mt-8 font-serif text-4xl font-normal leading-[1.05] tracking-tight sm:text-5xl md:text-[52px] md:leading-[52px] lg:text-[60px] lg:leading-[60px]"
                 >
-                  {{ page.stone.name }}
+                  {{ page.name }}
                 </h1>
                 <p class="mt-10 font-sans text-sm font-light uppercase tracking-[0.28em] text-editorial-charcoal/55">
-                  Origin — {{ page.detail.origin }}
+                  Origin — {{ page.origin }}
                 </p>
                 <NuxtLink
                   :to="inquireTo"
@@ -61,7 +61,7 @@
               <div class="md:col-span-7 lg:col-span-7">
                 <div class="max-w-prose space-y-10">
                   <p class="font-sans text-base font-light leading-[1.9] text-editorial-charcoal/80 md:text-lg md:leading-[1.88]">
-                    {{ page.detail.description }}
+                    {{ page.description }}
                   </p>
                 </div>
 
@@ -75,7 +75,7 @@
                         Finish
                       </dt>
                       <dd class="font-sans text-sm font-light leading-relaxed text-editorial-charcoal/85">
-                        {{ page.detail.specs.finish }}
+                        {{ page.finish }}
                       </dd>
                     </div>
                     <div class="grid grid-cols-1 gap-1 py-4 sm:grid-cols-[minmax(0,10rem)_1fr] sm:gap-8">
@@ -83,7 +83,7 @@
                         Thickness
                       </dt>
                       <dd class="font-sans text-sm font-light leading-relaxed text-editorial-charcoal/85">
-                        {{ page.detail.specs.thickness }}
+                        {{ page.thickness }}
                       </dd>
                     </div>
                     <div class="grid grid-cols-1 gap-1 py-4 sm:grid-cols-[minmax(0,10rem)_1fr] sm:gap-8">
@@ -91,7 +91,7 @@
                         Applications
                       </dt>
                       <dd class="font-sans text-sm font-light leading-relaxed text-editorial-charcoal/85">
-                        {{ page.detail.specs.applications }}
+                        {{ page.applications }}
                       </dd>
                     </div>
                   </dl>
@@ -132,42 +132,51 @@
 </template>
 
 <script setup lang="ts">
+import { pickMediaUrl, type StrapiStone } from '~/composables/useSignatureStones'
+
 const route = useRoute()
 
 const slug = computed(() => {
   const raw = route.params.slug
-  if (typeof raw === 'string') {
-    return raw
-  }
-  if (Array.isArray(raw)) {
-    return raw[0] ?? ''
-  }
+  if (typeof raw === 'string') return raw
+  if (Array.isArray(raw)) return raw[0] ?? ''
   return ''
 })
 
-const stones = useSignatureStones()
+// In Strapi v5, `findOne` expects a documentId (opaque id), not a slug. So
+// we use `find` with a slug filter and take the first match. This is the
+// idiomatic v5 pattern for slug-based routing. `populate: ['image']` is
+// required — v5 does not populate relations/media by default.
+const { find } = useStrapi()
 
-const page = computed(() => {
-  const s = slug.value
-  if (!s) {
-    return null
-  }
-  const stone = stones.find((st) => signatureStoneSlug(st.name) === s)
-  if (!stone) {
-    return null
-  }
-  return resolveSignatureStonePage(stone, s)
+const { data } = await useAsyncData(
+  () => `catalog-stone-${slug.value}`,
+  () =>
+    find<StrapiStone>('stones', {
+      filters: { slug: { $eq: slug.value } },
+      populate: ['image'],
+      pagination: { pageSize: 1 },
+    }),
+  { watch: [slug] },
+)
+
+const page = computed<StrapiStone | null>(() => {
+  const list = data.value?.data
+  if (!Array.isArray(list) || list.length === 0) return null
+  return list[0] ?? null
 })
+
+const heroUrl = computed(() =>
+  page.value ? pickMediaUrl(page.value.image, 'large') : '',
+)
 
 const headingId = 'stone-detail-heading'
 
 const inquireTo = computed(() => {
-  if (!page.value) {
-    return '/contact'
-  }
+  if (!page.value) return '/contact'
   return {
     path: '/contact',
-    query: { stone: page.value.stone.name },
+    query: { stone: page.value.name },
   }
 })
 
@@ -179,11 +188,11 @@ useHead(() => {
     }
   }
   return {
-    title: `${page.value.stone.name} — Culture Stone`,
+    title: `${page.value.name} — Culture Stone`,
     meta: [
       {
         name: 'description',
-        content: `${page.value.stone.name}. ${page.value.detail.description}`,
+        content: `${page.value.name}. ${page.value.description}`,
       },
     ],
   }
