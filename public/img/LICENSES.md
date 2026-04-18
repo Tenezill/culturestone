@@ -14,8 +14,8 @@ project is free to use, modify, replace, or discard them.
 | `ai-light-marble.jpg`           | Carrara Fantastico — white marble with grey veining        |
 | `ai-dark-marble.jpg`            | Nero Antico — black marble with white crystalline veins    |
 | `ai-veined-stone.jpg`           | Calacatta Oro — white marble with gold veining             |
-| `ai-rock-formation.jpg`         | Pietra Grey — charcoal grey stone                          |
-| `ai-stone-wall.jpg`             | Amazonite Gold — amber/gold translucent stone              |
+| `ai-rock-formation.jpg`         | Grigio Carnico — dark charcoal marble with white veining   |
+| `ai-stone-wall.jpg`             | Giallo Imperiale — amber/gold translucent quartzite        |
 | `ai-blue-green.jpg`             | Verde Alpi — deep green marble with white veins            |
 | `ai-cracked-stone.jpg`          | Travertino Romano — beige travertine                       |
 | `ai-blue-coral.jpg`             | Onice Fantastico — blue translucent onyx                   |

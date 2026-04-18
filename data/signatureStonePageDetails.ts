@@ -23,9 +23,9 @@ export const SIGNATURE_STONE_PAGE_DETAILS: Record<string, SignatureStonePageDeta
   },
   'nero-antico': {
     origin: 'Levanto, Liguria',
-    subhead: 'Deep Italian Breccia',
+    subhead: 'Deep Italian Marble',
     description:
-      'Compact black ground with warm mineral fragments that catch light at oblique angles. Quiet from afar, richly geological up close.',
+      'Rich jet-black ground traced by delicate hairline white veining in frost-like patterns. Quiet and disciplined from afar, crystalline under close inspection.',
     specs: {
       finish: 'Leathered, honed, or high polish',
       thickness: '2 cm and 3 cm',
@@ -36,7 +36,7 @@ export const SIGNATURE_STONE_PAGE_DETAILS: Record<string, SignatureStonePageDeta
     origin: 'Carrara basin, Tuscany',
     subhead: 'Bespoke Italian Marble',
     description:
-      'Gold-threaded veining over a cool white body. A classical Calacatta presence with a slightly warmer register than Statuario.',
+      'Bold rivers of honey and amber veining flow across a warm ivory body, accented with fine graphite hairlines. A Calacatta expression in a noticeably warmer register than Statuario.',
     specs: {
       finish: 'Polished or honed',
       thickness: '2 cm and 3 cm',
@@ -65,15 +65,15 @@ export const SIGNATURE_STONE_PAGE_DETAILS: Record<string, SignatureStonePageDeta
       applications: 'Bath surrounds, flooring, furniture insets',
     },
   },
-  'pietra-grey': {
-    origin: 'Guangxi Province',
-    subhead: 'Architectural Limestone',
+  'grigio-carnico': {
+    origin: 'Carnia, Friuli',
+    subhead: 'Italian Dark Marble',
     description:
-      'A cool grey limestone with subtle fossil movement. Restrained and contemporary; pairs cleanly with steel and pale timber.',
+      'A deep charcoal ground crossed by a dense web of pale crystalline veining. Dramatic yet disciplined; pairs cleanly with blackened steel and dark timber.',
     specs: {
-      finish: 'Honed, brushed, or sandblasted',
+      finish: 'Honed, brushed, or polished',
       thickness: '2 cm and 3 cm',
-      applications: 'Facades, flooring, pool coping',
+      applications: 'Feature walls, flooring, vanity tops',
     },
   },
   'bianco-lasa': {
@@ -131,11 +131,11 @@ export const SIGNATURE_STONE_PAGE_DETAILS: Record<string, SignatureStonePageDeta
       applications: 'Inlays, portals, accent walls',
     },
   },
-  'amazonite-gold': {
+  'giallo-imperiale': {
     origin: 'Brazil',
     subhead: 'Semi-Precious Quartzite',
     description:
-      'Translucent green body with metallic highlights. Best reserved for focal planes where lighting can be controlled.',
+      'Translucent amber and caramel body shot through with deep ochre and bronze veining. Best reserved for focal planes where backlighting can reveal its luminosity.',
     specs: {
       finish: 'Polished',
       thickness: '2 cm',
@@ -177,9 +177,9 @@ export const SIGNATURE_STONE_PAGE_DETAILS: Record<string, SignatureStonePageDeta
   },
   'onice-fantastico': {
     origin: 'Iran',
-    subhead: 'Translucent Onyx',
+    subhead: 'Translucent Blue Onyx',
     description:
-      'Layered warm tones with natural translucency. Demands thoughtful lighting design to reveal depth.',
+      'Layered bands of sapphire, teal, and pearl-white run through a naturally translucent body. Demands thoughtful lighting design to reveal its glacial depth.',
     specs: {
       finish: 'Polished',
       thickness: '2 cm',
@@ -199,9 +199,9 @@ export const SIGNATURE_STONE_PAGE_DETAILS: Record<string, SignatureStonePageDeta
   },
   'rosso-lepanto': {
     origin: 'Levanto, Liguria',
-    subhead: 'Italian Brecciated Marble',
+    subhead: 'Italian Red Marble',
     description:
-      'Wine-red ground with pale fragment inclusions. Romantic and assertive in equal measure.',
+      'Wine-red ground traced by bold, rivering white veining. Romantic and assertive in equal measure.',
     specs: {
       finish: 'Polished or honed',
       thickness: '2 cm and 3 cm',
@@ -212,7 +212,7 @@ export const SIGNATURE_STONE_PAGE_DETAILS: Record<string, SignatureStonePageDeta
     origin: 'Tuscany',
     subhead: 'Bespoke Italian Marble',
     description:
-      'Violet-grey veining on a luminous white body. A contemporary Calacatta expression with unmistakable character.',
+      'Bold violet and plum veining flows across a warm ivory body, accented with charcoal hairlines. A contemporary Calacatta expression with unmistakable character.',
     specs: {
       finish: 'Honed or polished',
       thickness: '2 cm and 3 cm',

@@ -58,7 +58,7 @@ const SIGNATURE_STONES: GalleryStone[] = [
   },
   */
   {
-    name: 'Pietra Grey',
+    name: 'Grigio Carnico',
     src: PLACEHOLDER_ROCK,
     aspect: 'aspect-[5/6]',
   },
@@ -98,7 +98,7 @@ const SIGNATURE_STONES: GalleryStone[] = [
   },
   */
   {
-    name: 'Amazonite Gold',
+    name: 'Giallo Imperiale',
     src: PLACEHOLDER_WALL,
     aspect: 'aspect-[5/3]',
   },
