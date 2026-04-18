@@ -11,21 +11,21 @@ export type GalleryStone = {
 
 export type { SignatureStonePageDetail }
 
-// Placeholder imagery sourced from Pexels (free license, see
-// public/img/LICENSES.md). Each active entry below uses a unique placeholder;
-// stones that would have repeated an image already in use are commented out
-// until the Strapi-managed product photography is connected and can supply a
-// distinct photograph per stone.
-const PLACEHOLDER_LIGHT = '/img/pexels-light-marble.jpg'
-const PLACEHOLDER_DARK = '/img/pexels-dark-marble.jpg'
-const PLACEHOLDER_VEINED = '/img/pexels-veined-stone.jpg'
-const PLACEHOLDER_CRACKED = '/img/pexels-cracked-stone.jpg'
-const PLACEHOLDER_ROCK = '/img/pexels-rock-formation.jpg'
-const PLACEHOLDER_WALL = '/img/pexels-stone-wall.jpg'
-const PLACEHOLDER_PINK = '/img/pexels-pink-marble.jpg'
-const PLACEHOLDER_BLUE_CORAL = '/img/pexels-blue-coral.jpg'
-const PLACEHOLDER_PURPLE = '/img/pexels-purple-marble.jpg'
-const PLACEHOLDER_BLUE_GREEN = '/img/pexels-blue-green.jpg'
+// Placeholder imagery is AI-generated (see public/img/LICENSES.md). Each
+// active entry below uses a unique placeholder; stones that would have
+// repeated an image already in use are commented out until the
+// Strapi-managed product photography is connected and can supply a distinct
+// photograph per stone.
+const PLACEHOLDER_LIGHT = '/img/ai-light-marble.jpg'
+const PLACEHOLDER_DARK = '/img/ai-dark-marble.jpg'
+const PLACEHOLDER_VEINED = '/img/ai-veined-stone.jpg'
+const PLACEHOLDER_CRACKED = '/img/ai-cracked-stone.jpg'
+const PLACEHOLDER_ROCK = '/img/ai-rock-formation.jpg'
+const PLACEHOLDER_WALL = '/img/ai-stone-wall.jpg'
+const PLACEHOLDER_PINK = '/img/ai-pink-marble.jpg'
+const PLACEHOLDER_BLUE_CORAL = '/img/ai-blue-coral.jpg'
+const PLACEHOLDER_PURPLE = '/img/ai-purple-marble.jpg'
+const PLACEHOLDER_BLUE_GREEN = '/img/ai-blue-green.jpg'
 
 const SIGNATURE_STONES: GalleryStone[] = [
   {

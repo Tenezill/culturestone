@@ -3,11 +3,11 @@
     <!-- 1. The Cover -->
     <header class="relative h-screen min-h-[100dvh] w-full overflow-hidden">
       <img
-        src="/img/pexels-bathroom-marble.jpg"
+        src="/img/ai-hero-marble-interior.jpg"
         alt="Luxury marble interior"
         class="absolute inset-0 h-screen w-full object-cover"
-        width="2000"
-        height="1333"
+        width="4096"
+        height="2284"
         fetchpriority="high"
       >
       <div class="absolute inset-0 bg-gradient-to-b from-black/55 via-black/30 to-black/65" aria-hidden="true" />
