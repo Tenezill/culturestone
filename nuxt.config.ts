@@ -5,6 +5,18 @@ export default defineNuxtConfig({
   srcDir: '.',
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
+  app: {
+    head: {
+      link: [
+        // Modern browsers prefer the PNG variants; /favicon.ico remains as
+        // the legacy fallback served automatically from /public.
+        { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32.png' },
+        { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16.png' },
+        { rel: 'icon', type: 'image/png', sizes: '192x192', href: '/favicon-192.png' },
+        { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
+      ],
+    },
+  },
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/google-fonts', '@nuxtjs/strapi'],
   strapi: {
     // Base URL of the Strapi backend (no trailing slash, no /api).
