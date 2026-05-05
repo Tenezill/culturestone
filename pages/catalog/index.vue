@@ -112,7 +112,7 @@
                   class="group"
                 >
                   <NuxtLink
-                    :to="localePath(`/catalog/${stone.slug}`)"
+                    :to="(`/catalog/${stone.slug}`)"
                     class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-editorial-charcoal"
                   >
                     <figure class="m-0">

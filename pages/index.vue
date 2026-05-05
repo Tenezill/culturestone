@@ -16,7 +16,7 @@
         class="relative z-10 flex min-h-[100dvh] flex-col justify-between px-4 pb-12 pt-8 md:px-8 md:pb-16 lg:px-12"
       >
         <NuxtLink
-          :to="localePath('/')"
+          :to="('/')"
           class="font-serif text-[0.65rem] uppercase tracking-[0.45em] text-white/95 sm:text-xs md:tracking-[0.55em]"
         >
           Culture Stone
@@ -225,7 +225,6 @@
 
 <script setup lang="ts">
 const { t } = useI18n()
-const localePath = useLocalePath()
 
 useHead({
   title: t('seo.home.title'),
