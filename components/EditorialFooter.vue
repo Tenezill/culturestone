@@ -75,5 +75,3 @@ const displayLabel = computed(() => props.secondaryLabel ?? t('footer.browse_cat
 
 const year = new Date().getFullYear()
 </script>
-tFullYear()
-</script>

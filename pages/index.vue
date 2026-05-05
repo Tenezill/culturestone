@@ -225,12 +225,10 @@
 
 <script setup lang="ts">
 const { t } = useI18n()
+const localePath = useLocalePath()
 
 useHead({
   title: t('seo.home.title'),
   meta: [{ name: 'description', content: t('seo.home.description') }],
-})
-</script>
-') }],
 })
 </script>
