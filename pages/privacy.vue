@@ -36,7 +36,7 @@
             <p class="mt-4">
               Further information about the operator is available in our
               <NuxtLink
-                to="/legal"
+                :to="localePath('/legal')"
                 class="underline decoration-editorial-charcoal/30 underline-offset-4 transition hover:decoration-editorial-charcoal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-editorial-charcoal"
               >Legal Notice</NuxtLink>.
             </p>
@@ -304,6 +304,7 @@
 
 <script setup lang="ts">
 const { t } = useI18n()
+const localePath = useLocalePath()
 
 useHead({
   title: t('seo.privacy.title'),

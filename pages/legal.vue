@@ -68,7 +68,7 @@
               virtual private server in the Hong Kong Special Administrative Region of the People&rsquo;s Republic of
               China, hosted by [VPS Provider Name]. Further information on the resulting data flows is available in our
               <NuxtLink
-                to="/privacy"
+                :to="localePath('/privacy')"
                 class="underline decoration-editorial-charcoal/30 underline-offset-4 transition hover:decoration-editorial-charcoal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-editorial-charcoal"
               >Privacy Policy</NuxtLink>.
             </p>
@@ -120,7 +120,7 @@
             <p class="mt-4">
               For information on how personal data is processed on this website, please refer to our
               <NuxtLink
-                to="/privacy"
+                :to="localePath('/privacy')"
                 class="underline decoration-editorial-charcoal/30 underline-offset-4 transition hover:decoration-editorial-charcoal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-editorial-charcoal"
               >Privacy Policy</NuxtLink>.
             </p>
@@ -146,3 +146,4 @@ useHead({
   ],
 })
 </script>
+ipt>

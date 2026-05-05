@@ -5,7 +5,7 @@
         <template v-if="page">
         <div class="px-8 pt-6 md:px-12 md:pt-8">
           <NuxtLink
-            to="/catalog"
+            :to="localePath('/catalog')"
             class="font-sans text-[0.65rem] uppercase tracking-[0.35em] text-editorial-charcoal/50 transition-colors duration-300 hover:text-editorial-charcoal"
           >
             {{ t('catalog.back') }}
@@ -127,7 +127,7 @@
 
         <div v-else class="flex min-h-[70vh] flex-col px-8 py-24 md:px-12 md:py-32">
         <NuxtLink
-          to="/catalog"
+          :to="localePath('/catalog')"
           class="font-sans text-[0.65rem] uppercase tracking-[0.35em] text-editorial-charcoal/50 transition-colors duration-300 hover:text-editorial-charcoal"
         >
           {{ t('catalog.back') }}
@@ -140,7 +140,7 @@
             {{ t('catalog.not_found.body') }}
           </p>
           <NuxtLink
-            to="/catalog"
+            :to="localePath('/catalog')"
             class="mt-12 border border-editorial-charcoal/25 px-10 py-3 font-sans text-[0.65rem] uppercase tracking-[0.28em] text-editorial-charcoal transition-colors duration-300 hover:border-editorial-charcoal hover:bg-editorial-charcoal hover:text-editorial-cream"
           >
             {{ t('catalog.return') }}
@@ -259,9 +259,9 @@ const galleryUrls = computed<string[]>(() => {
 const headingId = 'stone-detail-heading'
 
 const inquireTo = computed(() => {
-  if (!page.value) return '/contact'
+  if (!page.value) return localePath('/contact')
   return {
-    path: '/contact',
+    path: localePath('/contact'),
     query: { stone: page.value.name },
   }
 })

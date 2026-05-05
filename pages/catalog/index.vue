@@ -112,7 +112,7 @@
                   class="group"
                 >
                   <NuxtLink
-                    :to="`/catalog/${stone.slug}`"
+                    :to="localePath(`/catalog/${stone.slug}`)"
                     class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-editorial-charcoal"
                   >
                     <figure class="m-0">
@@ -190,6 +190,10 @@ useHead({
       name: 'description',
       content: t('seo.catalog.description'),
     },
+  ],
+})
+</script>
+  },
   ],
 })
 </script>

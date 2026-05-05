@@ -18,7 +18,7 @@
             {{ displayLabel }}
           </NuxtLink>
           <NuxtLink
-            to="/contact"
+            :to="localePath('/contact')"
             class="inline-flex min-h-[3rem] items-center justify-center border border-editorial-charcoal/40 bg-transparent px-12 py-4 font-sans text-[0.7rem] uppercase tracking-[0.28em] text-editorial-charcoal transition-colors duration-300 hover:border-editorial-charcoal hover:bg-editorial-charcoal hover:text-editorial-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-editorial-charcoal sm:min-h-0"
           >
             {{ t('footer.contact') }}
@@ -38,12 +38,12 @@
           <a href="#" class="underline decoration-editorial-charcoal/30 underline-offset-4 transition hover:decoration-editorial-charcoal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-editorial-charcoal">{{ t('footer.locations.milan') }}</a>
           <span class="mx-2 text-editorial-charcoal/25">|</span>
           <NuxtLink
-            to="/legal"
+            :to="localePath('/legal')"
             class="underline decoration-editorial-charcoal/30 underline-offset-4 transition hover:decoration-editorial-charcoal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-editorial-charcoal"
           >{{ t('footer.legal_notice') }}</NuxtLink>
           &middot;
           <NuxtLink
-            to="/privacy"
+            :to="localePath('/privacy')"
             class="underline decoration-editorial-charcoal/30 underline-offset-4 transition hover:decoration-editorial-charcoal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-editorial-charcoal"
           >{{ t('footer.privacy') }}</NuxtLink>
           <span class="mx-2 text-editorial-charcoal/25">|</span>
@@ -59,6 +59,7 @@
 
 <script setup lang="ts">
 const { t } = useI18n()
+const localePath = useLocalePath()
 
 const props = withDefaults(
   defineProps<{
@@ -73,4 +74,6 @@ const props = withDefaults(
 const displayLabel = computed(() => props.secondaryLabel ?? t('footer.browse_catalog'))
 
 const year = new Date().getFullYear()
+</script>
+tFullYear()
 </script>
