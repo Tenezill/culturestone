@@ -40,12 +40,21 @@ export default defineNuxtConfig({
   },
   strapi: {
     // Base URL of the Strapi backend (no trailing slash, no /api).
-    url: process.env.STRAPI_URL || 'http://localhost:1337',
+    url: (process.env.NUXT_PUBLIC_STRAPI_URL || process.env.STRAPI_URL || 'http://localhost:1337').replace(/\/$/, ''),
     prefix: '/api',
     // Local Strapi is v5 (flat responses, documentId). Keep in sync with backend.
     version: 'v5',
     cookie: {},
     cookieName: 'strapi_jwt',
+  },
+  runtimeConfig: {
+    public: {
+      strapi: {
+        // Ensure runtimeConfig is also populated with the normalized URL.
+        // Nuxt automatically maps NUXT_PUBLIC_STRAPI_URL to this.
+        url: (process.env.NUXT_PUBLIC_STRAPI_URL || process.env.STRAPI_URL || 'http://localhost:1337').replace(/\/$/, ''),
+      }
+    }
   },
   googleFonts: {
     // Download font files at build time and self-host them to avoid leaking

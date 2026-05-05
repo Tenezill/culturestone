@@ -63,31 +63,31 @@
                   <li>
                     <button
                       type="button"
-                      class="group flex items-center gap-3 font-sans text-[0.65rem] uppercase tracking-[0.35em] transition-colors duration-200"
+                      class="group flex items-start text-left gap-3 font-sans text-[0.65rem] uppercase tracking-[0.35em] transition-colors duration-200"
                       :class="selectedCategory === null ? 'text-editorial-charcoal' : 'text-editorial-charcoal/45 hover:text-editorial-charcoal'"
                       @click="selectedCategory = null"
                     >
                       <span
-                        class="block h-px w-4 shrink-0 transition-all duration-200"
+                        class="block h-px w-4 shrink-0 mt-1 transition-all duration-200"
                         :class="selectedCategory === null ? 'bg-editorial-charcoal' : 'bg-transparent group-hover:bg-editorial-charcoal/30'"
                         aria-hidden="true"
                       />
-                      {{ t('catalog.all') }}
+                      <span class="flex-1">{{ t('catalog.all') }}</span>
                     </button>
                   </li>
                   <li v-for="cat in categories" :key="cat.slug">
                     <button
                       type="button"
-                      class="group flex items-center gap-3 font-sans text-[0.65rem] uppercase tracking-[0.35em] transition-colors duration-200"
+                      class="group flex items-start text-left gap-3 font-sans text-[0.65rem] uppercase tracking-[0.35em] transition-colors duration-200"
                       :class="selectedCategory === cat.slug ? 'text-editorial-charcoal' : 'text-editorial-charcoal/45 hover:text-editorial-charcoal'"
                       @click="selectedCategory = cat.slug"
                     >
                       <span
-                        class="block h-px w-4 shrink-0 transition-all duration-200"
+                        class="block h-px w-4 shrink-0 mt-1 transition-all duration-200"
                         :class="selectedCategory === cat.slug ? 'bg-editorial-charcoal' : 'bg-transparent group-hover:bg-editorial-charcoal/30'"
                         aria-hidden="true"
                       />
-                      {{ cat.name }}
+                      <span class="flex-1">{{ cat.name }}</span>
                     </button>
                   </li>
                 </ul>
