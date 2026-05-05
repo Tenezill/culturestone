@@ -193,7 +193,3 @@ useHead({
   ],
 })
 </script>
-  },
-  ],
-})
-</script>
