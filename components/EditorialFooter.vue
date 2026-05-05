@@ -9,19 +9,19 @@
             href="mailto:studio@culturestone.example"
             class="inline-flex min-h-[3rem] items-center justify-center border border-editorial-charcoal/40 bg-transparent px-12 py-4 font-sans text-[0.7rem] uppercase tracking-[0.28em] text-editorial-charcoal transition-colors duration-300 hover:border-editorial-charcoal hover:bg-editorial-charcoal hover:text-editorial-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-editorial-charcoal sm:min-h-0"
           >
-            Inquire for specifications
+            {{ t('footer.inquire') }}
           </a>
           <NuxtLink
             :to="secondaryHref"
             class="inline-flex min-h-[3rem] items-center justify-center border border-editorial-charcoal/40 bg-transparent px-12 py-4 font-sans text-[0.7rem] uppercase tracking-[0.28em] text-editorial-charcoal transition-colors duration-300 hover:border-editorial-charcoal hover:bg-editorial-charcoal hover:text-editorial-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-editorial-charcoal sm:min-h-0"
           >
-            {{ secondaryLabel }}
+            {{ displayLabel }}
           </NuxtLink>
           <NuxtLink
             to="/contact"
             class="inline-flex min-h-[3rem] items-center justify-center border border-editorial-charcoal/40 bg-transparent px-12 py-4 font-sans text-[0.7rem] uppercase tracking-[0.28em] text-editorial-charcoal transition-colors duration-300 hover:border-editorial-charcoal hover:bg-editorial-charcoal hover:text-editorial-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-editorial-charcoal sm:min-h-0"
           >
-            Contact
+            {{ t('footer.contact') }}
           </NuxtLink>
         </div>
       </div>
@@ -29,23 +29,23 @@
       <div
         class="border-t border-editorial-charcoal/10 pt-12 font-sans text-xs font-light leading-relaxed text-editorial-charcoal/55 sm:pt-16 sm:text-sm md:flex md:items-end md:justify-between md:gap-12"
       >
-        <p>&copy; {{ year }} Culture Stone. All rights reserved.</p>
+        <p>{{ t('footer.copyright', { year }) }}</p>
         <p class="mt-6 md:mt-0 md:text-right">
-          <a href="#" class="underline decoration-editorial-charcoal/30 underline-offset-4 transition hover:decoration-editorial-charcoal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-editorial-charcoal">New York</a>
+          <a href="#" class="underline decoration-editorial-charcoal/30 underline-offset-4 transition hover:decoration-editorial-charcoal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-editorial-charcoal">{{ t('footer.locations.new_york') }}</a>
           &middot;
-          <a href="#" class="underline decoration-editorial-charcoal/30 underline-offset-4 transition hover:decoration-editorial-charcoal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-editorial-charcoal">London</a>
+          <a href="#" class="underline decoration-editorial-charcoal/30 underline-offset-4 transition hover:decoration-editorial-charcoal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-editorial-charcoal">{{ t('footer.locations.london') }}</a>
           &middot;
-          <a href="#" class="underline decoration-editorial-charcoal/30 underline-offset-4 transition hover:decoration-editorial-charcoal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-editorial-charcoal">Milan</a>
+          <a href="#" class="underline decoration-editorial-charcoal/30 underline-offset-4 transition hover:decoration-editorial-charcoal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-editorial-charcoal">{{ t('footer.locations.milan') }}</a>
           <span class="mx-2 text-editorial-charcoal/25">|</span>
           <NuxtLink
             to="/legal"
             class="underline decoration-editorial-charcoal/30 underline-offset-4 transition hover:decoration-editorial-charcoal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-editorial-charcoal"
-          >Legal notice</NuxtLink>
+          >{{ t('footer.legal_notice') }}</NuxtLink>
           &middot;
           <NuxtLink
             to="/privacy"
             class="underline decoration-editorial-charcoal/30 underline-offset-4 transition hover:decoration-editorial-charcoal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-editorial-charcoal"
-          >Privacy</NuxtLink>
+          >{{ t('footer.privacy') }}</NuxtLink>
           <span class="mx-2 text-editorial-charcoal/25">|</span>
           <a
             href="mailto:studio@culturestone.example"
@@ -58,16 +58,19 @@
 </template>
 
 <script setup lang="ts">
-withDefaults(
+const { t } = useI18n()
+
+const props = withDefaults(
   defineProps<{
     secondaryHref?: string
     secondaryLabel?: string
   }>(),
   {
     secondaryHref: '/catalog',
-    secondaryLabel: 'Browse Catalog',
   },
 )
+
+const displayLabel = computed(() => props.secondaryLabel ?? t('footer.browse_catalog'))
 
 const year = new Date().getFullYear()
 </script>

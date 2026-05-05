@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "menu": "Menú",
+    "close": "Cerrar",
+    "home": "Inicio",
+    "catalog": "Catálogo",
+    "contact": "Contacto",
+    "inquire": "Solicitar especificaciones",
+    "language_switcher_label": "Idioma",
+    "locations": {
+      "new_york": "Nueva York",
+      "london": "Londres",
+      "milan": "Milán"
+    }
+  },
+  "home": {
+    "hero": {
+      "headline": "Piedra, considerada.",
+      "subhead": "Planchas a medida y superficies arquitectónicas para estudios exigentes."
+    },
+    "editors_letter": {
+      "label": "La carta del editor",
+      "pull_quote": "«Creemos que la verdad del material comienza en la cantera — y termina en la quieta confianza de una habitación perfectamente resuelta.»",
+      "body_1": "Durante más de una generación, hemos colaborado con arquitectos y diseñadores de interiores que tratan la piedra no como decoración, sino como estructura, atmósfera y permanencia. Nuestro mandato es singular: obtener y elaborar los mármoles, calizas y granitos más excepcionales del mundo, con una procedencia que usted puede especificar y un carácter que no puede replicarse.",
+      "body_2": "Cada relación comienza con escuchar. Viajamos a las canteras, documentamos el vetado y el tono bajo luz natural, y seleccionamos lotes que honran su intención. Lo que llega a obra no es inventario; es una extensión considerada de su visión."
+    },
+    "sourcing": {
+      "label": "Autenticidad y abastecimiento",
+      "subhead": "Del lecho rocoso al proyecto",
+      "body": "Trabajamos directamente con socios de canteras en Europa y más allá, rastreando cada bloque desde la extracción hasta la fabricación. La documentación, la fotografía de lotes y las muestras físicas garantizan que lo que especifica es lo que recibe su proyecto, sin concesiones."
+    },
+    "lookbook": {
+      "label": "Colección signature",
+      "heading": "El lookbook",
+      "nero_marquina": {
+        "label": "I — Nero Marquina",
+        "heading": "Profundidad en monocromo",
+        "body": "Un fondo oscuro con relámpagos blancos contenidos. Adecuado para chimeneas, planos de acento y elementos de mobiliario donde la sombra y el pulido hablan por sí solos."
+      },
+      "calacatta_oro": {
+        "label": "II — Calacatta Oro",
+        "heading": "Vetado luminoso",
+        "body": "Fondo blanco cálido con movimientos de grafito y miel. Ideal para cocinas, baños galería y vestíbulos de recepción donde la luz del día revela el carácter de la piedra."
+      },
+      "caledonia": {
+        "label": "III — Caledonia",
+        "heading": "Fuerza tranquila",
+        "body": "Grano sal y pimienta con densidad duradera. Especifíquelo para suelos, revestimientos e interiores de alto tráfico que exigen una materialidad serena y larga vida útil."
+      }
+    }
+  },
+  "catalog": {
+    "page_title": "La Galería Signature",
+    "category_label": "Categoría",
+    "all": "Todo",
+    "loading": "Cargando la colección…",
+    "error": "El catálogo no está disponible temporalmente. Por favor, inténtelo de nuevo en breve.",
+    "empty": "No hay piedras en esta categoría todavía.",
+    "back": "← Volver al catálogo",
+    "return": "Volver al catálogo",
+    "not_found": {
+      "heading": "Piedra no encontrada",
+      "body": "Este material no está en la Galería Signature o el enlace puede haber cambiado."
+    },
+    "stone": {
+      "origin_prefix": "Origen —",
+      "inquire": "Consultar",
+      "spec_heading": "Especificaciones",
+      "finish": "Acabado",
+      "thickness": "Grosor",
+      "applications": "Aplicaciones",
+      "gallery_heading": "En Uso"
+    }
+  },
+  "contact": {
+    "page_label": "Contacto",
+    "heading": "Especifiquemos algo duradero",
+    "body": "Comparta los plazos del proyecto, la intención material y las cantidades. Le enviaremos una recomendación de planchas seleccionadas, orientación técnica y una estrategia de muestras."
+  },
+  "footer": {
+    "inquire": "Solicitar especificaciones",
+    "browse_catalog": "Explorar catálogo",
+    "contact": "Contacto",
+    "back_to_studio": "Volver al estudio",
+    "copyright": "© {year} Culture Stone. Todos los derechos reservados.",
+    "legal_notice": "Aviso legal",
+    "privacy": "Privacidad",
+    "locations": {
+      "new_york": "Nueva York",
+      "london": "Londres",
+      "milan": "Milán"
+    }
+  },
+  "legal": {
+    "nav_label": "Legal",
+    "page_title": "Aviso legal",
+    "subtitle": "Información sobre el operador de este sitio web."
+  },
+  "privacy": {
+    "nav_label": "Legal",
+    "page_title": "Política de privacidad",
+    "subtitle": "Cómo tratamos los datos personales cuando visita este sitio web, de conformidad con el Reglamento (UE) 2016/679 (RGPD) y la Ley de Protección de la Información Personal de la República Popular China (PIPL)."
+  },
+  "seo": {
+    "home": {
+      "title": "Culture Stone",
+      "description": "Planchas a medida y superficies arquitectónicas para estudios exigentes."
+    },
+    "catalog": {
+      "title": "Catálogo — La Galería Signature",
+      "description": "Panorama museográfico de las piedras signature de Culture Stone."
+    },
+    "contact": {
+      "title": "Contacto — Culture Stone",
+      "description": "Contacte con Culture Stone para especificaciones de proyectos y selección de piedras."
+    },
+    "legal": {
+      "title": "Aviso legal — Culture Stone",
+      "description": "Aviso legal e información del operador del sitio web de Culture Stone."
+    },
+    "privacy": {
+      "title": "Política de privacidad — Culture Stone",
+      "description": "Información sobre el tratamiento de datos personales por Culture Stone según el RGPD y el PIPL."
+    }
+  }
+}

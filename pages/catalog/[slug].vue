@@ -3,22 +3,14 @@
     <Transition appear name="luxury-enter">
       <div :key="page ? slug : 'not-found'" class="luxury-enter-root">
         <template v-if="page">
-        <header class="border-b border-editorial-charcoal/10 px-8 py-10 md:px-8 md:py-12 lg:px-12 lg:py-14">
-          <div class="mx-auto flex max-w-[1600px] flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-            <NuxtLink
-              to="/catalog"
-              class="font-sans text-[0.65rem] uppercase tracking-[0.35em] text-editorial-charcoal/50 transition-colors duration-300 hover:text-editorial-charcoal"
-            >
-              ← Back to Catalog
-            </NuxtLink>
-            <NuxtLink
-              to="/"
-              class="font-serif text-[0.65rem] uppercase tracking-[0.45em] text-editorial-charcoal/60 transition-colors duration-300 hover:text-editorial-charcoal sm:text-xs"
-            >
-              Culture Stone
-            </NuxtLink>
-          </div>
-        </header>
+        <div class="px-8 pt-6 md:px-12 md:pt-8">
+          <NuxtLink
+            to="/catalog"
+            class="font-sans text-[0.65rem] uppercase tracking-[0.35em] text-editorial-charcoal/50 transition-colors duration-300 hover:text-editorial-charcoal"
+          >
+            {{ t('catalog.back') }}
+          </NuxtLink>
+        </div>
 
         <section class="relative min-h-[60vh] w-full overflow-hidden md:min-h-[70vh]" aria-label="Stone hero">
           <img
@@ -47,56 +39,84 @@
                 >
                   {{ page.name }}
                 </h1>
-                <p class="mt-10 font-sans text-sm font-light uppercase tracking-[0.28em] text-editorial-charcoal/55">
-                  Origin — {{ page.origin }}
-                </p>
+                <div class="mt-8 border-t border-editorial-charcoal/15 pt-6">
+                  <p class="font-sans text-[0.6rem] uppercase tracking-[0.4em] text-editorial-charcoal/45">
+                    {{ t('catalog.stone.origin_prefix') }}
+                  </p>
+                  <p class="mt-2 font-serif text-xl italic text-editorial-charcoal md:text-2xl">
+                    {{ page.origin }}
+                  </p>
+                </div>
                 <NuxtLink
                   :to="inquireTo"
                   class="mt-14 inline-flex items-center justify-center bg-editorial-charcoal px-14 py-4 font-sans text-[0.7rem] uppercase tracking-[0.28em] text-editorial-cream transition-colors duration-300 hover:bg-editorial-charcoal/85 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-editorial-charcoal"
                 >
-                  Inquire
+                  {{ t('catalog.stone.inquire') }}
                 </NuxtLink>
               </div>
 
               <div class="md:col-span-7 lg:col-span-7">
                 <div class="max-w-prose space-y-10">
-                  <p class="font-sans text-base font-light leading-[1.9] text-editorial-charcoal/80 md:text-lg md:leading-[1.88]">
+                  <p class="font-sans text-base font-normal leading-[1.9] text-editorial-charcoal/90 md:text-lg md:leading-[1.88]">
                     {{ page.description }}
                   </p>
                 </div>
 
                 <div class="mt-20 max-w-prose">
                   <h2 class="font-sans text-[0.65rem] uppercase tracking-[0.35em] text-editorial-charcoal/45">
-                    Specifications
+                    {{ t('catalog.stone.spec_heading') }}
                   </h2>
                   <dl class="mt-10 divide-y divide-editorial-charcoal/10 border-t border-editorial-charcoal/10">
                     <div class="grid grid-cols-1 gap-1 py-4 sm:grid-cols-[minmax(0,10rem)_1fr] sm:gap-8">
                       <dt class="font-sans text-[0.65rem] uppercase tracking-widest text-editorial-charcoal/50">
-                        Finish
+                        {{ t('catalog.stone.finish') }}
                       </dt>
-                      <dd class="font-sans text-sm font-light leading-relaxed text-editorial-charcoal/85">
+                      <dd class="font-sans text-sm font-normal leading-relaxed text-editorial-charcoal">
                         {{ page.finish }}
                       </dd>
                     </div>
                     <div class="grid grid-cols-1 gap-1 py-4 sm:grid-cols-[minmax(0,10rem)_1fr] sm:gap-8">
                       <dt class="font-sans text-[0.65rem] uppercase tracking-widest text-editorial-charcoal/50">
-                        Thickness
+                        {{ t('catalog.stone.thickness') }}
                       </dt>
-                      <dd class="font-sans text-sm font-light leading-relaxed text-editorial-charcoal/85">
+                      <dd class="font-sans text-sm font-normal leading-relaxed text-editorial-charcoal">
                         {{ page.thickness }}
                       </dd>
                     </div>
                     <div class="grid grid-cols-1 gap-1 py-4 sm:grid-cols-[minmax(0,10rem)_1fr] sm:gap-8">
                       <dt class="font-sans text-[0.65rem] uppercase tracking-widest text-editorial-charcoal/50">
-                        Applications
+                        {{ t('catalog.stone.applications') }}
                       </dt>
-                      <dd class="font-sans text-sm font-light leading-relaxed text-editorial-charcoal/85">
+                      <dd class="font-sans text-sm font-normal leading-relaxed text-editorial-charcoal">
                         {{ page.applications }}
                       </dd>
                     </div>
                   </dl>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          v-if="galleryUrls.length"
+          class="px-8 pb-24 md:px-12 md:pb-32"
+          :aria-label="t('catalog.stone.gallery_heading')"
+        >
+          <div class="mx-auto max-w-[1600px]">
+            <h2 class="mb-10 font-sans text-[0.65rem] uppercase tracking-[0.35em] text-editorial-charcoal/45">
+              {{ t('catalog.stone.gallery_heading') }}
+            </h2>
+            <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
+              <img
+                v-for="(url, i) in galleryUrls"
+                :key="url"
+                :src="url"
+                :alt="`${page.name} — ${t('catalog.stone.gallery_heading')} ${i + 1}`"
+                class="aspect-[4/3] w-full object-cover"
+                loading="lazy"
+                decoding="async"
+              >
             </div>
           </div>
         </section>
@@ -107,33 +127,34 @@
           to="/catalog"
           class="font-sans text-[0.65rem] uppercase tracking-[0.35em] text-editorial-charcoal/50 transition-colors duration-300 hover:text-editorial-charcoal"
         >
-          ← Back to Catalog
+          {{ t('catalog.back') }}
         </NuxtLink>
         <div class="mx-auto flex max-w-md flex-1 flex-col items-center justify-center text-center">
           <p class="font-serif text-3xl font-normal tracking-tight text-editorial-charcoal sm:text-4xl">
-            Stone not found
+            {{ t('catalog.not_found.heading') }}
           </p>
-          <p class="mt-6 font-sans text-sm font-light leading-relaxed text-editorial-charcoal/55">
-            This material is not in the Signature Gallery or the link may have changed
+          <p class="mt-6 font-sans text-sm font-normal leading-relaxed text-editorial-charcoal/70">
+            {{ t('catalog.not_found.body') }}
           </p>
           <NuxtLink
             to="/catalog"
             class="mt-12 border border-editorial-charcoal/25 px-10 py-3 font-sans text-[0.65rem] uppercase tracking-[0.28em] text-editorial-charcoal transition-colors duration-300 hover:border-editorial-charcoal hover:bg-editorial-charcoal hover:text-editorial-cream"
           >
-            Return to catalog
+            {{ t('catalog.return') }}
           </NuxtLink>
         </div>
         </div>
       </div>
     </Transition>
 
-    <EditorialFooter secondary-href="/catalog" secondary-label="Catalog" />
+    <EditorialFooter secondary-href="/catalog" :secondary-label="t('nav.catalog')" />
   </div>
 </template>
 
 <script setup lang="ts">
 import { pickMediaUrl, type StrapiStone } from '~/composables/useSignatureStones'
 
+const { t, locale } = useI18n()
 const route = useRoute()
 
 const slug = computed(() => {
@@ -145,8 +166,8 @@ const slug = computed(() => {
 
 // In Strapi v5, `findOne` expects a documentId (opaque id), not a slug. So
 // we use `find` with a slug filter and take the first match. This is the
-// idiomatic v5 pattern for slug-based routing. `populate: ['image']` is
-// required — v5 does not populate relations/media by default.
+// idiomatic v5 pattern for slug-based routing. `populate` is required —
+// v5 does not populate relations/media by default.
 const { find } = useStrapi()
 
 const { data } = await useAsyncData(
@@ -154,7 +175,7 @@ const { data } = await useAsyncData(
   () =>
     find<StrapiStone>('stones', {
       filters: { slug: { $eq: slug.value } },
-      populate: ['image'],
+      populate: ['image', 'gallery'],
       pagination: { pageSize: 1 },
     }),
   { watch: [slug] },
@@ -170,6 +191,12 @@ const heroUrl = computed(() =>
   page.value ? pickMediaUrl(page.value.image, 'large') : '',
 )
 
+const galleryUrls = computed<string[]>(() => {
+  const items = page.value?.gallery
+  if (!Array.isArray(items) || items.length === 0) return []
+  return items.map(img => pickMediaUrl(img, 'large'))
+})
+
 const headingId = 'stone-detail-heading'
 
 const inquireTo = computed(() => {
@@ -183,8 +210,11 @@ const inquireTo = computed(() => {
 useHead(() => {
   if (!page.value) {
     return {
-      title: 'Stone not found — Culture Stone',
-      meta: [{ name: 'description', content: 'The requested stone could not be found in the Signature Gallery.' }],
+      title: `${t('catalog.not_found.heading')} — Culture Stone`,
+      meta: [
+        { name: 'description', content: t('catalog.not_found.body') },
+        { property: 'og:locale', content: locale.value },
+      ],
     }
   }
   return {
@@ -194,6 +224,7 @@ useHead(() => {
         name: 'description',
         content: `${page.value.name}. ${page.value.description}`,
       },
+      { property: 'og:locale', content: locale.value },
     ],
   }
 })

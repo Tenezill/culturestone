@@ -2,13 +2,12 @@
   <main>
     <section class="px-4 py-24 md:px-8 md:py-32 lg:px-12 lg:py-36" aria-labelledby="contact-heading">
       <div class="mx-auto max-w-3xl">
-        <p class="font-sans text-[0.7rem] uppercase tracking-[0.3em] text-editorial-charcoal/50">Contact</p>
+        <p class="font-sans text-[0.7rem] uppercase tracking-[0.3em] text-editorial-charcoal/50">{{ t('contact.page_label') }}</p>
         <h1 id="contact-heading" class="mt-6 font-serif text-4xl tracking-tight sm:text-5xl md:text-6xl">
-          Let&apos;s specify something enduring
+          {{ t('contact.heading') }}
         </h1>
         <p class="mt-8 max-w-2xl text-base leading-relaxed text-editorial-charcoal/75 md:text-lg">
-          Share project timelines, material intent, and quantities. We will return a curated slab recommendation,
-          technical guidance, and sample strategy.
+          {{ t('contact.body') }}
         </p>
 
         <div class="mt-12 space-y-5 text-sm uppercase tracking-[0.2em] text-editorial-charcoal/70">
@@ -21,8 +20,10 @@
 </template>
 
 <script setup lang="ts">
+const { t } = useI18n()
+
 useHead({
-  title: 'Contact — Culture Stone',
-  meta: [{ name: 'description', content: 'Contact Culture Stone for project specifications and stone curation.' }],
+  title: t('seo.contact.title'),
+  meta: [{ name: 'description', content: t('seo.contact.description') }],
 })
 </script>

@@ -19,7 +19,7 @@
               <span class="block h-px w-4 bg-current" />
               <span class="block h-px w-4 bg-current" />
             </span>
-            {{ isMobileMenuOpen ? 'Close' : 'Menu' }}
+            {{ isMobileMenuOpen ? t('nav.close') : t('nav.menu') }}
           </button>
 
           <NuxtLink
@@ -31,9 +31,10 @@
         </div>
 
         <ul class="hidden items-center gap-8 text-xs uppercase tracking-[0.25em] md:flex">
-          <li><NuxtLink to="/" class="transition-colors hover:text-editorial-charcoal/70">Home</NuxtLink></li>
-          <li><NuxtLink to="/catalog" class="transition-colors hover:text-editorial-charcoal/70">Catalog</NuxtLink></li>
-          <li><NuxtLink to="/contact" class="transition-colors hover:text-editorial-charcoal/70">Contact</NuxtLink></li>
+          <li><NuxtLink to="/" class="transition-colors hover:text-editorial-charcoal/70">{{ t('nav.home') }}</NuxtLink></li>
+          <li><NuxtLink to="/catalog" class="transition-colors hover:text-editorial-charcoal/70">{{ t('nav.catalog') }}</NuxtLink></li>
+          <li><NuxtLink to="/contact" class="transition-colors hover:text-editorial-charcoal/70">{{ t('nav.contact') }}</NuxtLink></li>
+          <li><LanguageSwitcher /></li>
         </ul>
       </nav>
 
@@ -43,20 +44,20 @@
         :class="isMobileMenuOpen ? 'block' : 'hidden'"
       >
         <ul class="mx-auto max-w-[1600px] space-y-4 text-xs uppercase tracking-[0.25em]">
-          <li><NuxtLink to="/" class="block" @click="isMobileMenuOpen = false">Home</NuxtLink></li>
-          <li><NuxtLink to="/catalog" class="block" @click="isMobileMenuOpen = false">Catalog</NuxtLink></li>
-          <li><NuxtLink to="/contact" class="block" @click="isMobileMenuOpen = false">Contact</NuxtLink></li>
+          <li><NuxtLink to="/" class="block" @click="isMobileMenuOpen = false">{{ t('nav.home') }}</NuxtLink></li>
+          <li><NuxtLink to="/catalog" class="block" @click="isMobileMenuOpen = false">{{ t('nav.catalog') }}</NuxtLink></li>
+          <li><NuxtLink to="/contact" class="block" @click="isMobileMenuOpen = false">{{ t('nav.contact') }}</NuxtLink></li>
           <li>
             <a href="mailto:studio@culturestone.example" class="block" @click="isMobileMenuOpen = false">
-              Inquire for specifications
+              {{ t('nav.inquire') }}
             </a>
           </li>
           <li class="pt-2 text-[0.65rem] tracking-[0.2em] text-editorial-charcoal/65">
-            <a href="#" class="underline decoration-editorial-charcoal/30 underline-offset-4 hover:decoration-editorial-charcoal">New York</a>
+            <a href="#" class="underline decoration-editorial-charcoal/30 underline-offset-4 hover:decoration-editorial-charcoal">{{ t('nav.locations.new_york') }}</a>
             &middot;
-            <a href="#" class="underline decoration-editorial-charcoal/30 underline-offset-4 hover:decoration-editorial-charcoal">London</a>
+            <a href="#" class="underline decoration-editorial-charcoal/30 underline-offset-4 hover:decoration-editorial-charcoal">{{ t('nav.locations.london') }}</a>
             &middot;
-            <a href="#" class="underline decoration-editorial-charcoal/30 underline-offset-4 hover:decoration-editorial-charcoal">Milan</a>
+            <a href="#" class="underline decoration-editorial-charcoal/30 underline-offset-4 hover:decoration-editorial-charcoal">{{ t('nav.locations.milan') }}</a>
           </li>
           <li>
             <a
@@ -64,6 +65,9 @@
               class="inline-block border-b border-editorial-charcoal/25 text-[0.65rem] tracking-[0.2em] text-editorial-charcoal/80 hover:border-editorial-charcoal/55"
               @click="isMobileMenuOpen = false"
             >studio@culturestone.example</a>
+          </li>
+          <li class="pt-2">
+            <LanguageSwitcher />
           </li>
         </ul>
       </div>
@@ -74,6 +78,7 @@
 </template>
 
 <script setup lang="ts">
+const { t } = useI18n()
 const route = useRoute()
 const isMobileMenuOpen = ref(false)
 

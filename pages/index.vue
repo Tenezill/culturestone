@@ -26,10 +26,10 @@
           <h1
             class="font-serif text-4xl font-medium leading-[1.08] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
           >
-            Stone, considered.
+            {{ t('home.hero.headline') }}
           </h1>
           <p class="mt-8 max-w-lg font-sans text-lg font-light leading-relaxed text-white/95 sm:text-xl md:text-2xl">
-            Bespoke slabs and architectural surfaces for discerning studios.
+            {{ t('home.hero.subhead') }}
           </p>
         </div>
       </div>
@@ -46,28 +46,18 @@
             id="editors-letter-heading"
             class="mb-20 font-sans text-[0.65rem] uppercase tracking-[0.35em] text-editorial-charcoal/50 sm:mb-24 md:mb-32"
           >
-            The editor&rsquo;s letter
+            {{ t('home.editors_letter.label') }}
           </p>
 
           <blockquote
             class="mb-16 font-serif text-4xl font-normal leading-tight tracking-tight text-editorial-charcoal sm:mb-20 md:mb-24 lg:text-[60px] lg:leading-[60px]"
           >
-            &ldquo;We believe material truth begins in the quarry&mdash;and ends in the quiet confidence of a room
-            perfectly resolved.&rdquo;
+            {{ t('home.editors_letter.pull_quote') }}
           </blockquote>
 
           <div class="max-w-3xl space-y-10 font-sans text-base font-light leading-[1.85] text-editorial-charcoal/80 sm:text-lg sm:leading-[1.9] md:text-xl md:leading-[1.88]">
-            <p>
-              For over a generation, we have partnered with architects and interior designers who treat stone not as
-              decoration, but as structure, atmosphere, and permanence. Our mandate is singular: to source and finish
-              the world&rsquo;s most exceptional marbles, limestones, and granites&mdash;with provenance you can specify
-              and character that cannot be replicated.
-            </p>
-            <p>
-              Each relationship begins with listening. We travel to quarries, document veining and tone under natural
-              light, and curate lots that honor your intent. What arrives on site is not inventory; it is a considered
-              extension of your vision.
-            </p>
+            <p>{{ t('home.editors_letter.body_1') }}</p>
+            <p>{{ t('home.editors_letter.body_2') }}</p>
           </div>
         </div>
       </section>
@@ -82,7 +72,7 @@
             id="feature-spread-heading"
             class="mb-16 font-sans text-[0.65rem] uppercase tracking-[0.35em] text-editorial-charcoal/50 sm:mb-20 md:mb-24 lg:mb-28"
           >
-            Authenticity &amp; sourcing
+            {{ t('home.sourcing.label') }}
           </p>
 
           <div
@@ -119,13 +109,9 @@
                 class="mt-16 max-w-2xl font-sans text-sm font-light leading-[1.9] text-editorial-charcoal/75 sm:mt-20 sm:text-base lg:mt-24 lg:ml-2 xl:ml-6"
               >
                 <p class="mb-6 font-serif text-2xl font-normal leading-snug text-editorial-charcoal md:text-3xl">
-                  From bedrock to brief
+                  {{ t('home.sourcing.subhead') }}
                 </p>
-                <p>
-                  We work directly with quarry partners across Europe and beyond, tracing each block from extraction
-                  through fabrication. Documentation, lot photography, and physical samples ensure what you specify is
-                  what your project receives&mdash;without compromise.
-                </p>
+                <p>{{ t('home.sourcing.body') }}</p>
               </div>
             </div>
           </div>
@@ -143,10 +129,10 @@
               id="lookbook-heading"
               class="font-sans text-[0.65rem] uppercase tracking-[0.35em] text-editorial-charcoal/50"
             >
-              Signature collection
+              {{ t('home.lookbook.label') }}
             </p>
             <h2 class="mt-6 font-serif text-4xl font-normal tracking-tight md:text-5xl lg:text-6xl">
-              The lookbook
+              {{ t('home.lookbook.heading') }}
             </h2>
           </div>
 
@@ -166,14 +152,13 @@
               </div>
               <div class="max-w-2xl lg:col-span-4 lg:col-start-9 lg:pl-4">
                 <p class="font-sans text-[0.65rem] uppercase tracking-[0.3em] text-editorial-charcoal/45">
-                  I &mdash; Nero Marquina
+                  {{ t('home.lookbook.nero_marquina.label') }}
                 </p>
                 <h3 class="mt-5 font-serif text-3xl font-normal md:text-4xl">
-                  Depth in monochrome
+                  {{ t('home.lookbook.nero_marquina.heading') }}
                 </h3>
                 <p class="mt-8 font-sans text-sm font-light leading-[1.9] text-editorial-charcoal/75 sm:text-base">
-                  A deep field with restrained white lightning. Suited to hearths, feature planes, and furniture
-                  elements where shadow and polish do the speaking.
+                  {{ t('home.lookbook.nero_marquina.body') }}
                 </p>
               </div>
             </li>
@@ -181,14 +166,13 @@
             <li class="grid grid-cols-1 items-center gap-16 lg:grid-cols-12 lg:gap-x-16 xl:gap-x-20">
               <div class="order-2 max-w-2xl lg:order-1 lg:col-span-4 lg:col-start-1 lg:pr-4">
                 <p class="font-sans text-[0.65rem] uppercase tracking-[0.3em] text-editorial-charcoal/45">
-                  II &mdash; Calacatta Oro
+                  {{ t('home.lookbook.calacatta_oro.label') }}
                 </p>
                 <h3 class="mt-5 font-serif text-3xl font-normal md:text-4xl">
-                  Luminous veining
+                  {{ t('home.lookbook.calacatta_oro.heading') }}
                 </h3>
                 <p class="mt-8 font-sans text-sm font-light leading-[1.9] text-editorial-charcoal/75 sm:text-base">
-                  Warm white ground with graphite and honey movement. Ideal for kitchens, gallery baths, and reception
-                  volumes where daylight reveals the stone&rsquo;s character.
+                  {{ t('home.lookbook.calacatta_oro.body') }}
                 </p>
               </div>
               <div class="order-1 lg:order-2 lg:col-span-7 lg:col-start-6">
@@ -220,14 +204,13 @@
               </div>
               <div class="max-w-2xl lg:col-span-4 lg:col-start-9 lg:pl-4">
                 <p class="font-sans text-[0.65rem] uppercase tracking-[0.3em] text-editorial-charcoal/45">
-                  III &mdash; Caledonia
+                  {{ t('home.lookbook.caledonia.label') }}
                 </p>
                 <h3 class="mt-5 font-serif text-3xl font-normal md:text-4xl">
-                  Quiet strength
+                  {{ t('home.lookbook.caledonia.heading') }}
                 </h3>
                 <p class="mt-8 font-sans text-sm font-light leading-[1.9] text-editorial-charcoal/75 sm:text-base">
-                  Salt-and-pepper grain with enduring density. Specify for flooring, cladding, and high-traffic
-                  interiors that demand calm materiality and long service.
+                  {{ t('home.lookbook.caledonia.body') }}
                 </p>
               </div>
             </li>
@@ -241,8 +224,10 @@
 </template>
 
 <script setup lang="ts">
+const { t } = useI18n()
+
 useHead({
-  title: 'Culture Stone',
-  meta: [{ name: 'description', content: 'Bespoke slabs and architectural surfaces for discerning studios.' }],
+  title: t('seo.home.title'),
+  meta: [{ name: 'description', content: t('seo.home.description') }],
 })
 </script>

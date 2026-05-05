@@ -2,13 +2,12 @@
   <main>
     <section class="px-4 py-24 md:px-8 md:py-32 lg:px-12 lg:py-36" aria-labelledby="privacy-heading">
       <div class="mx-auto max-w-3xl">
-        <p class="font-sans text-[0.7rem] uppercase tracking-[0.3em] text-editorial-charcoal/50">Legal</p>
+        <p class="font-sans text-[0.7rem] uppercase tracking-[0.3em] text-editorial-charcoal/50">{{ t('privacy.nav_label') }}</p>
         <h1 id="privacy-heading" class="mt-6 font-serif text-4xl tracking-tight sm:text-5xl md:text-6xl">
-          Privacy policy
+          {{ t('privacy.page_title') }}
         </h1>
         <p class="mt-8 max-w-2xl text-base leading-relaxed text-editorial-charcoal/75 md:text-lg">
-          How we handle personal data when you visit this website, in accordance with Regulation (EU) 2016/679 (GDPR)
-          and the Personal Information Protection Law of the People&rsquo;s Republic of China (PIPL).
+          {{ t('privacy.subtitle') }}
         </p>
         <p class="mt-6 font-sans text-[0.7rem] uppercase tracking-[0.28em] text-editorial-charcoal/50">
           Last updated: [Month Day, Year]
@@ -304,10 +303,12 @@
 </template>
 
 <script setup lang="ts">
+const { t } = useI18n()
+
 useHead({
-  title: 'Privacy Policy — Culture Stone',
+  title: t('seo.privacy.title'),
   meta: [
-    { name: 'description', content: 'Information on how Culture Stone processes personal data under the GDPR and PIPL.' },
+    { name: 'description', content: t('seo.privacy.description') },
     { name: 'robots', content: 'index, follow' },
   ],
 })

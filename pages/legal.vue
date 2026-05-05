@@ -2,12 +2,12 @@
   <main>
     <section class="px-4 py-24 md:px-8 md:py-32 lg:px-12 lg:py-36" aria-labelledby="legal-heading">
       <div class="mx-auto max-w-3xl">
-        <p class="font-sans text-[0.7rem] uppercase tracking-[0.3em] text-editorial-charcoal/50">Legal</p>
+        <p class="font-sans text-[0.7rem] uppercase tracking-[0.3em] text-editorial-charcoal/50">{{ t('legal.nav_label') }}</p>
         <h1 id="legal-heading" class="mt-6 font-serif text-4xl tracking-tight sm:text-5xl md:text-6xl">
-          Legal notice
+          {{ t('legal.page_title') }}
         </h1>
         <p class="mt-8 max-w-2xl text-base leading-relaxed text-editorial-charcoal/75 md:text-lg">
-          Information about the operator of this website.
+          {{ t('legal.subtitle') }}
         </p>
 
         <div class="mt-16 space-y-12 text-base leading-relaxed text-editorial-charcoal/80">
@@ -136,10 +136,12 @@
 </template>
 
 <script setup lang="ts">
+const { t } = useI18n()
+
 useHead({
-  title: 'Legal Notice — Culture Stone',
+  title: t('seo.legal.title'),
   meta: [
-    { name: 'description', content: 'Legal notice and operator information for the Culture Stone website.' },
+    { name: 'description', content: t('seo.legal.description') },
     { name: 'robots', content: 'index, follow' },
   ],
 })

@@ -1,0 +1,125 @@
+{
+  "nav": {
+    "menu": "Menü",
+    "close": "Schließen",
+    "home": "Start",
+    "catalog": "Katalog",
+    "contact": "Kontakt",
+    "inquire": "Anfrage stellen",
+    "language_switcher_label": "Sprache",
+    "locations": {
+      "new_york": "New York",
+      "london": "London",
+      "milan": "Mailand"
+    }
+  },
+  "home": {
+    "hero": {
+      "headline": "Stein, durchdacht.",
+      "subhead": "Maßgefertigte Platten und Architekturflächen für anspruchsvolle Studios."
+    },
+    "editors_letter": {
+      "label": "Das Vorwort der Redaktion",
+      "pull_quote": "„Wir glauben, dass die Wahrheit des Materials im Steinbruch beginnt – und in der stillen Selbstsicherheit eines perfekt gestalteten Raumes endet.“",
+      "body_1": "Seit über einer Generation arbeiten wir mit Architekten und Innenarchitekten zusammen, die Stein nicht als Dekoration, sondern als Struktur, Atmosphäre und Beständigkeit verstehen. Unser Auftrag ist klar: die außergewöhnlichsten Marmore, Kalksteine und Granite der Welt zu beschaffen und zu veredeln – mit nachvollziehbarer Herkunft und unverwechselbarem Charakter.",
+      "body_2": "Jede Zusammenarbeit beginnt mit dem Zuhören. Wir besuchen Steinbrüche, dokumentieren Äderung und Ton im natürlichen Licht und kuratieren Lose, die Ihrer Intention gerecht werden. Was auf der Baustelle ankommt, ist kein Lagerbestand – es ist eine durchdachte Erweiterung Ihrer Vision."
+    },
+    "sourcing": {
+      "label": "Echtheit & Beschaffung",
+      "subhead": "Vom Fels zur Skizze",
+      "body": "Wir arbeiten direkt mit Steinbruchpartnern in Europa und darüber hinaus und verfolgen jeden Block von der Gewinnung bis zur Verarbeitung. Dokumentation, Losfotos und physische Muster stellen sicher, dass Sie das erhalten, was Sie ausgeschrieben haben – kompromisslos."
+    },
+    "lookbook": {
+      "label": "Signature-Kollektion",
+      "heading": "Das Lookbook",
+      "nero_marquina": {
+        "label": "I – Nero Marquina",
+        "heading": "Tiefe im Monochrom",
+        "body": "Ein dunkles Feld mit zurückhaltendem weißem Blitz. Geeignet für Kamine, Akzentflächen und Möbelelemente, bei denen Schatten und Politur für sich sprechen."
+      },
+      "calacatta_oro": {
+        "label": "II – Calacatta Oro",
+        "heading": "Leuchtendes Aderwerk",
+        "body": "Warmer weißer Grund mit Graphit- und Honigbewegung. Ideal für Küchen, Galeriebäder und Empfangsbereiche, in denen das Tageslicht den Charakter des Steins offenbart."
+      },
+      "caledonia": {
+        "label": "III – Caledonia",
+        "heading": "Stille Stärke",
+        "body": "Salz-Pfeffer-Körnung mit beständiger Dichte. Für Böden, Verkleidungen und stark frequentierte Innenräume, die ruhige Materialität und langen Bestand erfordern."
+      }
+    }
+  },
+  "catalog": {
+    "page_title": "Die Signature Gallery",
+    "category_label": "Kategorie",
+    "all": "Alle",
+    "loading": "Kollektion wird geladen…",
+    "error": "Der Katalog ist vorübergehend nicht verfügbar. Bitte versuchen Sie es in Kürze erneut.",
+    "empty": "Noch keine Steine in dieser Kategorie.",
+    "back": "← Zurück zum Katalog",
+    "return": "Zurück zum Katalog",
+    "not_found": {
+      "heading": "Stein nicht gefunden",
+      "body": "Dieses Material befindet sich nicht in der Signature Gallery oder der Link hat sich geändert."
+    },
+    "stone": {
+      "origin_prefix": "Herkunft —",
+      "inquire": "Anfrage",
+      "spec_heading": "Spezifikationen",
+      "finish": "Oberfläche",
+      "thickness": "Dicke",
+      "applications": "Anwendungen"
+    }
+  },
+  "contact": {
+    "page_label": "Kontakt",
+    "heading": "Lassen Sie uns etwas Bleibendes spezifizieren",
+    "body": "Teilen Sie Projektzeitpläne, Materialkonzepte und Mengen mit. Wir erstellen eine kuratierte Plattenempfehlung, technische Beratung und eine Musterstrategie."
+  },
+  "footer": {
+    "inquire": "Anfrage stellen",
+    "browse_catalog": "Katalog durchsuchen",
+    "contact": "Kontakt",
+    "back_to_studio": "Zurück zum Studio",
+    "copyright": "© {year} Culture Stone. Alle Rechte vorbehalten.",
+    "legal_notice": "Impressum",
+    "privacy": "Datenschutz",
+    "locations": {
+      "new_york": "New York",
+      "london": "London",
+      "milan": "Mailand"
+    }
+  },
+  "legal": {
+    "nav_label": "Rechtliches",
+    "page_title": "Impressum",
+    "subtitle": "Informationen zum Betreiber dieser Website."
+  },
+  "privacy": {
+    "nav_label": "Rechtliches",
+    "page_title": "Datenschutzerklärung",
+    "subtitle": "Wie wir personenbezogene Daten verarbeiten, wenn Sie diese Website besuchen, gemäß der Verordnung (EU) 2016/679 (DSGVO) und dem Datenschutzgesetz der Volksrepublik China (PIPL)."
+  },
+  "seo": {
+    "home": {
+      "title": "Culture Stone",
+      "description": "Maßgefertigte Platten und Architekturflächen für anspruchsvolle Studios."
+    },
+    "catalog": {
+      "title": "Katalog — Die Signature Gallery",
+      "description": "Museumsartige Übersicht der Signature-Steine von Culture Stone."
+    },
+    "contact": {
+      "title": "Kontakt — Culture Stone",
+      "description": "Kontaktieren Sie Culture Stone für Projektspezifikationen und Steinauswahl."
+    },
+    "legal": {
+      "title": "Impressum — Culture Stone",
+      "description": "Impressum und Betreiberinformationen für die Culture Stone Website."
+    },
+    "privacy": {
+      "title": "Datenschutzerklärung — Culture Stone",
+      "description": "Informationen zur Verarbeitung personenbezogener Daten durch Culture Stone gemäß DSGVO und PIPL."
+    }
+  }
+}

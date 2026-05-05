@@ -11,7 +11,7 @@ export default {
     extend: {
       colors: {
         editorial: {
-          cream: '#FAFAFA',
+          cream: '#F8F4EC',
           charcoal: '#1A1A1A',
         },
       },

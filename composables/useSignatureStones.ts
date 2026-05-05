@@ -33,6 +33,15 @@ export type StrapiMedia = {
   > | null
 }
 
+export type StrapiStoneCategory = {
+  id: number
+  documentId: string
+  name: string
+  alias: string | null
+  slug: string
+  description: string | null
+}
+
 export type StrapiStone = {
   id: number
   documentId: string
@@ -44,7 +53,10 @@ export type StrapiStone = {
   finish: string
   thickness: string
   applications: string
+  alias: string | null
+  category: StrapiStoneCategory | null
   image: StrapiMedia | null
+  gallery: StrapiMedia[] | null
   createdAt?: string
   updatedAt?: string
   publishedAt?: string
