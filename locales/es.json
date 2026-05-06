@@ -75,7 +75,45 @@
   "contact": {
     "page_label": "Contacto",
     "heading": "Especifiquemos algo duradero",
-    "body": "Comparta los plazos del proyecto, la intención material y las cantidades. Le enviaremos una recomendación de planchas seleccionadas, orientación técnica y una estrategia de muestras."
+    "body": "Comparta los plazos del proyecto, la intención material y las cantidades. Le enviaremos una recomendación de planchas seleccionadas, orientación técnica y una estrategia de muestras.",
+    "info": {
+      "email_label": "Correo",
+      "phone_label": "Teléfono",
+      "studios_label": "Estudios"
+    },
+    "form": {
+      "name": "Nombre",
+      "studio": "Estudio / Despacho",
+      "email": "Correo electrónico",
+      "project_type": "Tipo de proyecto",
+      "project_type_placeholder": "Seleccionar",
+      "project_types": {
+        "residential": "Residencial",
+        "commercial": "Comercial",
+        "hospitality": "Hostelería",
+        "public": "Público / Cívico"
+      },
+      "timeline": "Plazo",
+      "timeline_placeholder": "ej. T3 2025",
+      "stone": "Piedra(s) de interés",
+      "stone_placeholder": "ej. Nero Marquina, Calacatta Oro",
+      "brief": "Descripción del proyecto",
+      "brief_placeholder": "Describa su proyecto, cantidades, preferencias de acabado y cualquier requisito especial…",
+      "submit": "Enviar consulta",
+      "submitting": "Enviando…",
+      "error_name": "Por favor, introduzca su nombre.",
+      "error_email_required": "Por favor, introduzca su correo electrónico.",
+      "error_email_invalid": "Por favor, introduzca una dirección de correo electrónico válida.",
+      "privacy_note_before": "Respondemos en un plazo de dos días hábiles. Su información se trata de acuerdo con nuestra ",
+      "privacy_link_text": "política de privacidad",
+      "privacy_note_after": "."
+    },
+    "success": {
+      "label": "Consulta recibida",
+      "heading": "Nos pondremos en contacto.",
+      "body": "Su propuesta ha sido enviada a nuestro estudio. Espere una respuesta personalizada en dos días hábiles.",
+      "reset": "Enviar otra consulta"
+    }
   },
   "footer": {
     "inquire": "Solicitar especificaciones",

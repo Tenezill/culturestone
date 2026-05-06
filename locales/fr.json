@@ -75,7 +75,45 @@
   "contact": {
     "page_label": "Contact",
     "heading": "Spécifions ensemble quelque chose de durable",
-    "body": "Partagez les délais de votre projet, vos intentions matérielles et vos quantités. Nous vous proposerons une sélection de dalles, des conseils techniques et une stratégie d'échantillonnage."
+    "body": "Partagez les délais de votre projet, vos intentions matérielles et vos quantités. Nous vous proposerons une sélection de dalles, des conseils techniques et une stratégie d'échantillonnage.",
+    "info": {
+      "email_label": "E-mail",
+      "phone_label": "Téléphone",
+      "studios_label": "Studios"
+    },
+    "form": {
+      "name": "Nom",
+      "studio": "Studio / Agence",
+      "email": "E-mail",
+      "project_type": "Type de projet",
+      "project_type_placeholder": "Sélectionner",
+      "project_types": {
+        "residential": "Résidentiel",
+        "commercial": "Commercial",
+        "hospitality": "Hôtellerie",
+        "public": "Public / Civique"
+      },
+      "timeline": "Calendrier",
+      "timeline_placeholder": "ex. T3 2025",
+      "stone": "Pierre(s) souhaitée(s)",
+      "stone_placeholder": "ex. Nero Marquina, Calacatta Oro",
+      "brief": "Description du projet",
+      "brief_placeholder": "Décrivez votre projet, les quantités, les finitions souhaitées et toute exigence particulière…",
+      "submit": "Envoyer la demande",
+      "submitting": "Envoi en cours…",
+      "error_name": "Veuillez indiquer votre nom.",
+      "error_email_required": "Veuillez indiquer votre adresse e-mail.",
+      "error_email_invalid": "Veuillez indiquer une adresse e-mail valide.",
+      "privacy_note_before": "Nous répondons généralement sous deux jours ouvrés. Vos informations sont traitées conformément à notre ",
+      "privacy_link_text": "politique de confidentialité",
+      "privacy_note_after": "."
+    },
+    "success": {
+      "label": "Demande reçue",
+      "heading": "Nous reviendrons vers vous.",
+      "body": "Votre brief a été transmis à notre studio. Attendez-vous à une réponse personnalisée sous deux jours ouvrés.",
+      "reset": "Soumettre une autre demande"
+    }
   },
   "footer": {
     "inquire": "Demander une spécification",

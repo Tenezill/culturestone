@@ -75,7 +75,45 @@
   "contact": {
     "page_label": "Kontakt",
     "heading": "Lassen Sie uns etwas Bleibendes spezifizieren",
-    "body": "Teilen Sie Projektzeitpläne, Materialkonzepte und Mengen mit. Wir erstellen eine kuratierte Plattenempfehlung, technische Beratung und eine Musterstrategie."
+    "body": "Teilen Sie Projektzeitpläne, Materialkonzepte und Mengen mit. Wir erstellen eine kuratierte Plattenempfehlung, technische Beratung und eine Musterstrategie.",
+    "info": {
+      "email_label": "E-Mail",
+      "phone_label": "Telefon",
+      "studios_label": "Studios"
+    },
+    "form": {
+      "name": "Name",
+      "studio": "Studio / Büro",
+      "email": "E-Mail",
+      "project_type": "Projektart",
+      "project_type_placeholder": "Auswählen",
+      "project_types": {
+        "residential": "Wohnbereich",
+        "commercial": "Gewerbe",
+        "hospitality": "Gastronomie & Hotellerie",
+        "public": "Öffentlich / Kommunal"
+      },
+      "timeline": "Zeitplan",
+      "timeline_placeholder": "z. B. Q3 2025",
+      "stone": "Stein(e) von Interesse",
+      "stone_placeholder": "z. B. Nero Marquina, Calacatta Oro",
+      "brief": "Projektbeschreibung",
+      "brief_placeholder": "Beschreiben Sie Ihr Projekt, Mengen, Oberflächenpräferenzen und besondere Anforderungen…",
+      "submit": "Anfrage senden",
+      "submitting": "Wird gesendet…",
+      "error_name": "Bitte geben Sie Ihren Namen ein.",
+      "error_email_required": "Bitte geben Sie Ihre E-Mail-Adresse ein.",
+      "error_email_invalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+      "privacy_note_before": "Wir antworten in der Regel innerhalb von zwei Werktagen. Ihre Daten werden gemäß unserer ",
+      "privacy_link_text": "Datenschutzerklärung",
+      "privacy_note_after": " behandelt."
+    },
+    "success": {
+      "label": "Anfrage eingegangen",
+      "heading": "Wir melden uns.",
+      "body": "Ihre Anfrage wurde an unser Studio weitergeleitet. Erwarten Sie eine kuratierte Antwort innerhalb von zwei Werktagen.",
+      "reset": "Weitere Anfrage senden"
+    }
   },
   "footer": {
     "inquire": "Anfrage stellen",
