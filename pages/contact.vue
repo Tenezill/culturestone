@@ -276,7 +276,7 @@
               </button>
               <p class="mt-5 font-sans text-[0.55rem] leading-[1.85] text-editorial-cream/28">
                 {{ t('contact.form.privacy_note_before') }}<NuxtLink
-                  :to="('/privacy')"
+                  :to="localePath('/privacy')"
                   class="underline decoration-editorial-cream/18 transition-colors duration-300 hover:decoration-editorial-cream/45 focus-visible:outline focus-visible:outline-2 focus-visible:outline-editorial-cream"
                 >{{ t('contact.form.privacy_link_text') }}</NuxtLink>{{ t('contact.form.privacy_note_after') }}
               </p>
@@ -292,12 +292,46 @@
 </template>
 
 <script setup lang="ts">
+import { buildBreadcrumbSchema, useSiteUrl } from '~/composables/useSchema'
+
 const { t } = useI18n()
 const route = useRoute()
+const localePath = useLocalePath()
+const siteUrl = useSiteUrl()
+
+const contactPageSchema = computed(() => ({
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  name: t('seo.contact.title'),
+  description: t('seo.contact.description'),
+  url: `${siteUrl}/contact`,
+  breadcrumb: buildBreadcrumbSchema(siteUrl, [
+    { name: 'Home', path: '/' },
+    { name: 'Contact', path: '/contact' },
+  ]),
+  isPartOf: { '@type': 'WebSite', url: siteUrl },
+}))
 
 useHead({
   title: t('seo.contact.title'),
-  meta: [{ name: 'description', content: t('seo.contact.description') }],
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify(contactPageSchema.value),
+    },
+  ],
+})
+
+useSeoMeta({
+  description: t('seo.contact.description'),
+  ogTitle: t('seo.contact.title'),
+  ogDescription: t('seo.contact.description'),
+  ogImage: `${siteUrl}/img/ai-hero-marble-interior.jpg`,
+  ogUrl: `${siteUrl}/contact`,
+  ogType: 'website',
+  twitterTitle: t('seo.contact.title'),
+  twitterDescription: t('seo.contact.description'),
+  twitterImage: `${siteUrl}/img/ai-hero-marble-interior.jpg`,
 })
 
 const form = reactive({

@@ -112,7 +112,7 @@
                   class="group"
                 >
                   <NuxtLink
-                    :to="(`/catalog/${stone.slug}`)"
+                    :to="localePath(`/catalog/${stone.slug}`)"
                     class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-editorial-charcoal"
                   >
                     <figure class="m-0">
@@ -149,8 +149,10 @@
 
 <script setup lang="ts">
 import { pickMediaUrl, type StrapiStone, type StrapiStoneCategory } from '~/composables/useSignatureStones'
+import { buildBreadcrumbSchema, useSiteUrl } from '~/composables/useSchema'
 
 const { t } = useI18n()
+const localePath = useLocalePath()
 const { find } = useStrapi()
 
 const [{ data: catData }, { data, pending, error }] = await Promise.all([
@@ -183,13 +185,40 @@ const filteredStones = computed<StrapiStone[]>(() => {
   return stones.value.filter(s => s.category?.slug === selectedCategory.value)
 })
 
+const siteUrl = useSiteUrl()
+
+const catalogSchema = computed(() => ({
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: t('catalog.page_title'),
+  description: t('seo.catalog.description'),
+  url: `${siteUrl}/catalog`,
+  breadcrumb: buildBreadcrumbSchema(siteUrl, [
+    { name: 'Home', path: '/' },
+    { name: 'Catalog', path: '/catalog' },
+  ]),
+  isPartOf: { '@type': 'WebSite', url: siteUrl },
+}))
+
 useHead({
   title: t('seo.catalog.title'),
-  meta: [
+  script: [
     {
-      name: 'description',
-      content: t('seo.catalog.description'),
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify(catalogSchema.value),
     },
   ],
+})
+
+useSeoMeta({
+  description: t('seo.catalog.description'),
+  ogTitle: t('seo.catalog.title'),
+  ogDescription: t('seo.catalog.description'),
+  ogImage: `${siteUrl}/img/ai-hero-marble-interior.jpg`,
+  ogUrl: `${siteUrl}/catalog`,
+  ogType: 'website',
+  twitterTitle: t('seo.catalog.title'),
+  twitterDescription: t('seo.catalog.description'),
+  twitterImage: `${siteUrl}/img/ai-hero-marble-interior.jpg`,
 })
 </script>

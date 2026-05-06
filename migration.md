@@ -61,3 +61,30 @@ Track all major changes here: new dependencies, routing changes, API contract ch
 ## 2026-04-28 — Initial CLAUDE.md + migration tracking added
 - Added `CLAUDE.md` at repo root with architecture overview and dev commands
 - Added this `migration.md` to track future major changes
+
+## 2026-05-06 — Fix locale loss on navigation (localePath)
+
+- All `NuxtLink :to` attributes were using hardcoded string paths (e.g. `'/catalog'`); when on a non-English locale like `/de/catalog`, any navigation dropped back to the English route
+- Fixed by replacing every hardcoded path with `localePath(path)` from `useLocalePath()` composable
+- Affected: `app.vue` (all nav links), `components/EditorialFooter.vue` (all footer links + `secondaryHref` prop), `pages/index.vue`, `pages/catalog/index.vue`, `pages/catalog/[slug].vue`, `pages/contact.vue`, `pages/legal.vue`, `pages/privacy.vue`
+
+## 2026-05-06 — Open Graph, Twitter Card, sitemap, hreflang, and title improvements
+
+- Added `@nuxtjs/sitemap` module; auto-generates `/sitemap.xml` from all app routes including dynamic stone catalog pages
+- Added global `og:site_name`, `og:type`, `twitter:card`, `twitter:site` defaults in `nuxt.config.ts` app.head
+- Activated `useLocaleHead({ addSeoAttributes: true })` in `app.vue` — now emits `<link rel="alternate" hreflang="...">` for all four locales (en/de/fr/es) and sets `lang` attribute on `<html>` on every page
+- Added `useSeoMeta` to all pages (index, catalog, catalog/[slug], contact, legal, privacy) with `ogTitle`, `ogDescription`, `ogImage`, `ogUrl`, `ogType`, `twitterTitle`, `twitterDescription`, `twitterImage`
+- Stone detail page: OG image uses the stone's Strapi hero image URL; falls back to default hero JPEG
+- Default OG image: `/img/ai-hero-marble-interior.jpg` (already in `public/`)
+- Strengthened page titles in all four active locale files (`locales/en|de|fr|es.json`): home now "Culture Stone — Luxury Marble & Stone Supplier", catalog now "Stone Catalog — The Signature Gallery | Culture Stone"
+- Updated `public/robots.txt` to include `Sitemap:` directive pointing to `/sitemap.xml`
+- Removed deprecated `nuxt-simple-sitemap` package (migrated to `@nuxtjs/sitemap`)
+
+## 2026-05-06 — Schema.org structured data + meta description improvements
+- Added `composables/useSchema.ts` with JSON-LD builder helpers: `buildOrganizationSchema`, `buildWebSiteSchema`, `buildBreadcrumbSchema`, `buildProductSchema`
+- Injected global `Organization` + `WebSite` JSON-LD blocks in `app.vue` (present on every page)
+- Added page-level JSON-LD: `WebPage` (homepage), `CollectionPage` + `BreadcrumbList` (catalog), `Product` + `BreadcrumbList` (stone detail), `ContactPage` + `BreadcrumbList` (contact)
+- Stone detail meta description now truncated to 155 chars (was emitting full CMS description, often 200+ chars)
+- Rewrote all four English meta descriptions in `i18n/locales/en.json` — now 130–160 chars with location and material-type signals
+- Added `NUXT_PUBLIC_SITE_URL` to `runtimeConfig.public` (defaults to `https://culturestone.com`); set this env var in Netlify for correct absolute URLs in JSON-LD
+- TODO before go-live: replace `studio@culturestone.example` placeholder email; add real street addresses to Organization location blocks; add `sameAs` social URLs to Organization schema

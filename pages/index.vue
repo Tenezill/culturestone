@@ -16,7 +16,7 @@
         class="relative z-10 flex min-h-[100dvh] flex-col justify-between px-4 pb-12 pt-8 md:px-8 md:pb-16 lg:px-12"
       >
         <NuxtLink
-          :to="('/')"
+          :to="localePath('/')"
           class="font-serif text-[0.65rem] uppercase tracking-[0.45em] text-white/95 sm:text-xs md:tracking-[0.55em]"
         >
           Culture Stone
@@ -224,10 +224,41 @@
 </template>
 
 <script setup lang="ts">
+import { buildBreadcrumbSchema, useSiteUrl } from '~/composables/useSchema'
+
 const { t } = useI18n()
+const localePath = useLocalePath()
+const siteUrl = useSiteUrl()
+
+const webPageSchema = computed(() => ({
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: t('seo.home.title'),
+  description: t('seo.home.description'),
+  url: siteUrl,
+  breadcrumb: buildBreadcrumbSchema(siteUrl, [{ name: 'Home', path: '/' }]),
+  isPartOf: { '@type': 'WebSite', url: siteUrl },
+}))
 
 useHead({
   title: t('seo.home.title'),
-  meta: [{ name: 'description', content: t('seo.home.description') }],
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify(webPageSchema.value),
+    },
+  ],
+})
+
+useSeoMeta({
+  description: t('seo.home.description'),
+  ogTitle: t('seo.home.title'),
+  ogDescription: t('seo.home.description'),
+  ogImage: `${siteUrl}/img/ai-hero-marble-interior.jpg`,
+  ogUrl: siteUrl,
+  ogType: 'website',
+  twitterTitle: t('seo.home.title'),
+  twitterDescription: t('seo.home.description'),
+  twitterImage: `${siteUrl}/img/ai-hero-marble-interior.jpg`,
 })
 </script>

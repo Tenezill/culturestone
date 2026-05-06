@@ -7,6 +7,12 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
     head: {
+      meta: [
+        { property: 'og:site_name', content: 'Culture Stone' },
+        { property: 'og:type', content: 'website' },
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:site', content: '@culturestone' },
+      ],
       link: [
         // Modern browsers prefer the PNG variants; /favicon.ico remains as
         // the legacy fallback served automatically from /public.
@@ -17,8 +23,15 @@ export default defineNuxtConfig({
       ],
     },
   },
-  modules: ['@nuxtjs/i18n', '@nuxtjs/tailwindcss', '@nuxtjs/google-fonts', '@nuxtjs/strapi'],
+  modules: ['@nuxtjs/i18n', '@nuxtjs/tailwindcss', '@nuxtjs/google-fonts', '@nuxtjs/strapi', '@nuxtjs/sitemap'],
+  site: {
+    url: process.env.NUXT_PUBLIC_SITE_URL || 'https://culturestone.com',
+  },
+  sitemap: {
+    strictNuxtContentPaths: false,
+  },
   i18n: {
+    baseUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://culturestone.com',
     langDir: 'locales',
     locales: [
       { code: 'en', language: 'en-US', name: 'English', file: 'en.json' },
@@ -49,6 +62,9 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
+      // Set NUXT_PUBLIC_SITE_URL in production (e.g. https://culturestone.com).
+      // Used for absolute URLs in JSON-LD schema and OG tags.
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://culturestone.com',
       strapi: {
         // Ensure runtimeConfig is also populated with the normalized URL.
         // Nuxt automatically maps NUXT_PUBLIC_STRAPI_URL to this.

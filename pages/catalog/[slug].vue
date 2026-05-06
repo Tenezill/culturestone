@@ -5,7 +5,7 @@
         <template v-if="page">
         <div class="px-8 pt-6 md:px-12 md:pt-8">
           <NuxtLink
-            :to="('/catalog')"
+            :to="localePath('/catalog')"
             class="font-sans text-[0.65rem] uppercase tracking-[0.35em] text-editorial-charcoal/50 transition-colors duration-300 hover:text-editorial-charcoal"
           >
             {{ t('catalog.back') }}
@@ -127,7 +127,7 @@
 
         <div v-else class="flex min-h-[70vh] flex-col px-8 py-24 md:px-12 md:py-32">
         <NuxtLink
-          :to="('/catalog')"
+          :to="localePath('/catalog')"
           class="font-sans text-[0.65rem] uppercase tracking-[0.35em] text-editorial-charcoal/50 transition-colors duration-300 hover:text-editorial-charcoal"
         >
           {{ t('catalog.back') }}
@@ -140,7 +140,7 @@
             {{ t('catalog.not_found.body') }}
           </p>
           <NuxtLink
-            :to="('/catalog')"
+            :to="localePath('/catalog')"
             class="mt-12 border border-editorial-charcoal/25 px-10 py-3 font-sans text-[0.65rem] uppercase tracking-[0.28em] text-editorial-charcoal transition-colors duration-300 hover:border-editorial-charcoal hover:bg-editorial-charcoal hover:text-editorial-cream"
           >
             {{ t('catalog.return') }}
@@ -212,9 +212,12 @@
 
 <script setup lang="ts">
 import { pickMediaUrl, type StrapiStone } from '~/composables/useSignatureStones'
+import { buildBreadcrumbSchema, buildProductSchema, useSiteUrl } from '~/composables/useSchema'
 
 const { t, locale } = useI18n()
 const route = useRoute()
+const localePath = useLocalePath()
+const siteUrl = useSiteUrl()
 
 const slug = computed(() => {
   const raw = route.params.slug
@@ -259,9 +262,9 @@ const galleryUrls = computed<string[]>(() => {
 const headingId = 'stone-detail-heading'
 
 const inquireTo = computed(() => {
-  if (!page.value) return ('/contact')
+  if (!page.value) return localePath('/contact')
   return {
-    path: ('/contact'),
+    path: localePath('/contact'),
     query: { stone: page.value.name },
   }
 })
@@ -270,23 +273,65 @@ useHead(() => {
   if (!page.value) {
     return {
       title: `${t('catalog.not_found.heading')} — Culture Stone`,
-      meta: [
-        { name: 'description', content: t('catalog.not_found.body') },
-        { property: 'og:locale', content: locale.value },
-      ],
     }
   }
+
+  const breadcrumb = buildBreadcrumbSchema(siteUrl, [
+    { name: 'Home', path: '/' },
+    { name: 'Catalog', path: '/catalog' },
+    { name: page.value.name, path: `/catalog/${page.value.slug}` },
+  ])
+
+  const product = buildProductSchema(siteUrl, page.value)
+
   return {
     title: `${page.value.name} — Culture Stone`,
-    meta: [
+    script: [
       {
-        name: 'description',
-        content: `${page.value.name}. ${page.value.description}`,
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify(breadcrumb),
       },
-      { property: 'og:locale', content: locale.value },
+      {
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify(product),
+      },
     ],
   }
 })
+
+useSeoMeta(computed(() => {
+  if (!page.value) {
+    return {
+      description: t('catalog.not_found.body'),
+      ogTitle: `${t('catalog.not_found.heading')} — Culture Stone`,
+      ogDescription: t('catalog.not_found.body'),
+      ogImage: `${siteUrl}/img/ai-hero-marble-interior.jpg`,
+      ogUrl: `${siteUrl}/catalog`,
+      ogType: 'website' as const,
+      twitterTitle: `${t('catalog.not_found.heading')} — Culture Stone`,
+      twitterDescription: t('catalog.not_found.body'),
+      twitterImage: `${siteUrl}/img/ai-hero-marble-interior.jpg`,
+    }
+  }
+
+  const description = page.value.description.length > 155
+    ? `${page.value.description.slice(0, 152)}…`
+    : page.value.description
+
+  const heroImage = pickMediaUrl(page.value.image, 'large') || `${siteUrl}/img/ai-hero-marble-interior.jpg`
+
+  return {
+    description,
+    ogTitle: `${page.value.name} — Culture Stone`,
+    ogDescription: description,
+    ogImage: heroImage,
+    ogUrl: `${siteUrl}/catalog/${page.value.slug}`,
+    ogType: 'website' as const,
+    twitterTitle: `${page.value.name} — Culture Stone`,
+    twitterDescription: description,
+    twitterImage: heroImage,
+  }
+}))
 
 // Gallery Modal State & Logic
 const isGalleryModalOpen = ref(false)

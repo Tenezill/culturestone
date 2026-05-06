@@ -23,7 +23,7 @@
           </button>
 
           <NuxtLink
-            :to="('/')"
+            :to="localePath('/')"
             class="font-serif text-[0.68rem] uppercase tracking-[0.4em] text-editorial-charcoal transition-colors hover:text-editorial-charcoal/70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-editorial-charcoal"
           >
             Culture Stone
@@ -31,9 +31,9 @@
         </div>
 
         <ul class="hidden items-center gap-8 text-xs uppercase tracking-[0.25em] md:flex">
-          <li><NuxtLink :to="('/')" class="transition-colors hover:text-editorial-charcoal/70">{{ t('nav.home') }}</NuxtLink></li>
-          <li><NuxtLink :to="('/catalog')" class="transition-colors hover:text-editorial-charcoal/70">{{ t('nav.catalog') }}</NuxtLink></li>
-          <li><NuxtLink :to="('/contact')" class="transition-colors hover:text-editorial-charcoal/70">{{ t('nav.contact') }}</NuxtLink></li>
+          <li><NuxtLink :to="localePath('/')" class="transition-colors hover:text-editorial-charcoal/70">{{ t('nav.home') }}</NuxtLink></li>
+          <li><NuxtLink :to="localePath('/catalog')" class="transition-colors hover:text-editorial-charcoal/70">{{ t('nav.catalog') }}</NuxtLink></li>
+          <li><NuxtLink :to="localePath('/contact')" class="transition-colors hover:text-editorial-charcoal/70">{{ t('nav.contact') }}</NuxtLink></li>
           <li><LanguageSwitcher /></li>
         </ul>
       </nav>
@@ -44,9 +44,9 @@
         :class="isMobileMenuOpen ? 'block' : 'hidden'"
       >
         <ul class="mx-auto max-w-[1600px] space-y-4 text-xs uppercase tracking-[0.25em]">
-          <li><NuxtLink :to="('/')" class="block" @click="isMobileMenuOpen = false">{{ t('nav.home') }}</NuxtLink></li>
-          <li><NuxtLink :to="('/catalog')" class="block" @click="isMobileMenuOpen = false">{{ t('nav.catalog') }}</NuxtLink></li>
-          <li><NuxtLink :to="('/contact')" class="block" @click="isMobileMenuOpen = false">{{ t('nav.contact') }}</NuxtLink></li>
+          <li><NuxtLink :to="localePath('/')" class="block" @click="isMobileMenuOpen = false">{{ t('nav.home') }}</NuxtLink></li>
+          <li><NuxtLink :to="localePath('/catalog')" class="block" @click="isMobileMenuOpen = false">{{ t('nav.catalog') }}</NuxtLink></li>
+          <li><NuxtLink :to="localePath('/contact')" class="block" @click="isMobileMenuOpen = false">{{ t('nav.contact') }}</NuxtLink></li>
           <li>
             <a href="mailto:studio@culturestone.example" class="block" @click="isMobileMenuOpen = false">
               {{ t('nav.inquire') }}
@@ -78,9 +78,35 @@
 </template>
 
 <script setup lang="ts">
+import { buildOrganizationSchema, buildWebSiteSchema, useSiteUrl } from '~/composables/useSchema'
+
 const { t } = useI18n()
 const route = useRoute()
+const localePath = useLocalePath()
 const isMobileMenuOpen = ref(false)
+
+const siteUrl = useSiteUrl()
+
+// Emit hreflang alternate links + og:locale for all 4 locales on every page.
+// Requires i18n.seo: true in nuxt.config.ts (already set).
+const i18nHead = useLocaleHead({ addSeoAttributes: true })
+useHead(computed(() => ({
+  htmlAttrs: i18nHead.value.htmlAttrs,
+  link: i18nHead.value.link,
+  meta: [
+    ...(i18nHead.value.meta ?? []),
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify(buildOrganizationSchema(siteUrl)),
+    },
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify(buildWebSiteSchema(siteUrl)),
+    },
+  ],
+})))
 
 watch(
   () => route.fullPath,
