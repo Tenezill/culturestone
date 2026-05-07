@@ -25,13 +25,13 @@ export default defineNuxtConfig({
   },
   modules: ['@nuxtjs/i18n', '@nuxtjs/tailwindcss', '@nuxtjs/google-fonts', '@nuxtjs/strapi', '@nuxtjs/sitemap'],
   site: {
-    url: process.env.NUXT_PUBLIC_SITE_URL || 'https://culturestone.com',
+    url: process.env.NUXT_PUBLIC_SITE_URL || 'https://culturestone.eu',
   },
   sitemap: {
     strictNuxtContentPaths: false,
   },
   i18n: {
-    baseUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://culturestone.com',
+    baseUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://culturestone.eu',
     langDir: 'locales',
     locales: [
       { code: 'en', language: 'en-US', name: 'English', file: 'en.json' },
@@ -62,9 +62,9 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      // Set NUXT_PUBLIC_SITE_URL in production (e.g. https://culturestone.com).
+      // Set NUXT_PUBLIC_SITE_URL in production (e.g. https://culturestone.eu).
       // Used for absolute URLs in JSON-LD schema and OG tags.
-      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://culturestone.com',
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://culturestone.eu',
       strapi: {
         // Ensure runtimeConfig is also populated with the normalized URL.
         // Nuxt automatically maps NUXT_PUBLIC_STRAPI_URL to this.

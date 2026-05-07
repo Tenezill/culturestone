@@ -8,9 +8,8 @@
     "inquire": "Inquire for specifications",
     "language_switcher_label": "Language",
     "locations": {
-      "new_york": "New York",
-      "london": "London",
-      "milan": "Milan"
+      "new_york": "Chengdu",
+      "london": "Lyon"
     }
   },
   "home": {
@@ -19,7 +18,7 @@
       "subhead": "Bespoke slabs and architectural surfaces for discerning studios."
     },
     "editors_letter": {
-      "label": "The editor’s letter",
+      "label": "The editor's letter",
       "pull_quote": "“We believe material truth begins in the quarry—and ends in the quiet confidence of a room perfectly resolved.”",
       "body_1": "For over a generation, we have partnered with architects and interior designers who treat stone not as decoration, but as structure, atmosphere, and permanence. Our mandate is singular: to source and finish the world’s most exceptional marbles, limestones, and granites—with provenance you can specify and character that cannot be replicated.",
       "body_2": "Each relationship begins with listening. We travel to quarries, document veining and tone under natural light, and curate lots that honor your intent. What arrives on site is not inventory; it is a considered extension of your vision."
@@ -75,7 +74,45 @@
   "contact": {
     "page_label": "Contact",
     "heading": "Let’s specify something enduring",
-    "body": "Share project timelines, material intent, and quantities. We will return a curated slab recommendation, technical guidance, and sample strategy."
+    "body": "Share project timelines, material intent, and quantities. We will return a curated slab recommendation, technical guidance, and sample strategy.",
+    "info": {
+      "email_label": "Email",
+      "phone_label": "Telephone",
+      "studios_label": "Offices"
+    },
+    "form": {
+      "name": "Name",
+      "studio": "Studio / Practice",
+      "email": "Email",
+      "project_type": "Project Type",
+      "project_type_placeholder": "Select",
+      "project_types": {
+        "residential": "Residential",
+        "commercial": "Commercial",
+        "hospitality": "Hospitality",
+        "public": "Public / Civic"
+      },
+      "timeline": "Timeline",
+      "timeline_placeholder": "e.g. Q3 2025",
+      "stone": "Stone(s) of Interest",
+      "stone_placeholder": "e.g. Nero Marquina, Calacatta Oro",
+      "brief": "Project Brief",
+      "brief_placeholder": "Describe your project, quantities, finish preferences, and any particular requirements…",
+      "submit": "Submit Inquiry",
+      "submitting": "Sending…",
+      "error_name": "Please enter your name.",
+      "error_email_required": "Please enter your email address.",
+      "error_email_invalid": "Please enter a valid email address.",
+      "privacy_note_before": "We typically respond within two business days. Your information is handled according to our ",
+      "privacy_link_text": "privacy policy",
+      "privacy_note_after": "."
+    },
+    "success": {
+      "label": "Inquiry received",
+      "heading": "We’ll be in touch.",
+      "body": "Your brief has been forwarded to our studio. Expect a curated response within two business days.",
+      "reset": "Submit another inquiry"
+    }
   },
   "footer": {
     "inquire": "Inquire for specifications",
@@ -86,9 +123,8 @@
     "legal_notice": "Legal notice",
     "privacy": "Privacy",
     "locations": {
-      "new_york": "New York",
-      "london": "London",
-      "milan": "Milan"
+      "new_york": "Chengdu",
+      "london": "Lyon"
     }
   },
   "legal": {
@@ -104,7 +140,7 @@
   "seo": {
     "home": {
       "title": "Culture Stone — Luxury Marble & Stone Supplier",
-      "description": "Culture Stone supplies bespoke marble, limestone, and granite slabs for architects and interior designers. Studios in New York, London, and Milan."
+      "description": "Culture Stone supplies bespoke marble, limestone, and granite slabs for architects and interior designers worldwide. Headquartered in Chengdu, China."
     },
     "catalog": {
       "title": "Stone Catalog — The Signature Gallery | Culture Stone",
@@ -112,7 +148,7 @@
     },
     "contact": {
       "title": "Contact — Culture Stone",
-      "description": "Specify natural stone for your project with Culture Stone. Studios in New York, London, and Milan serving architects, designers, and hospitality groups."
+      "description": "Specify natural stone for your project with Culture Stone. Serving architects, designers, and hospitality groups worldwide."
     },
     "legal": {
       "title": "Legal Notice — Culture Stone",

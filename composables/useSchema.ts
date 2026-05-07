@@ -24,42 +24,37 @@ export function buildOrganizationSchema(siteUrl: string) {
     },
     description:
       'Bespoke marble, limestone, and granite slabs and architectural surfaces for architects and interior designers.',
-    // TODO: replace with production email once placeholder is resolved
-    email: 'studio@culturestone.com',
+    email: 'inquiries@culturestone.eu',
+    telephone: '+8615196266588',
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'customer service',
-      email: 'studio@culturestone.com',
-      availableLanguage: ['English', 'German', 'French', 'Spanish'],
+      email: 'inquiries@culturestone.eu',
+      telephone: '+8615196266588',
+      availableLanguage: ['English', 'German', 'French', 'Spanish', 'Chinese'],
     },
-    // TODO: add sameAs array with social profile URLs once accounts are live
     location: [
       {
         '@type': 'Place',
-        name: 'Culture Stone New York',
+        name: 'Culture Stone — Chengdu (Headquarters)',
         address: {
           '@type': 'PostalAddress',
-          addressLocality: 'New York',
-          addressRegion: 'NY',
-          addressCountry: 'US',
+          streetAddress: 'No. 54-1, South Third Section of Second Ring Road, High-tech Zone',
+          addressLocality: 'Chengdu',
+          addressRegion: 'Sichuan',
+          postalCode: '610066',
+          addressCountry: 'CN',
         },
       },
       {
         '@type': 'Place',
-        name: 'Culture Stone London',
+        name: 'Culture Stone — EU Representative (Synertrade FR SAS)',
         address: {
           '@type': 'PostalAddress',
-          addressLocality: 'London',
-          addressCountry: 'GB',
-        },
-      },
-      {
-        '@type': 'Place',
-        name: 'Culture Stone Milan',
-        address: {
-          '@type': 'PostalAddress',
-          addressLocality: 'Milan',
-          addressCountry: 'IT',
+          streetAddress: '9 rue du Bat d\'Argent',
+          addressLocality: 'Lyon',
+          postalCode: '69001',
+          addressCountry: 'FR',
         },
       },
     ],

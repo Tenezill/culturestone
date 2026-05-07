@@ -48,7 +48,7 @@
           <li><NuxtLink :to="localePath('/catalog')" class="block" @click="isMobileMenuOpen = false">{{ t('nav.catalog') }}</NuxtLink></li>
           <li><NuxtLink :to="localePath('/contact')" class="block" @click="isMobileMenuOpen = false">{{ t('nav.contact') }}</NuxtLink></li>
           <li>
-            <a href="mailto:studio@culturestone.example" class="block" @click="isMobileMenuOpen = false">
+            <a href="mailto:inquiries@culturestone.eu" class="block" @click="isMobileMenuOpen = false">
               {{ t('nav.inquire') }}
             </a>
           </li>
@@ -56,15 +56,13 @@
             <a href="#" class="underline decoration-editorial-charcoal/30 underline-offset-4 hover:decoration-editorial-charcoal">{{ t('nav.locations.new_york') }}</a>
             &middot;
             <a href="#" class="underline decoration-editorial-charcoal/30 underline-offset-4 hover:decoration-editorial-charcoal">{{ t('nav.locations.london') }}</a>
-            &middot;
-            <a href="#" class="underline decoration-editorial-charcoal/30 underline-offset-4 hover:decoration-editorial-charcoal">{{ t('nav.locations.milan') }}</a>
           </li>
           <li>
             <a
-              href="mailto:studio@culturestone.example"
+              href="mailto:inquiries@culturestone.eu"
               class="inline-block border-b border-editorial-charcoal/25 text-[0.65rem] tracking-[0.2em] text-editorial-charcoal/80 hover:border-editorial-charcoal/55"
               @click="isMobileMenuOpen = false"
-            >studio@culturestone.example</a>
+            >inquiries@culturestone.eu</a>
           </li>
           <li class="pt-2">
             <LanguageSwitcher />

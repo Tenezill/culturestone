@@ -68,6 +68,18 @@ Track all major changes here: new dependencies, routing changes, API contract ch
 - Fixed by replacing every hardcoded path with `localePath(path)` from `useLocalePath()` composable
 - Affected: `app.vue` (all nav links), `components/EditorialFooter.vue` (all footer links + `secondaryHref` prop), `pages/index.vue`, `pages/catalog/index.vue`, `pages/catalog/[slug].vue`, `pages/contact.vue`, `pages/legal.vue`, `pages/privacy.vue`
 
+## 2026-05-07 — Contact page overhaul, placeholder fill, SEO files, and i18n fix
+
+- **i18n bug fix**: `i18n/locales/{en,de,fr,es}.json` were missing all `contact.form.*`, `contact.info.*`, `contact.success.*` keys — Nuxt 4 auto-detects `i18n/locales/` and loads it exclusively, so missing keys rendered as raw strings. Complete rewrite of all 8 locale files (`i18n/locales/` + `locales/`) to be in sync with full content.
+- **Contact form wired up**: replaced fake `setTimeout` in `handleSubmit` with Netlify Forms POST (`fetch('/', { method: 'POST', ... })`). Added `data-netlify="true"`, `name="contact"`, `netlify-honeypot="bot-field"` to `<form>` tag and hidden `<input type="hidden" name="form-name" value="contact">` inside form. No Netlify Functions needed.
+- **Email replacement**: `studio@culturestone.example` → `inquiries@culturestone.eu` in `pages/contact.vue`, `pages/legal.vue`, `pages/privacy.vue`, `app.vue`, `components/EditorialFooter.vue`; `studio@culturestone.com` → `inquiries@culturestone.eu` in `composables/useSchema.ts`
+- **Domain fix**: `https://culturestone.com` → `https://culturestone.eu` in `nuxt.config.ts` (3×) and `public/robots.txt` sitemap URL
+- **Locations updated**: New York / London / Milan → Chengdu / Lyon across all locale files, `app.vue` mobile nav, `components/EditorialFooter.vue`, `pages/contact.vue`, `composables/useSchema.ts`
+- **Legal page**: All bracketed placeholders filled — company name, address, legal rep (Luo Shasha 骆沙沙), credit code (91510100MA6CN9DD81), phone, hosting (Netlify), EU rep (Synertrade FR SAS, Lyon)
+- **Privacy page**: All placeholders resolved — DPO: not required (option b); retention: 30 days; hosting: Netlify (US); CMS section simplified; international transfers updated for Netlify (US) + mainland China with SCCs + Art. 49 GDPR
+- **Schema.org**: `composables/useSchema.ts` — added `telephone`, replaced fake location blocks with real Chengdu HQ and Lyon EU rep
+- **New files**: `public/llms.txt` (AI crawler index), `PLACEHOLDER_AUDIT.md` (placeholder tracker with DONE/TODO status)
+
 ## 2026-05-06 — Open Graph, Twitter Card, sitemap, hreflang, and title improvements
 
 - Added `@nuxtjs/sitemap` module; auto-generates `/sitemap.xml` from all app routes including dynamic stone catalog pages

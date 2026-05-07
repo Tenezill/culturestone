@@ -8,9 +8,8 @@
     "inquire": "Demander une spécification",
     "language_switcher_label": "Langue",
     "locations": {
-      "new_york": "New York",
-      "london": "Londres",
-      "milan": "Milan"
+      "new_york": "Chengdu",
+      "london": "Lyon"
     }
   },
   "home": {
@@ -19,15 +18,15 @@
       "subhead": "Dalles sur mesure et surfaces architecturales pour les studios exigeants."
     },
     "editors_letter": {
-      "label": "L'éditorial",
-      "pull_quote": "« Nous croyons que la vérité du matériau commence dans la carrière — et s'achève dans la confiance tranquille d'une pièce parfaitement résolue. »",
-      "body_1": "Depuis plus d'une génération, nous collaborons avec des architectes et des designers d'intérieur qui considèrent la pierre non comme une décoration, mais comme structure, atmosphère et pérennité. Notre mission est unique : sourcer et façonner les marbres, calcaires et granits les plus exceptionnels du monde — avec une traçabilité que vous pouvez prescrire et un caractère qui ne peut être reproduit.",
-      "body_2": "Chaque relation commence par l'écoute. Nous nous rendons dans les carrières, documentons les veinages et les tons sous la lumière naturelle, et sélectionnons des lots qui honorent votre intention. Ce qui arrive sur le chantier n'est pas un stock ; c'est une extension réfléchie de votre vision."
+      "label": "L’éditorial",
+      "pull_quote": "« Nous croyons que la vérité du matériau commence dans la carrière — et s’achève dans la confiance tranquille d’une pièce parfaitement résolue. »",
+      "body_1": "Depuis plus d’une génération, nous collaborons avec des architectes et des designers d’intérieur qui considèrent la pierre non comme une décoration, mais comme structure, atmosphère et pérennité. Notre mission est unique : sourcer et façonner les marbres, calcaires et granits les plus exceptionnels du monde — avec une traçabilité que vous pouvez prescrire et un caractère qui ne peut être reproduit.",
+      "body_2": "Chaque relation commence par l’écoute. Nous nous rendons dans les carrières, documentons les veinages et les tons sous la lumière naturelle, et sélectionnons des lots qui honorent votre intention. Ce qui arrive sur le chantier n’est pas un stock ; c’est une extension réfléchie de votre vision."
     },
     "sourcing": {
       "label": "Authenticité & approvisionnement",
       "subhead": "Du socle au projet",
-      "body": "Nous travaillons directement avec des partenaires carriers à travers l'Europe et au-delà, traçant chaque bloc de l'extraction à la fabrication. Documentation, photographies de lots et échantillons physiques garantissent que ce que vous prescrivez est ce que votre projet reçoit — sans compromis."
+      "body": "Nous travaillons directement avec des partenaires carriers à travers l’Europe et au-delà, traçant chaque bloc de l’extraction à la fabrication. Documentation, photographies de lots et échantillons physiques garantissent que ce que vous prescrivez est ce que votre projet reçoit — sans compromis."
     },
     "lookbook": {
       "label": "Collection signature",
@@ -35,7 +34,7 @@
       "nero_marquina": {
         "label": "I — Nero Marquina",
         "heading": "Profondeur en monochrome",
-        "body": "Un fond sombre avec une veine blanche retenue. Convient aux cheminées, aux plans d'accent et aux éléments de mobilier où l'ombre et le poli parlent d'eux-mêmes."
+        "body": "Un fond sombre avec une veine blanche retenue. Convient aux cheminées, aux plans d’accent et aux éléments de mobilier où l’ombre et le poli parlent d’eux-mêmes."
       },
       "calacatta_oro": {
         "label": "II — Calacatta Oro",
@@ -45,7 +44,7 @@
       "caledonia": {
         "label": "III — Caledonia",
         "heading": "Force tranquille",
-        "body": "Grain sel et poivre d'une densité durable. À prescrire pour les sols, les parements et les intérieurs à fort trafic qui exigent une matérialité apaisante et une longévité sans faille."
+        "body": "Grain sel et poivre d’une densité durable. À prescrire pour les sols, les parements et les intérieurs à fort trafic qui exigent une matérialité apaisante et une longévité sans faille."
       }
     }
   },
@@ -55,7 +54,7 @@
     "all": "Tout",
     "loading": "Chargement de la collection…",
     "error": "Le catalogue est temporairement indisponible. Veuillez réessayer sous peu.",
-    "empty": "Aucune pierre dans cette catégorie pour l'instant.",
+    "empty": "Aucune pierre dans cette catégorie pour l’instant.",
     "back": "← Retour au catalogue",
     "return": "Retour au catalogue",
     "not_found": {
@@ -75,11 +74,11 @@
   "contact": {
     "page_label": "Contact",
     "heading": "Spécifions ensemble quelque chose de durable",
-    "body": "Partagez les délais de votre projet, vos intentions matérielles et vos quantités. Nous vous proposerons une sélection de dalles, des conseils techniques et une stratégie d'échantillonnage.",
+    "body": "Partagez les délais de votre projet, vos intentions matérielles et vos quantités. Nous vous proposerons une sélection de dalles, des conseils techniques et une stratégie d’échantillonnage.",
     "info": {
       "email_label": "E-mail",
       "phone_label": "Téléphone",
-      "studios_label": "Studios"
+      "studios_label": "Bureaux"
     },
     "form": {
       "name": "Nom",
@@ -124,15 +123,14 @@
     "legal_notice": "Mentions légales",
     "privacy": "Confidentialité",
     "locations": {
-      "new_york": "New York",
-      "london": "Londres",
-      "milan": "Milan"
+      "new_york": "Chengdu",
+      "london": "Lyon"
     }
   },
   "legal": {
     "nav_label": "Juridique",
     "page_title": "Mentions légales",
-    "subtitle": "Informations sur l'exploitant de ce site web."
+    "subtitle": "Informations sur l’exploitant de ce site web."
   },
   "privacy": {
     "nav_label": "Juridique",
@@ -142,19 +140,19 @@
   "seo": {
     "home": {
       "title": "Culture Stone — Marbre de Luxe & Pierre Naturelle",
-      "description": "Culture Stone fournit des dalles sur mesure en marbre, calcaire et granit pour architectes et designers d'intérieur. Studios à New York, Londres et Milan."
+      "description": "Culture Stone fournit des dalles sur mesure en marbre, calcaire et granit pour architectes et designers d’intérieur du monde entier. Siège à Chengdu, Chine."
     },
     "catalog": {
       "title": "Catalogue de Pierre — La Galerie Signature | Culture Stone",
-      "description": "Marbre, calcaire et granit haut de gamme sourcés directement dans des carrières européennes : Nero Marquina, Calacatta Oro, Caledonia et plus encore."
+      "description": "Marbre, calcaire et granit haut de gamme sourcés directement dans des carrières européennes : Nero Marquina, Calacatta Oro, Caledonia et plus encore."
     },
     "contact": {
       "title": "Contact — Culture Stone",
-      "description": "Spécifiez la pierre naturelle pour votre projet avec Culture Stone. Studios à New York, Londres et Milan au service des architectes, designers et groupes hôteliers."
+      "description": "Spécifiez la pierre naturelle pour votre projet avec Culture Stone. Au service des architectes, designers et groupes hôteliers du monde entier."
     },
     "legal": {
       "title": "Mentions légales — Culture Stone",
-      "description": "Mentions légales et informations sur l'exploitant du site Culture Stone."
+      "description": "Mentions légales et informations sur l’exploitant du site Culture Stone."
     },
     "privacy": {
       "title": "Politique de confidentialité — Culture Stone",

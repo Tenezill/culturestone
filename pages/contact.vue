@@ -31,10 +31,21 @@
                 {{ t('contact.info.email_label') }}
               </p>
               <a
-                href="mailto:studio@culturestone.example"
+                href="mailto:inquiries@culturestone.eu"
                 class="mt-2 block font-sans text-xs tracking-wide text-editorial-cream/60 underline decoration-editorial-cream/15 underline-offset-4 transition-all duration-300 hover:text-editorial-cream hover:decoration-editorial-cream/40"
               >
-                studio@culturestone.example
+                inquiries@culturestone.eu
+              </a>
+            </div>
+            <div>
+              <p class="font-sans text-[0.5rem] uppercase tracking-[0.5em] text-editorial-cream/30">
+                {{ t('contact.info.phone_label') }}
+              </p>
+              <a
+                href="tel:+8615196266588"
+                class="mt-2 block font-sans text-xs tracking-wide text-editorial-cream/60 underline decoration-editorial-cream/15 underline-offset-4 transition-all duration-300 hover:text-editorial-cream hover:decoration-editorial-cream/40"
+              >
+                +86 151 9626 6588
               </a>
             </div>
             <div>
@@ -42,7 +53,7 @@
                 {{ t('contact.info.studios_label') }}
               </p>
               <p class="mt-2 font-sans text-xs tracking-wide text-editorial-cream/45">
-                New York &middot; London &middot; Milan
+                Chengdu &middot; Lyon
               </p>
             </div>
           </div>
@@ -92,10 +103,14 @@
           <form
             v-else
             key="form"
+            name="contact"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
             novalidate
             class="space-y-10 xl:space-y-11"
             @submit.prevent="handleSubmit"
           >
+            <input type="hidden" name="form-name" value="contact">
             <!-- Name + Studio -->
             <div class="grid grid-cols-1 gap-10 sm:grid-cols-2">
               <div>
@@ -372,9 +387,30 @@ function validateAll(): boolean {
 async function handleSubmit() {
   if (!validateAll()) return
   isSubmitting.value = true
-  await new Promise(resolve => setTimeout(resolve, 1200))
-  isSubmitting.value = false
-  submitted.value = true
+  try {
+    const body = new URLSearchParams({
+      'form-name': 'contact',
+      name: form.name,
+      studio: form.studio,
+      email: form.email,
+      projectType: form.projectType,
+      timeline: form.timeline,
+      stone: form.stone,
+      brief: form.brief,
+    })
+    await fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: body.toString(),
+    })
+    submitted.value = true
+  }
+  catch {
+    submitted.value = true
+  }
+  finally {
+    isSubmitting.value = false
+  }
 }
 
 function resetForm() {

@@ -8,9 +8,8 @@
     "inquire": "Solicitar especificaciones",
     "language_switcher_label": "Idioma",
     "locations": {
-      "new_york": "Nueva York",
-      "london": "Londres",
-      "milan": "Milán"
+      "new_york": "Chengdu",
+      "london": "Lyon"
     }
   },
   "home": {
@@ -45,7 +44,7 @@
       "caledonia": {
         "label": "III — Caledonia",
         "heading": "Fuerza tranquila",
-        "body": "Grano sal y pimienta con densidad duradera. Especifíquelo para suelos, revestimientos e interiores de alto tráfico que exigen una materialidad serena y larga vida útil."
+        "body": "Grano sal y pimienta con densidad duradera. Espécifíquelo para suelos, revestimientos e interiores de alto tráfico que exigen una materialidad serena y larga vida útil."
       }
     }
   },
@@ -79,7 +78,7 @@
     "info": {
       "email_label": "Correo",
       "phone_label": "Teléfono",
-      "studios_label": "Estudios"
+      "studios_label": "Oficinas"
     },
     "form": {
       "name": "Nombre",
@@ -124,9 +123,8 @@
     "legal_notice": "Aviso legal",
     "privacy": "Privacidad",
     "locations": {
-      "new_york": "Nueva York",
-      "london": "Londres",
-      "milan": "Milán"
+      "new_york": "Chengdu",
+      "london": "Lyon"
     }
   },
   "legal": {
@@ -142,7 +140,7 @@
   "seo": {
     "home": {
       "title": "Culture Stone — Mármol de Lujo y Piedra Natural",
-      "description": "Culture Stone suministra placas de mármol, caliza y granito a medida para arquitectos y diseñadores de interiores. Estudios en Nueva York, Londres y Milán."
+      "description": "Culture Stone suministra placas de mármol, caliza y granito a medida para arquitectos y diseñadores de interiores en todo el mundo. Sede en Chengdu, China."
     },
     "catalog": {
       "title": "Catálogo de Piedra — La Galería Signature | Culture Stone",
@@ -150,7 +148,7 @@
     },
     "contact": {
       "title": "Contacto — Culture Stone",
-      "description": "Especifique piedra natural para su proyecto con Culture Stone. Estudios en Nueva York, Londres y Milán al servicio de arquitectos, diseñadores y grupos de hostelería."
+      "description": "Especifique piedra natural para su proyecto con Culture Stone. Al servicio de arquitectos, diseñadores y grupos de hostelería en todo el mundo."
     },
     "legal": {
       "title": "Aviso legal — Culture Stone",

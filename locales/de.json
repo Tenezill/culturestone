@@ -8,9 +8,8 @@
     "inquire": "Anfrage stellen",
     "language_switcher_label": "Sprache",
     "locations": {
-      "new_york": "New York",
-      "london": "London",
-      "milan": "Mailand"
+      "new_york": "Chengdu",
+      "london": "Lyon"
     }
   },
   "home": {
@@ -20,7 +19,7 @@
     },
     "editors_letter": {
       "label": "Das Vorwort der Redaktion",
-      "pull_quote": "„Wir glauben, dass die Wahrheit des Materials im Steinbruch beginnt – und in der stillen Selbstsicherheit eines perfekt gestalteten Raumes endet."",
+      "pull_quote": "„Wir glauben, dass die Wahrheit des Materials im Steinbruch beginnt – und in der stillen Selbstsicherheit eines perfekt gestalteten Raumes endet.“",
       "body_1": "Seit über einer Generation arbeiten wir mit Architekten und Innenarchitekten zusammen, die Stein nicht als Dekoration, sondern als Struktur, Atmosphäre und Beständigkeit verstehen. Unser Auftrag ist klar: die außergewöhnlichsten Marmore, Kalksteine und Granite der Welt zu beschaffen und zu veredeln – mit nachvollziehbarer Herkunft und unverwechselbarem Charakter.",
       "body_2": "Jede Zusammenarbeit beginnt mit dem Zuhören. Wir besuchen Steinbrüche, dokumentieren Äderung und Ton im natürlichen Licht und kuratieren Lose, die Ihrer Intention gerecht werden. Was auf der Baustelle ankommt, ist kein Lagerbestand – es ist eine durchdachte Erweiterung Ihrer Vision."
     },
@@ -35,7 +34,7 @@
       "nero_marquina": {
         "label": "I – Nero Marquina",
         "heading": "Tiefe im Monochrom",
-        "body": "Ein dunkles Feld mit zurückhaltendem weißem Blitz. Geeignet für Kamine, Akzentflächen und Möbelelemente, bei denen Schatten und Politur für sich sprechen."
+        "body": "Ein dunkles Feld mit zurückhalt endem weißem Blitz. Geeignet für Kamine, Akzentflächen und Möbelelemente, bei denen Schatten und Politur für sich sprechen."
       },
       "calacatta_oro": {
         "label": "II – Calacatta Oro",
@@ -79,7 +78,7 @@
     "info": {
       "email_label": "E-Mail",
       "phone_label": "Telefon",
-      "studios_label": "Studios"
+      "studios_label": "Büros"
     },
     "form": {
       "name": "Name",
@@ -124,9 +123,8 @@
     "legal_notice": "Impressum",
     "privacy": "Datenschutz",
     "locations": {
-      "new_york": "New York",
-      "london": "London",
-      "milan": "Mailand"
+      "new_york": "Chengdu",
+      "london": "Lyon"
     }
   },
   "legal": {
@@ -142,7 +140,7 @@
   "seo": {
     "home": {
       "title": "Culture Stone — Luxuriöser Marmor & Naturstein",
-      "description": "Culture Stone liefert maßgefertigte Marmor-, Kalkstein- und Granitplatten für Architekten und Innenarchitekten. Studios in New York, London und Mailand."
+      "description": "Culture Stone liefert maßgefertigte Marmor-, Kalkstein- und Granitplatten für Architekten und Innenarchitekten weltweit. Hauptsitz in Chengdu, China."
     },
     "catalog": {
       "title": "Steinkatalog — Die Signature Gallery | Culture Stone",
@@ -150,7 +148,7 @@
     },
     "contact": {
       "title": "Kontakt — Culture Stone",
-      "description": "Legen Sie Naturstein für Ihr Projekt mit Culture Stone fest. Studios in New York, London und Mailand für Architekten, Designer und Hospitality-Gruppen."
+      "description": "Legen Sie Naturstein für Ihr Projekt mit Culture Stone fest. Wir bedienen Architekten, Designer und Hospitality-Gruppen weltweit."
     },
     "legal": {
       "title": "Impressum — Culture Stone",

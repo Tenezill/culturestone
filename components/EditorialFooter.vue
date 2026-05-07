@@ -6,7 +6,7 @@
           class="flex flex-col gap-8 px-4 py-16 sm:flex-row sm:flex-wrap sm:items-center sm:gap-10 sm:px-8 sm:py-20 md:gap-12 md:px-12 md:py-24 lg:px-16 lg:py-28"
         >
           <a
-            href="mailto:studio@culturestone.example"
+            href="mailto:inquiries@culturestone.eu"
             class="inline-flex min-h-[3rem] items-center justify-center border border-editorial-charcoal/40 bg-transparent px-12 py-4 font-sans text-[0.7rem] uppercase tracking-[0.28em] text-editorial-charcoal transition-colors duration-300 hover:border-editorial-charcoal hover:bg-editorial-charcoal hover:text-editorial-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-editorial-charcoal sm:min-h-0"
           >
             {{ t('footer.inquire') }}
@@ -34,8 +34,6 @@
           <a href="#" class="underline decoration-editorial-charcoal/30 underline-offset-4 transition hover:decoration-editorial-charcoal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-editorial-charcoal">{{ t('footer.locations.new_york') }}</a>
           &middot;
           <a href="#" class="underline decoration-editorial-charcoal/30 underline-offset-4 transition hover:decoration-editorial-charcoal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-editorial-charcoal">{{ t('footer.locations.london') }}</a>
-          &middot;
-          <a href="#" class="underline decoration-editorial-charcoal/30 underline-offset-4 transition hover:decoration-editorial-charcoal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-editorial-charcoal">{{ t('footer.locations.milan') }}</a>
           <span class="mx-2 text-editorial-charcoal/25">|</span>
           <NuxtLink
             :to="localePath('/legal')"
@@ -48,9 +46,9 @@
           >{{ t('footer.privacy') }}</NuxtLink>
           <span class="mx-2 text-editorial-charcoal/25">|</span>
           <a
-            href="mailto:studio@culturestone.example"
+            href="mailto:inquiries@culturestone.eu"
             class="border-b border-editorial-charcoal/20 transition-colors hover:border-editorial-charcoal/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-editorial-charcoal"
-          >studio@culturestone.example</a>
+          >inquiries@culturestone.eu</a>
         </p>
       </div>
     </div>

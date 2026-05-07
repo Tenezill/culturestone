@@ -16,9 +16,9 @@
               Website operator
             </h2>
             <p class="mt-4">
-              [Company Legal Name, in English and 中文]<br />
-              [Street Address]<br />
-              [District], [City] [Postal Code]<br />
+              Sichuan Zishu Chengfeng Building Materials Co., Ltd.<br />
+              No. 54-1, South Third Section of Second Ring Road, High-tech Zone<br />
+              Chengdu, Sichuan 610066<br />
               People&rsquo;s Republic of China
             </p>
           </section>
@@ -28,7 +28,7 @@
               Legal representative
             </h2>
             <p class="mt-4">
-              [Full Name of Legal Representative / 法定代表人]
+              Luo Shasha (骆沙沙)
             </p>
           </section>
 
@@ -37,8 +37,8 @@
               Business registration
             </h2>
             <p class="mt-4">
-              Unified Social Credit Code (统一社会信用代码): [18-character code]<br />
-              Registration authority: [Administration for Market Regulation of …]
+              Unified Social Credit Code (统一社会信用代码): 91510100MA6CN9DD81<br />
+              Registration authority: Administration for Market Regulation of Chengdu High-tech Zone
             </p>
           </section>
 
@@ -47,12 +47,12 @@
               Contact
             </h2>
             <p class="mt-4">
-              Phone: [+86 000 0000 0000]<br />
+              Phone: +86 151 9626 6588<br />
               Email:
               <a
                 class="underline decoration-editorial-charcoal/30 underline-offset-4 transition hover:decoration-editorial-charcoal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-editorial-charcoal"
-                href="mailto:studio@culturestone.example"
-              >studio@culturestone.example</a>
+                href="mailto:inquiries@culturestone.eu"
+              >inquiries@culturestone.eu</a>
             </p>
           </section>
 
@@ -61,12 +61,13 @@
               Hosting
             </h2>
             <p class="mt-4">
-              The public website is hosted in the European Union by [Hosting Provider Name], [Provider Address].
+              The public website is hosted by Netlify, Inc., 44 Montgomery Street, Suite 300, San Francisco,
+              CA 94104, USA.
             </p>
             <p class="mt-4">
               The content management system (Strapi) that supplies product data and imagery is operated by us on a
-              virtual private server in the Hong Kong Special Administrative Region of the People&rsquo;s Republic of
-              China, hosted by [VPS Provider Name]. Further information on the resulting data flows is available in our
+              virtual private server. Product images are delivered via Cloudinary, Inc., 101 Spear Street,
+              Floor 5, San Francisco, CA 94105, USA. Further information on the resulting data flows is available in our
               <NuxtLink
                 :to="localePath('/privacy')"
                 class="underline decoration-editorial-charcoal/30 underline-offset-4 transition hover:decoration-editorial-charcoal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-editorial-charcoal"
@@ -83,10 +84,14 @@
               representative under Article 27 of Regulation (EU) 2016/679 is:
             </p>
             <p class="mt-4">
-              [EU Representative Name / Company]<br />
-              [Street Address]<br />
-              [Postal Code] [City], [EU Member State]<br />
-              Email: [rep@example.eu]
+              Synertrade FR SAS<br />
+              9 rue du Bat d&rsquo;Argent<br />
+              69001 Lyon, France<br />
+              Email:
+              <a
+                class="underline decoration-editorial-charcoal/30 underline-offset-4 transition hover:decoration-editorial-charcoal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-editorial-charcoal"
+                href="mailto:info@syner-sarl.cn"
+              >info@syner-sarl.cn</a>
             </p>
           </section>
 
@@ -126,10 +131,6 @@
             </p>
           </section>
         </div>
-
-        <p class="mt-20 font-sans text-[0.7rem] uppercase tracking-[0.28em] text-editorial-charcoal/40">
-          Placeholder notice: replace all bracketed values with verified information before publishing.
-        </p>
       </div>
     </section>
   </main>

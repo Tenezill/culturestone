@@ -8,9 +8,8 @@
     "inquire": "Anfrage stellen",
     "language_switcher_label": "Sprache",
     "locations": {
-      "new_york": "New York",
-      "london": "London",
-      "milan": "Mailand"
+      "new_york": "Chengdu",
+      "london": "Lyon"
     }
   },
   "home": {
@@ -35,7 +34,7 @@
       "nero_marquina": {
         "label": "I – Nero Marquina",
         "heading": "Tiefe im Monochrom",
-        "body": "Ein dunkles Feld mit zurückhaltendem weißem Blitz. Geeignet für Kamine, Akzentflächen und Möbelelemente, bei denen Schatten und Politur für sich sprechen."
+        "body": "Ein dunkles Feld mit zurückhalt endem weißem Blitz. Geeignet für Kamine, Akzentflächen und Möbelelemente, bei denen Schatten und Politur für sich sprechen."
       },
       "calacatta_oro": {
         "label": "II – Calacatta Oro",
@@ -68,13 +67,52 @@
       "spec_heading": "Spezifikationen",
       "finish": "Oberfläche",
       "thickness": "Dicke",
-      "applications": "Anwendungen"
+      "applications": "Anwendungen",
+      "gallery_heading": "In Situ"
     }
   },
   "contact": {
     "page_label": "Kontakt",
     "heading": "Lassen Sie uns etwas Bleibendes spezifizieren",
-    "body": "Teilen Sie Projektzeitpläne, Materialkonzepte und Mengen mit. Wir erstellen eine kuratierte Plattenempfehlung, technische Beratung und eine Musterstrategie."
+    "body": "Teilen Sie Projektzeitpläne, Materialkonzepte und Mengen mit. Wir erstellen eine kuratierte Plattenempfehlung, technische Beratung und eine Musterstrategie.",
+    "info": {
+      "email_label": "E-Mail",
+      "phone_label": "Telefon",
+      "studios_label": "Büros"
+    },
+    "form": {
+      "name": "Name",
+      "studio": "Studio / Büro",
+      "email": "E-Mail",
+      "project_type": "Projektart",
+      "project_type_placeholder": "Auswählen",
+      "project_types": {
+        "residential": "Wohnbereich",
+        "commercial": "Gewerbe",
+        "hospitality": "Gastronomie & Hotellerie",
+        "public": "Öffentlich / Kommunal"
+      },
+      "timeline": "Zeitplan",
+      "timeline_placeholder": "z. B. Q3 2025",
+      "stone": "Stein(e) von Interesse",
+      "stone_placeholder": "z. B. Nero Marquina, Calacatta Oro",
+      "brief": "Projektbeschreibung",
+      "brief_placeholder": "Beschreiben Sie Ihr Projekt, Mengen, Oberflächenpräferenzen und besondere Anforderungen…",
+      "submit": "Anfrage senden",
+      "submitting": "Wird gesendet…",
+      "error_name": "Bitte geben Sie Ihren Namen ein.",
+      "error_email_required": "Bitte geben Sie Ihre E-Mail-Adresse ein.",
+      "error_email_invalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+      "privacy_note_before": "Wir antworten in der Regel innerhalb von zwei Werktagen. Ihre Daten werden gemäß unserer ",
+      "privacy_link_text": "Datenschutzerklärung",
+      "privacy_note_after": " behandelt."
+    },
+    "success": {
+      "label": "Anfrage eingegangen",
+      "heading": "Wir melden uns.",
+      "body": "Ihre Anfrage wurde an unser Studio weitergeleitet. Erwarten Sie eine kuratierte Antwort innerhalb von zwei Werktagen.",
+      "reset": "Weitere Anfrage senden"
+    }
   },
   "footer": {
     "inquire": "Anfrage stellen",
@@ -85,9 +123,8 @@
     "legal_notice": "Impressum",
     "privacy": "Datenschutz",
     "locations": {
-      "new_york": "New York",
-      "london": "London",
-      "milan": "Mailand"
+      "new_york": "Chengdu",
+      "london": "Lyon"
     }
   },
   "legal": {
@@ -102,16 +139,16 @@
   },
   "seo": {
     "home": {
-      "title": "Culture Stone",
-      "description": "Maßgefertigte Platten und Architekturflächen für anspruchsvolle Studios."
+      "title": "Culture Stone — Luxuriöser Marmor & Naturstein",
+      "description": "Culture Stone liefert maßgefertigte Marmor-, Kalkstein- und Granitplatten für Architekten und Innenarchitekten weltweit. Hauptsitz in Chengdu, China."
     },
     "catalog": {
-      "title": "Katalog — Die Signature Gallery",
-      "description": "Museumsartige Übersicht der Signature-Steine von Culture Stone."
+      "title": "Steinkatalog — Die Signature Gallery | Culture Stone",
+      "description": "Premium-Marmor-, Kalkstein- und Granitoberächen direkt aus europäischen Steinbrüchen: Nero Marquina, Calacatta Oro, Caledonia und mehr."
     },
     "contact": {
       "title": "Kontakt — Culture Stone",
-      "description": "Kontaktieren Sie Culture Stone für Projektspezifikationen und Steinauswahl."
+      "description": "Legen Sie Naturstein für Ihr Projekt mit Culture Stone fest. Wir bedienen Architekten, Designer und Hospitality-Gruppen weltweit."
     },
     "legal": {
       "title": "Impressum — Culture Stone",
