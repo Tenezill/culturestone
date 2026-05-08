@@ -53,9 +53,9 @@
             </a>
           </li>
           <li class="pt-2 text-[0.65rem] tracking-[0.2em] text-editorial-charcoal/65">
-            <a href="#" class="underline decoration-editorial-charcoal/30 underline-offset-4 hover:decoration-editorial-charcoal">{{ t('nav.locations.new_york') }}</a>
+            <span class="underline decoration-editorial-charcoal/30 underline-offset-4">{{ t('nav.locations.new_york') }}</span>
             &middot;
-            <a href="#" class="underline decoration-editorial-charcoal/30 underline-offset-4 hover:decoration-editorial-charcoal">{{ t('nav.locations.london') }}</a>
+            <span class="underline decoration-editorial-charcoal/30 underline-offset-4">{{ t('nav.locations.london') }}</span>
           </li>
           <li>
             <a

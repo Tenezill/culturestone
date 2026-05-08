@@ -31,9 +31,9 @@
       >
         <p>{{ t('footer.copyright', { year }) }}</p>
         <p class="mt-6 md:mt-0 md:text-right">
-          <a href="#" class="underline decoration-editorial-charcoal/30 underline-offset-4 transition hover:decoration-editorial-charcoal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-editorial-charcoal">{{ t('footer.locations.new_york') }}</a>
+          <span class="underline decoration-editorial-charcoal/30 underline-offset-4">{{ t('footer.locations.new_york') }}</span>
           &middot;
-          <a href="#" class="underline decoration-editorial-charcoal/30 underline-offset-4 transition hover:decoration-editorial-charcoal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-editorial-charcoal">{{ t('footer.locations.london') }}</a>
+          <span class="underline decoration-editorial-charcoal/30 underline-offset-4">{{ t('footer.locations.london') }}</span>
           <span class="mx-2 text-editorial-charcoal/25">|</span>
           <NuxtLink
             :to="localePath('/legal')"
