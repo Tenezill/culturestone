@@ -16,7 +16,7 @@
         <div class="relative flex h-full flex-col justify-between p-12 xl:p-16">
           <div />
           <div class="max-w-sm">
-            <p class="font-sans text-[0.55rem] uppercase tracking-[0.5em] text-editorial-cream/60">
+            <p class="font-sans text-xs uppercase tracking-[0.25em] text-editorial-cream/60">
               {{ t('contact.page_label') }}
             </p>
             <h1 class="mt-5 font-serif text-5xl font-normal leading-[1.04] tracking-tight text-editorial-cream xl:text-[56px]">
@@ -28,7 +28,7 @@
           </div>
           <div class="space-y-6">
             <div>
-              <p class="font-sans text-[0.5rem] uppercase tracking-[0.5em] text-editorial-cream/50">
+              <p class="font-sans text-xs uppercase tracking-[0.25em] text-editorial-cream/50">
                 {{ t('contact.info.email_label') }}
               </p>
               <a
@@ -39,7 +39,7 @@
               </a>
             </div>
             <div>
-              <p class="font-sans text-[0.5rem] uppercase tracking-[0.5em] text-editorial-cream/50">
+              <p class="font-sans text-xs uppercase tracking-[0.25em] text-editorial-cream/50">
                 {{ t('contact.info.studios_label') }}
               </p>
               <p class="mt-2 font-sans text-xs tracking-wide text-editorial-cream/65">
@@ -55,7 +55,7 @@
 
         <!-- Mobile-only heading -->
         <div class="mb-14 lg:hidden">
-          <p class="font-sans text-[0.55rem] uppercase tracking-[0.5em] text-editorial-cream/60">
+          <p class="font-sans text-xs uppercase tracking-[0.25em] text-editorial-cream/60">
             {{ t('contact.page_label') }}
           </p>
           <h1 class="mt-5 font-serif text-4xl font-normal leading-[1.06] tracking-tight text-editorial-cream sm:text-5xl">
@@ -71,7 +71,7 @@
           <!-- Success state -->
           <div v-if="submitted" key="success" class="flex flex-col py-4">
             <div class="mb-10 h-px w-10 bg-editorial-cream/20" aria-hidden="true" />
-            <p class="font-sans text-[0.6rem] uppercase tracking-[0.4em] text-editorial-cream/60">
+            <p class="font-sans text-xs uppercase tracking-[0.25em] text-editorial-cream/60">
               {{ t('contact.success.label') }}
             </p>
             <p class="mt-6 font-serif text-3xl font-normal tracking-tight text-editorial-cream sm:text-4xl">
@@ -82,7 +82,7 @@
             </p>
             <button
               type="button"
-              class="mt-14 w-max border-b border-editorial-cream/35 pb-px font-sans text-[0.6rem] uppercase tracking-[0.28em] text-editorial-cream/60 transition-colors duration-300 hover:border-editorial-cream hover:text-editorial-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-editorial-cream"
+              class="mt-14 w-max border-b border-editorial-cream/35 pb-px font-sans text-xs uppercase tracking-[0.2em] text-editorial-cream/60 transition-colors duration-300 hover:border-editorial-cream hover:text-editorial-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-editorial-cream"
               @click="resetForm"
             >
               {{ t('contact.success.reset') }}
@@ -106,7 +106,7 @@
               <div>
                 <label
                   for="f-name"
-                  class="block font-sans text-[0.55rem] uppercase tracking-[0.45em] text-editorial-cream/60"
+                  class="block font-sans text-xs uppercase tracking-[0.2em] text-editorial-cream/60"
                 >
                   {{ t('contact.form.name') }}
                   <span aria-hidden="true" class="text-editorial-cream/40">*</span>
@@ -125,7 +125,7 @@
                 <p
                   v-if="errors.name"
                   id="err-name"
-                  class="mt-2 font-sans text-[0.55rem] uppercase tracking-[0.2em] text-red-400/65"
+                  class="mt-2 font-sans text-xs uppercase tracking-[0.15em] text-red-400/65"
                   role="alert"
                 >
                   {{ errors.name }}
@@ -134,7 +134,7 @@
               <div>
                 <label
                   for="f-studio"
-                  class="block font-sans text-[0.55rem] uppercase tracking-[0.45em] text-editorial-cream/60"
+                  class="block font-sans text-xs uppercase tracking-[0.2em] text-editorial-cream/60"
                 >
                   {{ t('contact.form.studio') }}
                 </label>
@@ -152,7 +152,7 @@
             <div>
               <label
                 for="f-email"
-                class="block font-sans text-[0.55rem] uppercase tracking-[0.45em] text-editorial-cream/60"
+                class="block font-sans text-xs uppercase tracking-[0.2em] text-editorial-cream/60"
               >
                 {{ t('contact.form.email') }}
                 <span aria-hidden="true" class="text-editorial-cream/40">*</span>
@@ -171,7 +171,7 @@
               <p
                 v-if="errors.email"
                 id="err-email"
-                class="mt-2 font-sans text-[0.55rem] uppercase tracking-[0.2em] text-red-400/65"
+                class="mt-2 font-sans text-xs uppercase tracking-[0.15em] text-red-400/65"
                 role="alert"
               >
                 {{ errors.email }}
@@ -183,7 +183,7 @@
               <div>
                 <label
                   for="f-type"
-                  class="block font-sans text-[0.55rem] uppercase tracking-[0.45em] text-editorial-cream/60"
+                  class="block font-sans text-xs uppercase tracking-[0.2em] text-editorial-cream/60"
                 >
                   {{ t('contact.form.project_type') }}
                 </label>
@@ -222,7 +222,7 @@
               <div>
                 <label
                   for="f-timeline"
-                  class="block font-sans text-[0.55rem] uppercase tracking-[0.45em] text-editorial-cream/60"
+                  class="block font-sans text-xs uppercase tracking-[0.2em] text-editorial-cream/60"
                 >
                   {{ t('contact.form.timeline') }}
                 </label>
@@ -240,7 +240,7 @@
             <div>
               <label
                 for="f-stone"
-                class="block font-sans text-[0.55rem] uppercase tracking-[0.45em] text-editorial-cream/60"
+                class="block font-sans text-xs uppercase tracking-[0.2em] text-editorial-cream/60"
               >
                 {{ t('contact.form.stone') }}
               </label>
@@ -257,7 +257,7 @@
             <div>
               <label
                 for="f-brief"
-                class="block font-sans text-[0.55rem] uppercase tracking-[0.45em] text-editorial-cream/60"
+                class="block font-sans text-xs uppercase tracking-[0.2em] text-editorial-cream/60"
               >
                 {{ t('contact.form.brief') }}
               </label>
@@ -279,13 +279,13 @@
               >
                 {{ isSubmitting ? t('contact.form.submitting') : t('contact.form.submit') }}
               </button>
-              <p class="mt-5 font-sans text-[0.55rem] leading-[1.85] text-editorial-cream/50">
+              <p class="mt-5 font-sans text-xs leading-[1.7] text-editorial-cream/50">
                 {{ t('contact.form.privacy_note_before') }}<NuxtLink
                   :to="localePath('/privacy')"
                   class="underline decoration-editorial-cream/30 transition-colors duration-300 hover:decoration-editorial-cream/55 focus-visible:outline focus-visible:outline-2 focus-visible:outline-editorial-cream"
                 >{{ t('contact.form.privacy_link_text') }}</NuxtLink>{{ t('contact.form.privacy_note_after') }}
               </p>
-              <p class="mt-4 font-sans text-[0.55rem] leading-[1.85] text-editorial-cream/50">
+              <p class="mt-4 font-sans text-xs leading-[1.7] text-editorial-cream/50">
                 {{ t('contact.form.email_alternative_before') }}
                 <a
                   href="mailto:inquiries@culturestone.eu"
