@@ -105,7 +105,9 @@
       "error_email_invalid": "Veuillez indiquer une adresse e-mail valide.",
       "privacy_note_before": "Nous répondons généralement sous deux jours ouvrés. Vos informations sont traitées conformément à notre ",
       "privacy_link_text": "politique de confidentialité",
-      "privacy_note_after": "."
+      "privacy_note_after": ".",
+      "email_alternative_before": "Préférez-vous l’e-mail ? Écrivez à ",
+      "email_alternative_after": "."
     },
     "success": {
       "label": "Demande reçue",

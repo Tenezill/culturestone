@@ -105,7 +105,9 @@
       "error_email_invalid": "Please enter a valid email address.",
       "privacy_note_before": "We typically respond within two business days. Your information is handled according to our ",
       "privacy_link_text": "privacy policy",
-      "privacy_note_after": "."
+      "privacy_note_after": ".",
+      "email_alternative_before": "Prefer email? Write to ",
+      "email_alternative_after": "."
     },
     "success": {
       "label": "Inquiry received",

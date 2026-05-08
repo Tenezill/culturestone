@@ -105,7 +105,9 @@
       "error_email_invalid": "Por favor, introduzca una dirección de correo electrónico válida.",
       "privacy_note_before": "Respondemos en un plazo de dos días hábiles. Su información se trata de acuerdo con nuestra ",
       "privacy_link_text": "política de privacidad",
-      "privacy_note_after": "."
+      "privacy_note_after": ".",
+      "email_alternative_before": "¿Prefiere el correo? Escriba a ",
+      "email_alternative_after": "."
     },
     "success": {
       "label": "Consulta recibida",

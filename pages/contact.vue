@@ -5,11 +5,11 @@
       <!-- Left: Stone image panel — desktop only -->
       <div class="relative hidden lg:block">
         <img
-          src="https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?q=80&w=1400&auto=format&fit=crop"
-          alt="Stone quarry with dramatic vertical strata"
+          src="/img/ai-rock-formation.jpg"
+          alt="Stone formation"
           class="absolute inset-0 h-full w-full object-cover opacity-55"
-          width="1400"
-          height="2100"
+          width="1376"
+          height="768"
         >
         <div class="absolute inset-0 bg-gradient-to-br from-editorial-charcoal/50 via-transparent to-editorial-charcoal/70" aria-hidden="true" />
         <div class="relative flex h-full flex-col justify-between p-12 xl:p-16">
@@ -35,17 +35,6 @@
                 class="mt-2 block font-sans text-xs tracking-wide text-editorial-cream/60 underline decoration-editorial-cream/15 underline-offset-4 transition-all duration-300 hover:text-editorial-cream hover:decoration-editorial-cream/40"
               >
                 inquiries@culturestone.eu
-              </a>
-            </div>
-            <div>
-              <p class="font-sans text-[0.5rem] uppercase tracking-[0.5em] text-editorial-cream/30">
-                {{ t('contact.info.phone_label') }}
-              </p>
-              <a
-                href="tel:+8615196266588"
-                class="mt-2 block font-sans text-xs tracking-wide text-editorial-cream/60 underline decoration-editorial-cream/15 underline-offset-4 transition-all duration-300 hover:text-editorial-cream hover:decoration-editorial-cream/40"
-              >
-                +86 151 9626 6588
               </a>
             </div>
             <div>
@@ -294,6 +283,14 @@
                   :to="localePath('/privacy')"
                   class="underline decoration-editorial-cream/18 transition-colors duration-300 hover:decoration-editorial-cream/45 focus-visible:outline focus-visible:outline-2 focus-visible:outline-editorial-cream"
                 >{{ t('contact.form.privacy_link_text') }}</NuxtLink>{{ t('contact.form.privacy_note_after') }}
+              </p>
+              <p class="mt-4 font-sans text-[0.55rem] leading-[1.85] text-editorial-cream/28">
+                {{ t('contact.form.email_alternative_before') }}
+                <a
+                  href="mailto:inquiries@culturestone.eu"
+                  class="underline decoration-editorial-cream/18 underline-offset-4 hover:decoration-editorial-cream/45"
+                >inquiries@culturestone.eu</a>
+                {{ t('contact.form.email_alternative_after') }}
               </p>
             </div>
           </form>
