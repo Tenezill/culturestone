@@ -81,11 +81,11 @@
             <div class="lg:col-span-7 lg:col-start-1">
               <figure class="overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?q=80&w=1500&auto=format&fit=crop"
-                  alt="Raw stone quarry, dramatic vertical strata"
+                  src="/img/ai-rock-formation.jpg"
+                  alt="Raw stone formation with dramatic strata"
                   class="h-[80vh] w-full object-cover"
-                  width="1500"
-                  height="2250"
+                  width="1376"
+                  height="768"
                   loading="lazy"
                 >
               </figure>
@@ -96,11 +96,11 @@
             >
               <figure class="overflow-hidden lg:ml-4 xl:ml-10">
                 <img
-                  src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=1000&auto=format&fit=crop"
+                  src="/img/ai-veined-stone.jpg"
                   alt="Polished interior stone detail"
                   class="h-[40vh] w-full object-cover"
-                  width="1000"
-                  height="667"
+                  width="1376"
+                  height="768"
                   loading="lazy"
                 >
               </figure>
@@ -141,11 +141,11 @@
               <div class="lg:col-span-7 lg:col-start-1">
                 <figure class="overflow-hidden">
                   <img
-                    src="https://images.unsplash.com/photo-1550053808-52a75a05955d?q=80&w=1200&auto=format&fit=crop"
+                    src="/img/ai-dark-marble.jpg"
                     alt="Dark marble surface with fine veining"
                     class="aspect-[5/4] w-full object-cover lg:min-h-[min(52vh,560px)]"
-                    width="1200"
-                    height="960"
+                    width="1376"
+                    height="768"
                     loading="lazy"
                   >
                 </figure>
@@ -178,11 +178,11 @@
               <div class="order-1 lg:order-2 lg:col-span-7 lg:col-start-6">
                 <figure class="overflow-hidden">
                   <img
-                    src="https://images.unsplash.com/photo-1719107647328-dd2134da4fa7?q=80&w=1200&auto=format&fit=crop"
+                    src="/img/ai-light-marble.jpg"
                     alt="White marble with gold and grey veining"
                     class="aspect-[5/4] w-full object-cover lg:min-h-[min(52vh,560px)]"
-                    width="1200"
-                    height="960"
+                    width="1376"
+                    height="768"
                     loading="lazy"
                   >
                 </figure>
@@ -193,11 +193,11 @@
               <div class="lg:col-span-7 lg:col-start-1">
                 <figure class="overflow-hidden">
                   <img
-                    src="https://images.unsplash.com/photo-1764021995962-53921e9f2317?q=80&w=1200&auto=format&fit=crop"
+                    src="/img/ai-blue-green.jpg"
                     alt="Textured grey granite surface"
                     class="aspect-[5/4] w-full object-cover lg:min-h-[min(52vh,560px)]"
-                    width="1200"
-                    height="960"
+                    width="1376"
+                    height="768"
                     loading="lazy"
                   >
                 </figure>
