@@ -1,61 +1,66 @@
 <template>
-  <footer class="border-t border-editorial-charcoal/15 px-4 py-24 md:px-8 md:py-28 lg:px-12 lg:py-32">
-    <div class="mx-auto max-w-[1400px]">
-      <div class="mb-20 flex flex-col gap-10 sm:mb-24 md:mb-28 lg:mb-32">
+  <footer class="border-t border-editorial-charcoal/10 px-6 py-32 md:px-12 md:py-40 lg:px-20">
+    <div class="mx-auto max-w-[1600px]">
+      <div class="mb-32">
         <div
-          class="flex flex-col gap-8 px-4 py-16 sm:flex-row sm:flex-wrap sm:items-center sm:gap-10 sm:px-8 sm:py-20 md:gap-12 md:px-12 md:py-24 lg:px-16 lg:py-28"
+          class="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between"
         >
-          <a
-            href="mailto:inquiries@culturestone.eu"
-            class="inline-flex min-h-[3rem] items-center justify-center border border-editorial-charcoal/40 bg-transparent px-12 py-4 font-sans text-[0.7rem] uppercase tracking-[0.28em] text-editorial-charcoal transition-colors duration-300 hover:border-editorial-charcoal hover:bg-editorial-charcoal hover:text-editorial-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-editorial-charcoal sm:min-h-0"
-          >
-            {{ t('footer.inquire') }}
-          </a>
-          <NuxtLink
-            :to="resolvedSecondaryHref"
-            class="inline-flex min-h-[3rem] items-center justify-center border border-editorial-charcoal/40 bg-transparent px-12 py-4 font-sans text-[0.7rem] uppercase tracking-[0.28em] text-editorial-charcoal transition-colors duration-300 hover:border-editorial-charcoal hover:bg-editorial-charcoal hover:text-editorial-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-editorial-charcoal sm:min-h-0"
-          >
-            {{ displayLabel }}
-          </NuxtLink>
-          <NuxtLink
-            :to="localePath('/contact')"
-            class="inline-flex min-h-[3rem] items-center justify-center border border-editorial-charcoal/40 bg-transparent px-12 py-4 font-sans text-[0.7rem] uppercase tracking-[0.28em] text-editorial-charcoal transition-colors duration-300 hover:border-editorial-charcoal hover:bg-editorial-charcoal hover:text-editorial-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-editorial-charcoal sm:min-h-0"
-          >
-            {{ t('footer.contact') }}
-          </NuxtLink>
+          <div class="max-w-2xl">
+            <h2 class="font-serif text-4xl font-normal leading-tight text-editorial-charcoal md:text-5xl lg:text-6xl">
+              {{ t('footer.inquire') }}
+            </h2>
+            <p class="mt-8 font-sans text-lg font-light text-editorial-charcoal/60">
+              Transforming spaces with timeless stone. Reach out for a consultation or browse our latest collections.
+            </p>
+          </div>
+
+          <div class="flex flex-wrap gap-6">
+            <a
+              href="mailto:inquiries@culturestone.eu"
+              class="group inline-flex items-center gap-3 border border-editorial-charcoal px-10 py-5 font-sans text-[0.7rem] uppercase tracking-[0.25em] text-editorial-charcoal transition-all duration-500 hover:bg-editorial-charcoal hover:text-editorial-cream"
+            >
+              <PhEnvelopeSimple :size="18" weight="light" class="transition-transform group-hover:scale-110" />
+              Email Us
+            </a>
+            <NuxtLink
+              :to="resolvedSecondaryHref"
+              class="inline-flex items-center border border-editorial-charcoal px-10 py-5 font-sans text-[0.7rem] uppercase tracking-[0.25em] text-editorial-charcoal transition-all duration-500 hover:bg-editorial-charcoal hover:text-editorial-cream"
+            >
+              {{ displayLabel }}
+            </NuxtLink>
+          </div>
         </div>
       </div>
 
       <div
-        class="border-t border-editorial-charcoal/10 pt-12 font-sans text-xs font-light leading-relaxed text-editorial-charcoal/55 sm:pt-16 sm:text-sm md:flex md:items-end md:justify-between md:gap-12"
+        class="border-t border-editorial-charcoal/5 pt-16 font-sans text-xs font-light tracking-wide text-editorial-charcoal/40 md:flex md:items-end md:justify-between"
       >
-        <p>{{ t('footer.copyright', { year }) }}</p>
-        <p class="mt-6 md:mt-0 md:text-right">
-          <span class="underline decoration-editorial-charcoal/30 underline-offset-4">{{ t('footer.locations.new_york') }}</span>
-          &middot;
-          <span class="underline decoration-editorial-charcoal/30 underline-offset-4">{{ t('footer.locations.london') }}</span>
-          <span class="mx-2 text-editorial-charcoal/25">|</span>
-          <NuxtLink
-            :to="localePath('/legal')"
-            class="underline decoration-editorial-charcoal/30 underline-offset-4 transition hover:decoration-editorial-charcoal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-editorial-charcoal"
-          >{{ t('footer.legal_notice') }}</NuxtLink>
-          &middot;
-          <NuxtLink
-            :to="localePath('/privacy')"
-            class="underline decoration-editorial-charcoal/30 underline-offset-4 transition hover:decoration-editorial-charcoal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-editorial-charcoal"
-          >{{ t('footer.privacy') }}</NuxtLink>
-          <span class="mx-2 text-editorial-charcoal/25">|</span>
-          <a
-            href="mailto:inquiries@culturestone.eu"
-            class="border-b border-editorial-charcoal/20 transition-colors hover:border-editorial-charcoal/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-editorial-charcoal"
-          >inquiries@culturestone.eu</a>
-        </p>
+        <div class="space-y-4 md:space-y-0 md:flex md:items-center md:gap-8">
+          <p>&copy; {{ year }} Culture Stone</p>
+          <div class="flex gap-4">
+            <NuxtLink :to="localePath('/legal')" class="transition-colors hover:text-editorial-charcoal">{{ t('footer.legal_notice') }}</NuxtLink>
+            <NuxtLink :to="localePath('/privacy')" class="transition-colors hover:text-editorial-charcoal">{{ t('footer.privacy') }}</NuxtLink>
+          </div>
+        </div>
+        
+        <div class="mt-8 md:mt-0 flex flex-wrap gap-x-6 gap-y-2">
+          <span class="flex items-center gap-2">
+            <PhMapPin :size="14" />
+            {{ t('footer.locations.new_york') }}
+          </span>
+          <span class="flex items-center gap-2">
+            <PhMapPin :size="14" />
+            {{ t('footer.locations.london') }}
+          </span>
+        </div>
       </div>
     </div>
   </footer>
 </template>
 
 <script setup lang="ts">
+import { PhEnvelopeSimple, PhMapPin } from '@phosphor-icons/vue'
+
 const { t } = useI18n()
 const localePath = useLocalePath()
 

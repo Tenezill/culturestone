@@ -17,7 +17,8 @@ export default {
       },
       fontFamily: {
         serif: ['"Playfair Display"', 'Georgia', 'serif'],
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['Geist', 'system-ui', 'sans-serif'],
+        display: ['Outfit', 'sans-serif'],
       },
       spacing: {
         '18': '4.5rem',

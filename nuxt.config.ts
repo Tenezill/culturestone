@@ -23,7 +23,7 @@ export default defineNuxtConfig({
       ],
     },
   },
-  modules: ['@nuxtjs/i18n', '@nuxtjs/tailwindcss', '@nuxtjs/google-fonts', '@nuxtjs/strapi', '@nuxtjs/sitemap'],
+  modules: ['@nuxtjs/i18n', '@nuxtjs/tailwindcss', '@nuxtjs/google-fonts', '@nuxtjs/strapi', '@nuxtjs/sitemap', '@vueuse/motion/nuxt'],
   site: {
     url: process.env.NUXT_PUBLIC_SITE_URL || 'https://culturestone.eu',
   },
@@ -79,7 +79,8 @@ export default defineNuxtConfig({
     inject: true,
     display: 'swap',
     families: {
-      Inter: [300, 400, 500, 600],
+      Geist: [300, 400, 500, 600],
+      Outfit: [300, 400, 500, 600, 700],
       'Playfair Display': {
         wght: [400, 500, 600, 700],
         ital: [400],

@@ -1,18 +1,24 @@
 <template>
   <div>
     <main>
-      <section class="px-4 py-24 md:px-8 md:py-32 lg:px-12 lg:py-36" aria-labelledby="catalog-gallery-heading">
+      <section class="px-6 py-32 md:px-12 md:py-48 lg:px-20 lg:py-56" aria-labelledby="catalog-gallery-heading">
         <div class="mx-auto max-w-[1600px]">
-          <h1
-            id="catalog-gallery-heading"
-            class="mb-20 max-w-4xl font-serif text-4xl font-normal leading-[1.1] tracking-tight text-editorial-charcoal sm:mb-24 sm:text-5xl md:mb-32 md:text-6xl lg:mb-40 lg:text-7xl xl:text-8xl"
+          <div
+            v-motion
+            :initial="{ y: 40, opacity: 0 }"
+            :enter="{ y: 0, opacity: 1, transition: { duration: 800 } }"
           >
-            {{ t('catalog.page_title') }}
-          </h1>
+            <h1
+              id="catalog-gallery-heading"
+              class="mb-32 max-w-5xl font-serif text-5xl font-normal leading-[1.05] tracking-tight text-editorial-charcoal sm:text-7xl md:text-8xl lg:text-9xl"
+            >
+              {{ t('catalog.page_title') }}
+            </h1>
+          </div>
 
           <p
             v-if="pending"
-            class="font-sans text-[0.65rem] uppercase tracking-[0.35em] text-editorial-charcoal/45"
+            class="font-sans text-[0.65rem] uppercase tracking-[0.4em] text-editorial-charcoal/40"
           >
             {{ t('catalog.loading') }}
           </p>
@@ -23,112 +29,121 @@
             {{ t('catalog.error') }}
           </p>
 
-          <div v-else class="flex flex-col gap-12 lg:flex-row lg:gap-16 xl:gap-20">
+          <div v-else class="flex flex-col gap-24 lg:flex-row lg:gap-32">
 
             <!-- Category sidebar -->
-            <aside class="shrink-0 lg:w-44 xl:w-52" :aria-label="t('catalog.category_label')">
+            <aside class="shrink-0 lg:w-56" :aria-label="t('catalog.category_label')">
+              <div
+                v-motion
+                :initial="{ opacity: 0, x: -20 }"
+                :enter="{ opacity: 1, x: 0, transition: { delay: 400, duration: 800 } }"
+              >
+                <!-- Mobile: horizontal scroll pills -->
+                <div class="flex gap-4 overflow-x-auto pb-4 lg:hidden">
+                  <button
+                    type="button"
+                    class="shrink-0 border-b-2 px-1 pb-2 font-sans text-[0.6rem] uppercase tracking-[0.3em] transition-all duration-300"
+                    :class="selectedCategory === null
+                      ? 'border-editorial-charcoal text-editorial-charcoal'
+                      : 'border-transparent text-editorial-charcoal/40 hover:text-editorial-charcoal'"
+                    @click="selectedCategory = null"
+                  >
+                    {{ t('catalog.all') }}
+                  </button>
+                  <button
+                    v-for="cat in categories"
+                    :key="cat.slug"
+                    type="button"
+                    class="shrink-0 border-b-2 px-1 pb-2 font-sans text-[0.6rem] uppercase tracking-[0.3em] transition-all duration-300"
+                    :class="selectedCategory === cat.slug
+                      ? 'border-editorial-charcoal text-editorial-charcoal'
+                      : 'border-transparent text-editorial-charcoal/40 hover:text-editorial-charcoal'"
+                    @click="selectedCategory = cat.slug"
+                  >
+                    {{ cat.name }}
+                  </button>
+                </div>
 
-              <!-- Mobile: horizontal scroll pills -->
-              <div class="flex gap-2 overflow-x-auto pb-2 lg:hidden">
-                <button
-                  type="button"
-                  class="shrink-0 border px-4 py-1.5 font-sans text-[0.6rem] uppercase tracking-[0.3em] transition-colors duration-200"
-                  :class="selectedCategory === null
-                    ? 'border-editorial-charcoal bg-editorial-charcoal text-editorial-cream'
-                    : 'border-editorial-charcoal/25 text-editorial-charcoal/55 hover:border-editorial-charcoal/55 hover:text-editorial-charcoal'"
-                  @click="selectedCategory = null"
-                >
-                  {{ t('catalog.all') }}
-                </button>
-                <button
-                  v-for="cat in categories"
-                  :key="cat.slug"
-                  type="button"
-                  class="shrink-0 border px-4 py-1.5 font-sans text-[0.6rem] uppercase tracking-[0.3em] transition-colors duration-200"
-                  :class="selectedCategory === cat.slug
-                    ? 'border-editorial-charcoal bg-editorial-charcoal text-editorial-cream'
-                    : 'border-editorial-charcoal/25 text-editorial-charcoal/55 hover:border-editorial-charcoal/55 hover:text-editorial-charcoal'"
-                  @click="selectedCategory = cat.slug"
-                >
-                  {{ cat.name }}
-                </button>
+                <!-- Desktop: vertical sticky list -->
+                <nav class="sticky top-32 hidden lg:block" :aria-label="t('catalog.category_label')">
+                  <p class="mb-10 font-sans text-[0.55rem] uppercase tracking-[0.5em] text-editorial-charcoal/30">
+                    {{ t('catalog.category_label') }}
+                  </p>
+                  <ul class="space-y-6">
+                    <li>
+                      <button
+                        type="button"
+                        class="group flex items-center gap-4 font-sans text-[0.65rem] uppercase tracking-[0.4em] transition-all duration-300"
+                        :class="selectedCategory === null ? 'text-editorial-charcoal' : 'text-editorial-charcoal/40 hover:text-editorial-charcoal'"
+                        @click="selectedCategory = null"
+                      >
+                        <span
+                          class="block h-px transition-all duration-300"
+                          :class="selectedCategory === null ? 'w-8 bg-editorial-charcoal' : 'w-0 bg-transparent group-hover:w-4 group-hover:bg-editorial-charcoal/30'"
+                          aria-hidden="true"
+                        />
+                        <span>{{ t('catalog.all') }}</span>
+                      </button>
+                    </li>
+                    <li v-for="cat in categories" :key="cat.slug">
+                      <button
+                        type="button"
+                        class="group flex items-center gap-4 font-sans text-[0.65rem] uppercase tracking-[0.4em] transition-all duration-300"
+                        :class="selectedCategory === cat.slug ? 'text-editorial-charcoal' : 'text-editorial-charcoal/40 hover:text-editorial-charcoal'"
+                        @click="selectedCategory = cat.slug"
+                      >
+                        <span
+                          class="block h-px transition-all duration-300"
+                          :class="selectedCategory === cat.slug ? 'w-8 bg-editorial-charcoal' : 'w-0 bg-transparent group-hover:w-4 group-hover:bg-editorial-charcoal/30'"
+                          aria-hidden="true"
+                        />
+                        <span>{{ cat.name }}</span>
+                      </button>
+                    </li>
+                  </ul>
+                </nav>
               </div>
-
-              <!-- Desktop: vertical sticky list -->
-              <nav class="sticky top-24 hidden lg:block" :aria-label="t('catalog.category_label')">
-                <p class="mb-8 font-sans text-[0.55rem] uppercase tracking-[0.45em] text-editorial-charcoal/35">
-                  {{ t('catalog.category_label') }}
-                </p>
-                <ul class="space-y-5">
-                  <li>
-                    <button
-                      type="button"
-                      class="group flex items-start text-left gap-3 font-sans text-[0.65rem] uppercase tracking-[0.35em] transition-colors duration-200"
-                      :class="selectedCategory === null ? 'text-editorial-charcoal' : 'text-editorial-charcoal/45 hover:text-editorial-charcoal'"
-                      @click="selectedCategory = null"
-                    >
-                      <span
-                        class="block h-px w-4 shrink-0 mt-1 transition-all duration-200"
-                        :class="selectedCategory === null ? 'bg-editorial-charcoal' : 'bg-transparent group-hover:bg-editorial-charcoal/30'"
-                        aria-hidden="true"
-                      />
-                      <span class="flex-1">{{ t('catalog.all') }}</span>
-                    </button>
-                  </li>
-                  <li v-for="cat in categories" :key="cat.slug">
-                    <button
-                      type="button"
-                      class="group flex items-start text-left gap-3 font-sans text-[0.65rem] uppercase tracking-[0.35em] transition-colors duration-200"
-                      :class="selectedCategory === cat.slug ? 'text-editorial-charcoal' : 'text-editorial-charcoal/45 hover:text-editorial-charcoal'"
-                      @click="selectedCategory = cat.slug"
-                    >
-                      <span
-                        class="block h-px w-4 shrink-0 mt-1 transition-all duration-200"
-                        :class="selectedCategory === cat.slug ? 'bg-editorial-charcoal' : 'bg-transparent group-hover:bg-editorial-charcoal/30'"
-                        aria-hidden="true"
-                      />
-                      <span class="flex-1">{{ cat.name }}</span>
-                    </button>
-                  </li>
-                </ul>
-              </nav>
             </aside>
 
             <!-- Stone grid -->
             <div class="min-w-0 flex-1">
               <p
                 v-if="filteredStones.length === 0"
-                class="font-sans text-[0.65rem] uppercase tracking-[0.35em] text-editorial-charcoal/45"
+                class="font-sans text-[0.65rem] uppercase tracking-[0.4em] text-editorial-charcoal/40"
               >
                 {{ t('catalog.empty') }}
               </p>
               <div
                 v-else
-                class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 md:gap-6 xl:grid-cols-5"
+                class="grid grid-cols-2 gap-x-8 gap-y-20 sm:grid-cols-3 md:gap-x-12 md:gap-y-24 xl:grid-cols-4"
               >
                 <article
-                  v-for="stone in filteredStones"
+                  v-for="(stone, index) in filteredStones"
                   :key="stone.slug"
+                  v-motion
+                  :initial="{ opacity: 0, y: 20 }"
+                  :enter="{ opacity: 1, y: 0, transition: { delay: 400 + (index % 5) * 100, duration: 800 } }"
                   class="group"
                 >
                   <NuxtLink
                     :to="localePath(`/catalog/${stone.slug}`)"
-                    class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-editorial-charcoal"
+                    class="block"
                   >
                     <figure class="m-0">
-                      <div class="overflow-hidden bg-editorial-charcoal/[0.03]">
+                      <div class="relative overflow-hidden bg-editorial-charcoal/[0.03]">
                         <img
                           :src="pickMediaUrl(stone.image, 'medium')"
                           :alt="stone.image?.alternativeText ?? stone.name"
-                          class="aspect-square w-full object-cover transition duration-700 ease-out group-hover:scale-[1.02] group-hover:opacity-[0.92]"
+                          class="aspect-[4/5] w-full object-cover transition duration-1000 ease-out group-hover:scale-110"
                           width="600"
-                          height="600"
+                          height="750"
                           loading="lazy"
                           decoding="async"
                         >
+                        <div class="absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/10" />
                       </div>
                       <figcaption
-                        class="mt-6 font-sans text-xs font-normal uppercase tracking-widest text-editorial-charcoal/70 transition-colors duration-500 group-hover:text-editorial-charcoal"
+                        class="mt-8 font-sans text-[0.6rem] uppercase tracking-[0.3em] text-editorial-charcoal/50 transition-colors duration-500 group-hover:text-editorial-charcoal"
                       >
                         {{ stone.name }}
                       </figcaption>

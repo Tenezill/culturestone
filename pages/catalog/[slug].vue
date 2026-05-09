@@ -1,93 +1,110 @@
 <template>
-  <div class="min-h-screen bg-editorial-cream text-editorial-charcoal">
-    <Transition appear name="luxury-enter">
-      <div :key="page ? slug : 'not-found'" class="luxury-enter-root">
-        <template v-if="page">
-        <div class="px-8 pt-6 md:px-12 md:pt-8">
-          <NuxtLink
-            :to="localePath('/catalog')"
-            class="font-sans text-[0.65rem] uppercase tracking-[0.35em] text-editorial-charcoal/50 transition-colors duration-300 hover:text-editorial-charcoal"
-          >
-            {{ t('catalog.back') }}
-          </NuxtLink>
-        </div>
+  <div class="min-h-screen bg-editorial-cream text-editorial-charcoal selection:bg-editorial-charcoal/10">
+    <div v-if="page" class="relative">
+      <div class="px-6 pt-10 md:px-12 md:pt-12 lg:px-20">
+        <NuxtLink
+          :to="localePath('/catalog')"
+          class="group inline-flex items-center gap-4 font-sans text-[0.65rem] uppercase tracking-[0.4em] text-editorial-charcoal/40 transition-colors duration-300 hover:text-editorial-charcoal"
+        >
+          <PhArrowLeft :size="14" class="transition-transform group-hover:-translate-x-1" />
+          {{ t('catalog.back') }}
+        </NuxtLink>
+      </div>
 
-        <section class="relative min-h-[60vh] w-full overflow-hidden md:min-h-[70vh]" aria-label="Stone hero">
+      <header class="relative mt-12 min-h-[70vh] w-full overflow-hidden md:min-h-[85vh]">
+        <div
+          v-motion
+          :initial="{ scale: 1.1, opacity: 0 }"
+          :enter="{ scale: 1, opacity: 1, transition: { duration: 1200, ease: 'easeOut' } }"
+          class="absolute inset-0"
+        >
           <img
             :src="heroUrl"
             :alt="page.image?.alternativeText ?? page.name"
-            class="absolute inset-0 h-full w-full object-cover"
+            class="h-full w-full object-cover"
             :width="page.image?.width ?? 1600"
             :height="page.image?.height ?? 1200"
             fetchpriority="high"
           >
-          <div class="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-black/10" aria-hidden="true" />
-        </section>
+        </div>
+        <div class="absolute inset-0 bg-neutral-950/20" aria-hidden="true" />
+      </header>
 
-        <section class="px-8 py-24 md:py-28 lg:px-12 lg:py-32" :aria-labelledby="headingId">
-          <div class="mx-auto max-w-[1600px]">
-            <div class="grid grid-cols-1 gap-16 md:grid-cols-12 md:gap-24 lg:gap-24">
-              <div class="md:col-span-5 md:self-start md:sticky md:top-24 lg:col-span-5">
-                <p
-                  class="font-sans text-[0.65rem] font-normal uppercase tracking-widest text-editorial-charcoal/45"
-                >
+      <section class="px-6 py-32 md:px-12 md:py-48 lg:px-20 lg:py-56" :aria-labelledby="headingId">
+        <div class="mx-auto max-w-[1600px]">
+          <div class="grid grid-cols-1 gap-24 lg:grid-cols-12 lg:gap-32">
+            <div class="lg:col-span-5 lg:sticky lg:top-32 lg:self-start">
+              <div
+                v-motion
+                :initial="{ y: 20, opacity: 0 }"
+                :enter="{ y: 0, opacity: 1, transition: { delay: 400, duration: 800 } }"
+              >
+                <p class="font-sans text-[0.65rem] uppercase tracking-[0.5em] text-editorial-charcoal/40">
                   {{ page.subhead }}
                 </p>
                 <h1
                   :id="headingId"
-                  class="mt-8 font-serif text-4xl font-normal leading-[1.05] tracking-tight sm:text-5xl md:text-[52px] md:leading-[52px] lg:text-[60px] lg:leading-[60px]"
+                  class="mt-10 font-serif text-5xl font-normal leading-[1.05] tracking-tight sm:text-6xl md:text-7xl lg:text-8xl"
                 >
                   {{ page.name }}
                 </h1>
-                <div class="mt-8 border-t border-editorial-charcoal/15 pt-6">
-                  <p class="font-sans text-[0.6rem] uppercase tracking-[0.4em] text-editorial-charcoal/45">
+                
+                <div class="mt-12 border-t border-editorial-charcoal/10 pt-10">
+                  <p class="font-sans text-[0.55rem] uppercase tracking-[0.5em] text-editorial-charcoal/30">
                     {{ t('catalog.stone.origin_prefix') }}
                   </p>
-                  <p class="mt-2 font-serif text-xl italic text-editorial-charcoal md:text-2xl">
+                  <p class="mt-4 font-serif text-2xl italic text-editorial-charcoal md:text-3xl">
                     {{ page.origin }}
                   </p>
                 </div>
+
                 <NuxtLink
                   :to="inquireTo"
-                  class="mt-14 inline-flex items-center justify-center bg-editorial-charcoal px-14 py-4 font-sans text-[0.7rem] uppercase tracking-[0.28em] text-editorial-cream transition-colors duration-300 hover:bg-editorial-charcoal/85 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-editorial-charcoal"
+                  class="group mt-16 inline-flex items-center gap-4 border border-editorial-charcoal px-12 py-6 font-sans text-[0.7rem] uppercase tracking-[0.3em] text-editorial-cream bg-editorial-charcoal transition-all duration-500 hover:bg-transparent hover:text-editorial-charcoal"
                 >
                   {{ t('catalog.stone.inquire') }}
+                  <PhArrowRight :size="16" class="transition-transform group-hover:translate-x-1" />
                 </NuxtLink>
               </div>
+            </div>
 
-              <div class="md:col-span-7 lg:col-span-7">
-                <div class="max-w-prose space-y-10">
-                  <p class="font-sans text-base font-normal leading-[1.9] text-editorial-charcoal/90 md:text-lg md:leading-[1.88]">
-                    {{ page.description }}
-                  </p>
-                </div>
+            <div class="lg:col-span-7">
+              <div
+                v-motion
+                :initial="{ opacity: 0 }"
+                :enter="{ opacity: 1, transition: { delay: 600, duration: 1000 } }"
+                class="max-w-2xl space-y-12"
+              >
+                <p class="font-sans text-lg font-light leading-[1.9] text-editorial-charcoal/70 sm:text-xl md:text-2xl">
+                  {{ page.description }}
+                </p>
 
-                <div class="mt-20 max-w-prose">
-                  <h2 class="font-sans text-[0.65rem] uppercase tracking-[0.35em] text-editorial-charcoal/45">
+                <div class="pt-24">
+                  <h2 class="font-sans text-[0.65rem] uppercase tracking-[0.5em] text-editorial-charcoal/40">
                     {{ t('catalog.stone.spec_heading') }}
                   </h2>
-                  <dl class="mt-10 divide-y divide-editorial-charcoal/10 border-t border-editorial-charcoal/10">
-                    <div class="grid grid-cols-1 gap-1 py-4 sm:grid-cols-[minmax(0,10rem)_1fr] sm:gap-8">
-                      <dt class="font-sans text-[0.65rem] uppercase tracking-widest text-editorial-charcoal/50">
+                  <dl class="mt-12 divide-y divide-editorial-charcoal/5 border-t border-editorial-charcoal/5">
+                    <div class="grid grid-cols-1 gap-4 py-8 sm:grid-cols-2 lg:grid-cols-[1fr_2fr]">
+                      <dt class="font-sans text-[0.6rem] uppercase tracking-[0.3em] text-editorial-charcoal/40">
                         {{ t('catalog.stone.finish') }}
                       </dt>
-                      <dd class="font-sans text-sm font-normal leading-relaxed text-editorial-charcoal">
+                      <dd class="font-sans text-base font-light text-editorial-charcoal/80">
                         {{ page.finish }}
                       </dd>
                     </div>
-                    <div class="grid grid-cols-1 gap-1 py-4 sm:grid-cols-[minmax(0,10rem)_1fr] sm:gap-8">
-                      <dt class="font-sans text-[0.65rem] uppercase tracking-widest text-editorial-charcoal/50">
+                    <div class="grid grid-cols-1 gap-4 py-8 sm:grid-cols-2 lg:grid-cols-[1fr_2fr]">
+                      <dt class="font-sans text-[0.6rem] uppercase tracking-[0.3em] text-editorial-charcoal/40">
                         {{ t('catalog.stone.thickness') }}
                       </dt>
-                      <dd class="font-sans text-sm font-normal leading-relaxed text-editorial-charcoal">
+                      <dd class="font-sans text-base font-light text-editorial-charcoal/80">
                         {{ page.thickness }}
                       </dd>
                     </div>
-                    <div class="grid grid-cols-1 gap-1 py-4 sm:grid-cols-[minmax(0,10rem)_1fr] sm:gap-8">
-                      <dt class="font-sans text-[0.65rem] uppercase tracking-widest text-editorial-charcoal/50">
+                    <div class="grid grid-cols-1 gap-4 py-8 sm:grid-cols-2 lg:grid-cols-[1fr_2fr]">
+                      <dt class="font-sans text-[0.6rem] uppercase tracking-[0.3em] text-editorial-charcoal/40">
                         {{ t('catalog.stone.applications') }}
                       </dt>
-                      <dd class="font-sans text-sm font-normal leading-relaxed text-editorial-charcoal">
+                      <dd class="font-sans text-base font-light text-editorial-charcoal/80">
                         {{ page.applications }}
                       </dd>
                     </div>
@@ -96,116 +113,110 @@
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section
-          v-if="galleryUrls.length"
-          class="px-8 pb-24 md:px-12 md:pb-32"
-          :aria-label="t('catalog.stone.gallery_heading')"
-        >
-          <div class="mx-auto max-w-[1600px]">
-            <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
-              <button
-                v-for="(url, i) in galleryUrls"
-                :key="url"
-                type="button"
-                class="group relative block w-full overflow-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-editorial-charcoal"
-                @click="openGalleryModal(i)"
+      <section
+        v-if="galleryUrls.length"
+        class="px-6 pb-32 md:px-12 md:pb-48 lg:px-20 lg:pb-56"
+        :aria-label="t('catalog.stone.gallery_heading')"
+      >
+        <div class="mx-auto max-w-[1600px]">
+          <div class="grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-16">
+            <button
+              v-for="(url, i) in galleryUrls"
+              :key="url"
+              v-motion
+              :initial="{ opacity: 0, scale: 0.95 }"
+              :visible-once="{ opacity: 1, scale: 1, transition: { delay: i * 100, duration: 1000 } }"
+              type="button"
+              class="group relative block w-full overflow-hidden"
+              @click="openGalleryModal(i)"
+            >
+              <img
+                :src="url"
+                :alt="`${page.name} — Image ${i + 1}`"
+                class="aspect-[4/3] w-full object-cover transition duration-1000 group-hover:scale-105"
+                loading="lazy"
+                decoding="async"
               >
-                <img
-                  :src="url"
-                  :alt="`${page.name} — Image ${i + 1}`"
-                  class="aspect-[4/3] w-full object-cover transition duration-700 ease-out group-hover:scale-[1.02] group-hover:opacity-90"
-                  loading="lazy"
-                  decoding="async"
-                >
-              </button>
-            </div>
+              <div class="absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/10" />
+            </button>
           </div>
-        </section>
-        </template>
+        </div>
+      </section>
+    </div>
 
-        <div v-else class="flex min-h-[70vh] flex-col px-8 py-24 md:px-12 md:py-32">
-        <NuxtLink
-          :to="localePath('/catalog')"
-          class="font-sans text-[0.65rem] uppercase tracking-[0.35em] text-editorial-charcoal/50 transition-colors duration-300 hover:text-editorial-charcoal"
-        >
-          {{ t('catalog.back') }}
-        </NuxtLink>
-        <div class="mx-auto flex max-w-md flex-1 flex-col items-center justify-center text-center">
-          <p class="font-serif text-3xl font-normal tracking-tight text-editorial-charcoal sm:text-4xl">
-            {{ t('catalog.not_found.heading') }}
-          </p>
-          <p class="mt-6 font-sans text-sm font-normal leading-relaxed text-editorial-charcoal/70">
-            {{ t('catalog.not_found.body') }}
-          </p>
-          <NuxtLink
-            :to="localePath('/catalog')"
-            class="mt-12 border border-editorial-charcoal/25 px-10 py-3 font-sans text-[0.65rem] uppercase tracking-[0.28em] text-editorial-charcoal transition-colors duration-300 hover:border-editorial-charcoal hover:bg-editorial-charcoal hover:text-editorial-cream"
-          >
-            {{ t('catalog.return') }}
-          </NuxtLink>
-        </div>
-        </div>
-      </div>
-    </Transition>
+    <div v-else class="flex min-h-[70vh] flex-col items-center justify-center px-6 py-32 text-center">
+      <h1 class="font-serif text-4xl font-normal text-editorial-charcoal sm:text-5xl">
+        {{ t('catalog.not_found.heading') }}
+      </h1>
+      <p class="mt-8 font-sans text-lg font-light text-editorial-charcoal/60">
+        {{ t('catalog.not_found.body') }}
+      </p>
+      <NuxtLink
+        :to="localePath('/catalog')"
+        class="mt-16 border border-editorial-charcoal px-12 py-5 font-sans text-[0.7rem] uppercase tracking-[0.3em] text-editorial-charcoal transition-all duration-500 hover:bg-editorial-charcoal hover:text-editorial-cream"
+      >
+        {{ t('catalog.return') }}
+      </NuxtLink>
+    </div>
 
     <EditorialFooter secondary-href="/catalog" :secondary-label="t('nav.catalog')" />
 
     <Teleport to="body">
-      <Transition name="fade">
-        <div
-          v-if="isGalleryModalOpen"
-          class="fixed inset-0 z-[100] flex items-center justify-center bg-editorial-charcoal/95 backdrop-blur-sm"
-          @click="closeGalleryModal"
-          role="dialog"
-          aria-modal="true"
+      <div
+        v-if="isGalleryModalOpen"
+        v-motion
+        :initial="{ opacity: 0 }"
+        :enter="{ opacity: 1 }"
+        class="fixed inset-0 z-[100] flex items-center justify-center bg-neutral-950/95 backdrop-blur-md"
+        @click="closeGalleryModal"
+        role="dialog"
+        aria-modal="true"
+      >
+        <button
+          type="button"
+          class="absolute right-8 top-8 z-10 p-2 text-white/50 transition-colors hover:text-white"
+          @click.stop="closeGalleryModal"
+          aria-label="Close gallery"
         >
-          <button
-            type="button"
-            class="absolute right-6 top-6 z-10 p-2 text-editorial-cream/70 transition-colors hover:text-editorial-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-editorial-cream"
-            @click.stop="closeGalleryModal"
-            aria-label="Close gallery"
-          >
-            <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
+          <PhX :size="32" weight="light" />
+        </button>
 
-          <button
-            v-if="currentGalleryIndex > 0"
-            type="button"
-            class="absolute left-4 top-1/2 z-10 -translate-y-1/2 p-4 text-editorial-cream/50 transition-colors hover:text-editorial-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-editorial-cream md:left-8"
-            @click.stop="prevGalleryImage"
-            aria-label="Previous image"
-          >
-            <svg class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
+        <button
+          v-if="currentGalleryIndex > 0"
+          type="button"
+          class="absolute left-8 top-1/2 z-10 -translate-y-1/2 p-4 text-white/30 transition-colors hover:text-white"
+          @click.stop="prevGalleryImage"
+          aria-label="Previous image"
+        >
+          <PhCaretLeft :size="48" weight="thin" />
+        </button>
 
-          <button
-            v-if="currentGalleryIndex < galleryUrls.length - 1"
-            type="button"
-            class="absolute right-4 top-1/2 z-10 -translate-y-1/2 p-4 text-editorial-cream/50 transition-colors hover:text-editorial-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-editorial-cream md:right-8"
-            @click.stop="nextGalleryImage"
-            aria-label="Next image"
-          >
-            <svg class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
+        <button
+          v-if="currentGalleryIndex < galleryUrls.length - 1"
+          type="button"
+          class="absolute right-8 top-1/2 z-10 -translate-y-1/2 p-4 text-white/30 transition-colors hover:text-white"
+          @click.stop="nextGalleryImage"
+          aria-label="Next image"
+        >
+          <PhCaretRight :size="48" weight="thin" />
+        </button>
 
-          <div class="pointer-events-none flex h-full w-full items-center justify-center p-4 md:p-12">
-            <img
-              :src="galleryUrls[currentGalleryIndex]"
-              :alt="`${page?.name} — Gallery Image ${currentGalleryIndex + 1}`"
-              class="pointer-events-auto max-h-full max-w-full object-contain shadow-2xl"
-              @click.stop
-            >
-          </div>
+        <div class="pointer-events-none flex h-full w-full items-center justify-center p-8 md:p-20">
+          <img
+            v-motion
+            :initial="{ opacity: 0, scale: 0.9 }"
+            :enter="{ opacity: 1, scale: 1 }"
+            :key="currentGalleryIndex"
+            :src="galleryUrls[currentGalleryIndex]"
+            :alt="`${page?.name} — Gallery Image ${currentGalleryIndex + 1}`"
+            class="pointer-events-auto max-h-full max-w-full object-contain shadow-2xl"
+            @click.stop
+          >
         </div>
-      </Transition>
+      </div>
     </Teleport>
   </div>
 </template>

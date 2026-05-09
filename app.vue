@@ -2,69 +2,80 @@
   <div
     class="min-h-screen bg-editorial-cream text-editorial-charcoal font-sans antialiased selection:bg-editorial-charcoal/10"
   >
+    <NoiseOverlay />
     <NuxtRouteAnnouncer />
-    <header class="sticky top-0 z-50 border-b border-editorial-charcoal/10 bg-editorial-cream/95 backdrop-blur">
-      <nav class="mx-auto flex max-w-[1600px] items-center justify-between px-4 py-4 md:px-8" aria-label="Primary">
-        <div class="flex items-center gap-3">
+    <header class="sticky top-0 z-50 border-b border-editorial-charcoal/5 bg-editorial-cream/80 backdrop-blur-xl">
+      <nav class="mx-auto flex max-w-[1600px] items-center justify-between px-6 py-5 md:px-12" aria-label="Primary">
+        <div class="flex items-center gap-6">
           <button
             type="button"
-            class="inline-flex items-center gap-2 rounded border border-editorial-charcoal/20 px-3 py-2 text-xs uppercase tracking-[0.2em] text-editorial-charcoal transition-colors hover:border-editorial-charcoal/45 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-editorial-charcoal"
+            class="group flex items-center gap-3 font-sans text-[0.65rem] uppercase tracking-[0.3em] text-editorial-charcoal transition-colors hover:text-editorial-charcoal/60"
             :aria-expanded="isMobileMenuOpen ? 'true' : 'false'"
             aria-controls="mobile-navigation"
             aria-label="Toggle utility menu"
             @click="isMobileMenuOpen = !isMobileMenuOpen"
           >
-            <span aria-hidden="true" class="space-y-1">
-              <span class="block h-px w-4 bg-current" />
-              <span class="block h-px w-4 bg-current" />
-              <span class="block h-px w-4 bg-current" />
-            </span>
-            {{ isMobileMenuOpen ? t('nav.close') : t('nav.menu') }}
+            <div class="relative h-4 w-5">
+              <span 
+                class="absolute left-0 block h-px w-5 bg-current transition-all duration-300"
+                :class="isMobileMenuOpen ? 'top-2 rotate-45' : 'top-0'"
+              />
+              <span 
+                class="absolute left-0 top-2 block h-px w-5 bg-current transition-opacity duration-300"
+                :class="isMobileMenuOpen ? 'opacity-0' : 'opacity-100'"
+              />
+              <span 
+                class="absolute left-0 block h-px w-5 bg-current transition-all duration-300"
+                :class="isMobileMenuOpen ? 'top-2 -rotate-45' : 'top-4'"
+              />
+            </div>
+            <span class="hidden sm:inline">{{ isMobileMenuOpen ? t('nav.close') : t('nav.menu') }}</span>
           </button>
 
           <NuxtLink
             :to="localePath('/')"
-            class="font-serif text-[0.68rem] uppercase tracking-[0.4em] text-editorial-charcoal transition-colors hover:text-editorial-charcoal/70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-editorial-charcoal"
+            class="font-serif text-[0.75rem] uppercase tracking-[0.5em] text-editorial-charcoal transition-colors hover:text-editorial-charcoal/60"
           >
             Culture Stone
           </NuxtLink>
         </div>
 
-        <ul class="hidden items-center gap-8 text-xs uppercase tracking-[0.25em] md:flex">
-          <li><NuxtLink :to="localePath('/')" class="transition-colors hover:text-editorial-charcoal/70">{{ t('nav.home') }}</NuxtLink></li>
-          <li><NuxtLink :to="localePath('/catalog')" class="transition-colors hover:text-editorial-charcoal/70">{{ t('nav.catalog') }}</NuxtLink></li>
-          <li><NuxtLink :to="localePath('/contact')" class="transition-colors hover:text-editorial-charcoal/70">{{ t('nav.contact') }}</NuxtLink></li>
+        <ul class="hidden items-center gap-10 text-[0.65rem] uppercase tracking-[0.3em] md:flex">
+          <li>
+            <NuxtLink :to="localePath('/')" class="group relative py-1 transition-colors hover:text-editorial-charcoal/60">
+              {{ t('nav.home') }}
+              <span class="absolute bottom-0 left-0 h-px w-0 bg-editorial-charcoal transition-all duration-500 group-hover:w-full" />
+            </NuxtLink>
+          </li>
+          <li>
+            <NuxtLink :to="localePath('/catalog')" class="group relative py-1 transition-colors hover:text-editorial-charcoal/60">
+              {{ t('nav.catalog') }}
+              <span class="absolute bottom-0 left-0 h-px w-0 bg-editorial-charcoal transition-all duration-500 group-hover:w-full" />
+            </NuxtLink>
+          </li>
+          <li>
+            <NuxtLink :to="localePath('/contact')" class="group relative py-1 transition-colors hover:text-editorial-charcoal/60">
+              {{ t('nav.contact') }}
+              <span class="absolute bottom-0 left-0 h-px w-0 bg-editorial-charcoal transition-all duration-500 group-hover:w-full" />
+            </NuxtLink>
+          </li>
           <li><LanguageSwitcher /></li>
         </ul>
       </nav>
 
       <div
+        v-if="isMobileMenuOpen"
         id="mobile-navigation"
-        class="border-t border-editorial-charcoal/10 px-4 py-5 md:px-8"
-        :class="isMobileMenuOpen ? 'block' : 'hidden'"
+        v-motion
+        :initial="{ opacity: 0, y: -10 }"
+        :enter="{ opacity: 1, y: 0 }"
+        class="border-t border-editorial-charcoal/5 px-6 py-10 md:px-12"
       >
-        <ul class="mx-auto max-w-[1600px] space-y-4 text-xs uppercase tracking-[0.25em]">
-          <li><NuxtLink :to="localePath('/')" class="block" @click="isMobileMenuOpen = false">{{ t('nav.home') }}</NuxtLink></li>
-          <li><NuxtLink :to="localePath('/catalog')" class="block" @click="isMobileMenuOpen = false">{{ t('nav.catalog') }}</NuxtLink></li>
-          <li><NuxtLink :to="localePath('/contact')" class="block" @click="isMobileMenuOpen = false">{{ t('nav.contact') }}</NuxtLink></li>
-          <li>
-            <a href="mailto:inquiries@culturestone.eu" class="block" @click="isMobileMenuOpen = false">
-              {{ t('nav.inquire') }}
-            </a>
-          </li>
-          <li class="pt-2 text-[0.65rem] tracking-[0.2em] text-editorial-charcoal/65">
-            <span class="underline decoration-editorial-charcoal/30 underline-offset-4">{{ t('nav.locations.new_york') }}</span>
-            &middot;
-            <span class="underline decoration-editorial-charcoal/30 underline-offset-4">{{ t('nav.locations.london') }}</span>
-          </li>
-          <li>
-            <a
-              href="mailto:inquiries@culturestone.eu"
-              class="inline-block border-b border-editorial-charcoal/25 text-[0.65rem] tracking-[0.2em] text-editorial-charcoal/80 hover:border-editorial-charcoal/55"
-              @click="isMobileMenuOpen = false"
-            >inquiries@culturestone.eu</a>
-          </li>
-          <li class="pt-2">
+        <ul class="mx-auto max-w-[1600px] space-y-6 text-[0.65rem] uppercase tracking-[0.3em]">
+          <li><NuxtLink :to="localePath('/')" class="block py-2" @click="isMobileMenuOpen = false">{{ t('nav.home') }}</NuxtLink></li>
+          <li><NuxtLink :to="localePath('/catalog')" class="block py-2" @click="isMobileMenuOpen = false">{{ t('nav.catalog') }}</NuxtLink></li>
+          <li><NuxtLink :to="localePath('/contact')" class="block py-2" @click="isMobileMenuOpen = false">{{ t('nav.contact') }}</NuxtLink></li>
+          <li class="pt-6">
             <LanguageSwitcher />
           </li>
         </ul>
@@ -87,7 +98,7 @@ const siteUrl = useSiteUrl()
 
 // Emit hreflang alternate links + og:locale for all 4 locales on every page.
 // Requires i18n.seo: true in nuxt.config.ts (already set).
-const i18nHead = useLocaleHead({ addSeoAttributes: true })
+const i18nHead = useLocaleHead({ seo: true })
 useHead(computed(() => ({
   htmlAttrs: i18nHead.value.htmlAttrs,
   link: i18nHead.value.link,

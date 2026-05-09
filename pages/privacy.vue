@@ -1,19 +1,30 @@
 <template>
   <main>
-    <section class="px-4 py-24 md:px-8 md:py-32 lg:px-12 lg:py-36" aria-labelledby="privacy-heading">
-      <div class="mx-auto max-w-3xl">
-        <p class="font-sans text-[0.7rem] uppercase tracking-[0.3em] text-editorial-charcoal/50">{{ t('privacy.nav_label') }}</p>
-        <h1 id="privacy-heading" class="mt-6 font-serif text-4xl tracking-tight sm:text-5xl md:text-6xl">
-          {{ t('privacy.page_title') }}
-        </h1>
-        <p class="mt-8 max-w-2xl text-base leading-relaxed text-editorial-charcoal/75 md:text-lg">
-          {{ t('privacy.subtitle') }}
-        </p>
-        <p class="mt-6 font-sans text-[0.7rem] uppercase tracking-[0.28em] text-editorial-charcoal/50">
-          Last updated: May 7, 2026
-        </p>
+    <section class="px-6 py-32 md:px-12 md:py-48 lg:px-20 lg:py-56" aria-labelledby="privacy-heading">
+      <div class="mx-auto max-w-4xl">
+        <div
+          v-motion
+          :initial="{ y: 20, opacity: 0 }"
+          :enter="{ y: 0, opacity: 1, transition: { duration: 800 } }"
+        >
+          <p class="font-sans text-[0.65rem] uppercase tracking-[0.4em] text-editorial-charcoal/40">{{ t('privacy.nav_label') }}</p>
+          <h1 id="privacy-heading" class="mt-8 font-serif text-5xl tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
+            {{ t('privacy.page_title') }}
+          </h1>
+          <p class="mt-10 max-w-2xl font-sans text-lg font-light leading-relaxed text-editorial-charcoal/60 md:text-xl">
+            {{ t('privacy.subtitle') }}
+          </p>
+          <p class="mt-8 font-sans text-[0.55rem] uppercase tracking-[0.4em] text-editorial-charcoal/30">
+            Last updated: May 7, 2026
+          </p>
+        </div>
 
-        <div class="mt-16 space-y-12 text-base leading-relaxed text-editorial-charcoal/80">
+        <div
+          v-motion
+          :initial="{ opacity: 0 }"
+          :enter="{ opacity: 1, transition: { delay: 400, duration: 1000 } }"
+          class="mt-24 space-y-20 text-base leading-relaxed text-editorial-charcoal/70"
+        >
           <section>
             <h2 class="font-sans text-[0.7rem] uppercase tracking-[0.28em] text-editorial-charcoal/55">
               1. Controller
