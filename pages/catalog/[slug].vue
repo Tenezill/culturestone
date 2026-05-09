@@ -39,7 +39,7 @@
                 :initial="{ y: 20, opacity: 0 }"
                 :enter="{ y: 0, opacity: 1, transition: { delay: 400, duration: 800 } }"
               >
-                <p class="font-sans text-[0.65rem] uppercase tracking-[0.5em] text-editorial-charcoal/40">
+                <p class="font-sans text-[0.65rem] uppercase tracking-[0.5em] text-editorial-charcoal/60">
                   {{ page.subhead }}
                 </p>
                 <h1
@@ -48,9 +48,9 @@
                 >
                   {{ page.name }}
                 </h1>
-                
+
                 <div class="mt-12 border-t border-editorial-charcoal/10 pt-10">
-                  <p class="font-sans text-[0.55rem] uppercase tracking-[0.5em] text-editorial-charcoal/30">
+                  <p class="font-sans text-[0.55rem] uppercase tracking-[0.5em] text-editorial-charcoal/50">
                     {{ t('catalog.stone.origin_prefix') }}
                   </p>
                   <p class="mt-4 font-serif text-2xl italic text-editorial-charcoal md:text-3xl">
@@ -80,31 +80,31 @@
                 </p>
 
                 <div class="pt-24">
-                  <h2 class="font-sans text-[0.65rem] uppercase tracking-[0.5em] text-editorial-charcoal/40">
+                  <h2 class="font-sans text-[0.65rem] uppercase tracking-[0.5em] text-editorial-charcoal/60">
                     {{ t('catalog.stone.spec_heading') }}
                   </h2>
-                  <dl class="mt-12 divide-y divide-editorial-charcoal/5 border-t border-editorial-charcoal/5">
+                  <dl class="mt-12 divide-y divide-editorial-charcoal/10 border-t border-editorial-charcoal/10">
                     <div class="grid grid-cols-1 gap-4 py-8 sm:grid-cols-2 lg:grid-cols-[1fr_2fr]">
-                      <dt class="font-sans text-[0.6rem] uppercase tracking-[0.3em] text-editorial-charcoal/40">
+                      <dt class="font-sans text-[0.6rem] uppercase tracking-[0.3em] text-editorial-charcoal/60">
                         {{ t('catalog.stone.finish') }}
                       </dt>
-                      <dd class="font-sans text-base font-light text-editorial-charcoal/80">
+                      <dd class="font-sans text-base font-light text-editorial-charcoal/90">
                         {{ page.finish }}
                       </dd>
                     </div>
                     <div class="grid grid-cols-1 gap-4 py-8 sm:grid-cols-2 lg:grid-cols-[1fr_2fr]">
-                      <dt class="font-sans text-[0.6rem] uppercase tracking-[0.3em] text-editorial-charcoal/40">
+                      <dt class="font-sans text-[0.6rem] uppercase tracking-[0.3em] text-editorial-charcoal/60">
                         {{ t('catalog.stone.thickness') }}
                       </dt>
-                      <dd class="font-sans text-base font-light text-editorial-charcoal/80">
+                      <dd class="font-sans text-base font-light text-editorial-charcoal/90">
                         {{ page.thickness }}
                       </dd>
                     </div>
                     <div class="grid grid-cols-1 gap-4 py-8 sm:grid-cols-2 lg:grid-cols-[1fr_2fr]">
-                      <dt class="font-sans text-[0.6rem] uppercase tracking-[0.3em] text-editorial-charcoal/40">
+                      <dt class="font-sans text-[0.6rem] uppercase tracking-[0.3em] text-editorial-charcoal/60">
                         {{ t('catalog.stone.applications') }}
                       </dt>
-                      <dd class="font-sans text-base font-light text-editorial-charcoal/80">
+                      <dd class="font-sans text-base font-light text-editorial-charcoal/90">
                         {{ page.applications }}
                       </dd>
                     </div>

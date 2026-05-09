@@ -18,7 +18,7 @@
 
           <p
             v-if="pending"
-            class="font-sans text-[0.65rem] uppercase tracking-[0.4em] text-editorial-charcoal/40"
+            class="font-sans text-[0.65rem] uppercase tracking-[0.4em] text-editorial-charcoal/60"
           >
             {{ t('catalog.loading') }}
           </p>
@@ -45,7 +45,7 @@
                     class="shrink-0 border-b-2 px-1 pb-2 font-sans text-[0.6rem] uppercase tracking-[0.3em] transition-all duration-300"
                     :class="selectedCategory === null
                       ? 'border-editorial-charcoal text-editorial-charcoal'
-                      : 'border-transparent text-editorial-charcoal/40 hover:text-editorial-charcoal'"
+                      : 'border-transparent text-editorial-charcoal/60 hover:text-editorial-charcoal'"
                     @click="selectedCategory = null"
                   >
                     {{ t('catalog.all') }}
@@ -57,7 +57,7 @@
                     class="shrink-0 border-b-2 px-1 pb-2 font-sans text-[0.6rem] uppercase tracking-[0.3em] transition-all duration-300"
                     :class="selectedCategory === cat.slug
                       ? 'border-editorial-charcoal text-editorial-charcoal'
-                      : 'border-transparent text-editorial-charcoal/40 hover:text-editorial-charcoal'"
+                      : 'border-transparent text-editorial-charcoal/60 hover:text-editorial-charcoal'"
                     @click="selectedCategory = cat.slug"
                   >
                     {{ cat.name }}
@@ -66,7 +66,7 @@
 
                 <!-- Desktop: vertical sticky list -->
                 <nav class="sticky top-32 hidden lg:block" :aria-label="t('catalog.category_label')">
-                  <p class="mb-10 font-sans text-[0.55rem] uppercase tracking-[0.5em] text-editorial-charcoal/30">
+                  <p class="mb-10 font-sans text-[0.55rem] uppercase tracking-[0.5em] text-editorial-charcoal/50">
                     {{ t('catalog.category_label') }}
                   </p>
                   <ul class="space-y-6">
@@ -74,7 +74,7 @@
                       <button
                         type="button"
                         class="group flex items-center gap-4 font-sans text-[0.65rem] uppercase tracking-[0.4em] transition-all duration-300"
-                        :class="selectedCategory === null ? 'text-editorial-charcoal' : 'text-editorial-charcoal/40 hover:text-editorial-charcoal'"
+                        :class="selectedCategory === null ? 'text-editorial-charcoal' : 'text-editorial-charcoal/60 hover:text-editorial-charcoal'"
                         @click="selectedCategory = null"
                       >
                         <span
@@ -89,7 +89,7 @@
                       <button
                         type="button"
                         class="group flex items-center gap-4 font-sans text-[0.65rem] uppercase tracking-[0.4em] transition-all duration-300"
-                        :class="selectedCategory === cat.slug ? 'text-editorial-charcoal' : 'text-editorial-charcoal/40 hover:text-editorial-charcoal'"
+                        :class="selectedCategory === cat.slug ? 'text-editorial-charcoal' : 'text-editorial-charcoal/60 hover:text-editorial-charcoal'"
                         @click="selectedCategory = cat.slug"
                       >
                         <span
@@ -109,7 +109,7 @@
             <div class="min-w-0 flex-1">
               <p
                 v-if="filteredStones.length === 0"
-                class="font-sans text-[0.65rem] uppercase tracking-[0.4em] text-editorial-charcoal/40"
+                class="font-sans text-[0.65rem] uppercase tracking-[0.4em] text-editorial-charcoal/60"
               >
                 {{ t('catalog.empty') }}
               </p>
@@ -143,7 +143,7 @@
                         <div class="absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/10" />
                       </div>
                       <figcaption
-                        class="mt-8 font-sans text-[0.6rem] uppercase tracking-[0.3em] text-editorial-charcoal/50 transition-colors duration-500 group-hover:text-editorial-charcoal"
+                        class="mt-8 font-sans text-[0.6rem] uppercase tracking-[0.3em] text-editorial-charcoal/70 transition-colors duration-500 group-hover:text-editorial-charcoal"
                       >
                         {{ stone.name }}
                       </figcaption>
