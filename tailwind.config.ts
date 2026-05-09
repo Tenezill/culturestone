@@ -11,13 +11,14 @@ export default {
     extend: {
       colors: {
         editorial: {
-          cream: '#FAFAFA',
+          cream: '#F8F4EC',
           charcoal: '#1A1A1A',
         },
       },
       fontFamily: {
         serif: ['"Playfair Display"', 'Georgia', 'serif'],
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['Geist', 'system-ui', 'sans-serif'],
+        display: ['Outfit', 'sans-serif'],
       },
       spacing: {
         '18': '4.5rem',

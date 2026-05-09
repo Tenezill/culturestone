@@ -1,20 +1,30 @@
 <template>
   <main>
-    <section class="px-4 py-24 md:px-8 md:py-32 lg:px-12 lg:py-36" aria-labelledby="privacy-heading">
-      <div class="mx-auto max-w-3xl">
-        <p class="font-sans text-[0.7rem] uppercase tracking-[0.3em] text-editorial-charcoal/50">Legal</p>
-        <h1 id="privacy-heading" class="mt-6 font-serif text-4xl tracking-tight sm:text-5xl md:text-6xl">
-          Privacy policy
-        </h1>
-        <p class="mt-8 max-w-2xl text-base leading-relaxed text-editorial-charcoal/75 md:text-lg">
-          How we handle personal data when you visit this website, in accordance with Regulation (EU) 2016/679 (GDPR)
-          and the Personal Information Protection Law of the People&rsquo;s Republic of China (PIPL).
-        </p>
-        <p class="mt-6 font-sans text-[0.7rem] uppercase tracking-[0.28em] text-editorial-charcoal/50">
-          Last updated: [Month Day, Year]
-        </p>
+    <section class="px-6 py-32 md:px-12 md:py-48 lg:px-20 lg:py-56" aria-labelledby="privacy-heading">
+      <div class="mx-auto max-w-4xl">
+        <div
+          v-motion
+          :initial="{ y: 20, opacity: 0 }"
+          :enter="{ y: 0, opacity: 1, transition: { duration: 800 } }"
+        >
+          <p class="font-sans text-[0.65rem] uppercase tracking-[0.4em] text-editorial-charcoal/40">{{ t('privacy.nav_label') }}</p>
+          <h1 id="privacy-heading" class="mt-8 font-serif text-5xl tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
+            {{ t('privacy.page_title') }}
+          </h1>
+          <p class="mt-10 max-w-2xl font-sans text-lg font-light leading-relaxed text-editorial-charcoal/60 md:text-xl">
+            {{ t('privacy.subtitle') }}
+          </p>
+          <p class="mt-8 font-sans text-[0.55rem] uppercase tracking-[0.4em] text-editorial-charcoal/30">
+            Last updated: May 7, 2026
+          </p>
+        </div>
 
-        <div class="mt-16 space-y-12 text-base leading-relaxed text-editorial-charcoal/80">
+        <div
+          v-motion
+          :initial="{ opacity: 0 }"
+          :enter="{ opacity: 1, transition: { delay: 400, duration: 1000 } }"
+          class="mt-24 space-y-20 text-base leading-relaxed text-editorial-charcoal/70"
+        >
           <section>
             <h2 class="font-sans text-[0.7rem] uppercase tracking-[0.28em] text-editorial-charcoal/55">
               1. Controller
@@ -24,20 +34,20 @@
               is:
             </p>
             <p class="mt-4">
-              [Company Legal Name, in English and 中文]<br />
-              [Street Address]<br />
-              [District], [City] [Postal Code]<br />
+              Sichuan Zishu Chengfeng Building Materials Co., Ltd.<br />
+              No. 54-1, South Third Section of Second Ring Road, High-tech Zone<br />
+              Chengdu, Sichuan 610066<br />
               People&rsquo;s Republic of China<br />
               Email:
               <a
                 class="underline decoration-editorial-charcoal/30 underline-offset-4 transition hover:decoration-editorial-charcoal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-editorial-charcoal"
-                href="mailto:privacy@culturestone.example"
-              >privacy@culturestone.example</a>
+                href="mailto:inquiries@culturestone.eu"
+              >inquiries@culturestone.eu</a>
             </p>
             <p class="mt-4">
               Further information about the operator is available in our
               <NuxtLink
-                to="/legal"
+                :to="localePath('/legal')"
                 class="underline decoration-editorial-charcoal/30 underline-offset-4 transition hover:decoration-editorial-charcoal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-editorial-charcoal"
               >Legal Notice</NuxtLink>.
             </p>
@@ -52,10 +62,14 @@
               appointed the following representative pursuant to Article 27 GDPR:
             </p>
             <p class="mt-4">
-              [EU Representative Name / Company]<br />
-              [Street Address]<br />
-              [Postal Code] [City], [EU Member State]<br />
-              Email: [rep@example.eu]
+              Synertrade FR SAS<br />
+              9 rue du Bat d&rsquo;Argent<br />
+              69001 Lyon, France<br />
+              Email:
+              <a
+                class="underline decoration-editorial-charcoal/30 underline-offset-4 transition hover:decoration-editorial-charcoal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-editorial-charcoal"
+                href="mailto:info@syner-sarl.cn"
+              >info@syner-sarl.cn</a>
             </p>
             <p class="mt-4">
               You may contact our EU representative directly on any matter relating to the processing of your personal
@@ -68,13 +82,7 @@
               3. Data protection officer
             </h2>
             <p class="mt-4">
-              [Select one of the following and delete the other:]
-            </p>
-            <p class="mt-4">
-              (a) We have appointed a Data Protection Officer who can be reached at [dpo@example.com].
-            </p>
-            <p class="mt-4">
-              (b) We are not legally required to appoint a Data Protection Officer. For any privacy-related questions,
+              We are not legally required to appoint a Data Protection Officer. For any privacy-related questions,
               please contact us using the details in Section 1 or our EU representative in Section 2.
             </p>
           </section>
@@ -98,7 +106,7 @@
             <p class="mt-4">
               <strong>Legal basis:</strong> Art. 6 (1) (f) GDPR — our legitimate interest in a secure, stable, and
               functioning website.<br />
-              <strong>Retention:</strong> log data is deleted after [7 / 14 / 30] days, unless retention is required to
+              <strong>Retention:</strong> log data is deleted after 30 days, unless retention is required to
               investigate a concrete security incident.<br />
               <strong>Recipients:</strong> our hosting provider (see Section 5) processes this data on our behalf under
               a Data Processing Agreement pursuant to Art. 28 GDPR.
@@ -110,9 +118,11 @@
               5. Hosting
             </h2>
             <p class="mt-4">
-              This website is hosted by [Hosting Provider Name], [Provider Address], within the European Union. The
-              hosting provider processes server log data and any data submitted through the site on our behalf under a
-              Data Processing Agreement in accordance with Art. 28 GDPR.
+              This website is hosted by Netlify, Inc., 44 Montgomery Street, Suite 300, San Francisco, CA 94104,
+              United States of America. The hosting provider processes server log data and any data submitted through
+              the site on our behalf under a Data Processing Agreement in accordance with Art. 28 GDPR. As Netlify is
+              located in the United States, data transfers to Netlify are subject to Standard Contractual Clauses
+              (see Section 10).
             </p>
           </section>
 
@@ -120,10 +130,6 @@
             <h2 class="font-sans text-[0.7rem] uppercase tracking-[0.28em] text-editorial-charcoal/55">
               6. Cookies and similar technologies
             </h2>
-            <p class="mt-4">
-              [Adjust this section to reflect actual cookie use. If no cookies are set at all, state so and delete the
-              consent paragraph below.]
-            </p>
             <p class="mt-4">
               This website currently sets only strictly necessary cookies required for the basic functioning of the
               site. No tracking, analytics, or advertising cookies are used. Strictly necessary cookies do not require
@@ -170,11 +176,9 @@
               9. Product imagery and content management system
             </h2>
             <p class="mt-4">
-              Product images and editorial assets shown on this website are delivered from a content management system
-              (Strapi) operated by us on a virtual private server located in the [Hong Kong Special Administrative
-              Region of the People&rsquo;s Republic of China / European Union — update to reflect current deployment].
-              [Only include the following paragraphs if the CMS or its images are served directly to visitors from
-              outside the EU/EEA.]
+              Product images and editorial assets shown on this website are stored in and delivered via Cloudinary,
+              Inc., 101 Spear Street, Floor 5, San Francisco, CA 94105, USA. Our content management system (Strapi),
+              which manages the catalogue data, is operated by us on a separate virtual private server.
             </p>
             <p class="mt-4">
               When your browser loads an image, your IP address and standard HTTP request metadata (browser type,
@@ -185,7 +189,7 @@
               <strong>Legal basis:</strong> Art. 6 (1) (f) GDPR — our legitimate interest in delivering product imagery
               efficiently and in enabling our commercial team to update the catalogue.<br />
               <strong>Retention:</strong> standard web-server access logs on the CMS server are deleted after
-              [7 / 14 / 30] days.<br />
+              30 days.<br />
               <strong>International transfer:</strong> see Section 10 below.
             </p>
           </section>
@@ -199,23 +203,24 @@
               this website:
             </p>
             <p class="mt-4">
-              <strong>(a) Transfers to the Hong Kong Special Administrative Region.</strong> Where product imagery is
-              served directly from our content management system in Hong Kong, the loading of a page results in a
-              transfer of your IP address and request metadata to Hong Kong. The European Commission has not issued an
-              adequacy decision for Hong Kong.
+              <strong>(a) Transfers to the United States.</strong> Our website is hosted by Netlify, Inc. and product
+              imagery is delivered via Cloudinary, Inc., both established in the United States. Where your browser loads
+              pages or images from our site, your IP address and request metadata are transferred to servers operated by
+              these providers. The European Commission has issued an adequacy decision for the EU–US Data Privacy
+              Framework; where applicable, this framework provides the legal basis for such transfers. Where not covered
+              by the adequacy decision, transfers rely on Standard Contractual Clauses.
             </p>
             <p class="mt-4">
-              <strong>(b) Transfers to the mainland People&rsquo;s Republic of China.</strong> Where you contact us and
-              your inquiry is handled by our team at the address shown in Section 1, the content of your inquiry may be
+              <strong>(b) Transfers to the People&rsquo;s Republic of China.</strong> Where you contact us and your
+              inquiry is handled by our team at the address shown in Section 1, the content of your inquiry may be
               accessed and processed in mainland China. The European Commission has not issued an adequacy decision for
               the People&rsquo;s Republic of China.
             </p>
             <p class="mt-4">
-              Such transfers are safeguarded by [select applicable safeguards per jurisdiction, deleting those that do
-              not apply]:
+              Such transfers are safeguarded by:
             </p>
             <ul class="mt-4 list-disc space-y-1 pl-6">
-              <li>EU Standard Contractual Clauses (Commission Implementing Decision (EU) 2021/914 of 4 June 2021, Module [1 / 4]) between the EU data exporter and the data importer, supplemented by a transfer impact assessment and, where required, additional technical and organizational measures (e.g. pseudonymization, encryption, minimization of transferred data).</li>
+              <li>EU Standard Contractual Clauses (Commission Implementing Decision (EU) 2021/914 of 4 June 2021) between the EU data exporter and the data importer, supplemented where required by a transfer impact assessment and additional technical and organizational measures.</li>
               <li>For one-off replies to pre-contractual inquiries you have initiated: Art. 49 (1) (b) GDPR (transfer necessary for the performance of a contract or pre-contractual measures taken at your request). This basis is used only for occasional, non-systematic transfers.</li>
             </ul>
             <p class="mt-4">
@@ -293,22 +298,23 @@
             </p>
           </section>
         </div>
-
-        <p class="mt-20 font-sans text-[0.7rem] uppercase tracking-[0.28em] text-editorial-charcoal/40">
-          Placeholder notice: this document is a scaffold. Review, complete, and adapt every bracketed value and every
-          section to reflect your actual processing activities before publishing.
-        </p>
       </div>
     </section>
   </main>
 </template>
 
 <script setup lang="ts">
+const { t } = useI18n()
+const localePath = useLocalePath()
+
 useHead({
-  title: 'Privacy Policy — Culture Stone',
-  meta: [
-    { name: 'description', content: 'Information on how Culture Stone processes personal data under the GDPR and PIPL.' },
-    { name: 'robots', content: 'index, follow' },
-  ],
+  title: t('seo.privacy.title'),
+  meta: [{ name: 'robots', content: 'index, follow' }],
+})
+
+useSeoMeta({
+  description: t('seo.privacy.description'),
+  ogTitle: t('seo.privacy.title'),
+  ogDescription: t('seo.privacy.description'),
 })
 </script>

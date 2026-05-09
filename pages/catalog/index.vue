@@ -1,80 +1,239 @@
 <template>
   <div>
-    <header class="border-b border-editorial-charcoal/10 px-4 py-10 md:px-8 md:py-12 lg:px-12 lg:py-14">
-      <div
-        class="mx-auto flex max-w-[1600px] flex-col gap-8 sm:flex-row sm:items-baseline sm:justify-between sm:gap-12"
-      >
-        <NuxtLink
-          to="/"
-          class="font-serif text-[0.65rem] uppercase tracking-[0.45em] text-editorial-charcoal/60 transition-colors hover:text-editorial-charcoal sm:text-xs"
-        >
-          Culture Stone
-        </NuxtLink>
-        <p class="font-sans text-[0.65rem] uppercase tracking-[0.35em] text-editorial-charcoal/45">
-          Catalog
-        </p>
-      </div>
-    </header>
-
     <main>
-      <section class="px-4 py-24 md:px-8 md:py-32 lg:px-12 lg:py-36" aria-labelledby="catalog-gallery-heading">
+      <section class="px-6 py-32 md:px-12 md:py-48 lg:px-20 lg:py-56" aria-labelledby="catalog-gallery-heading">
         <div class="mx-auto max-w-[1600px]">
-          <h1
-            id="catalog-gallery-heading"
-            class="mb-20 max-w-4xl font-serif text-4xl font-normal leading-[1.1] tracking-tight text-editorial-charcoal sm:mb-24 sm:text-5xl md:mb-32 md:text-6xl lg:mb-40 lg:text-7xl xl:text-8xl"
+          <div
+            v-motion
+            :initial="{ y: 40, opacity: 0 }"
+            :enter="{ y: 0, opacity: 1, transition: { duration: 800 } }"
           >
-            The Signature Gallery
-          </h1>
-
-          <div class="grid grid-cols-2 gap-4 md:grid-cols-5 md:gap-6 lg:grid-cols-5">
-            <article
-              v-for="stone in signatureStones"
-              :key="stone.name"
-              class="group"
+            <h1
+              id="catalog-gallery-heading"
+              class="mb-32 max-w-5xl font-serif text-5xl font-normal leading-[1.05] tracking-tight text-editorial-charcoal sm:text-7xl md:text-8xl lg:text-9xl"
             >
-              <NuxtLink
-                :to="`/catalog/${signatureStoneSlug(stone.name)}`"
-                class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-editorial-charcoal"
+              {{ t('catalog.page_title') }}
+            </h1>
+          </div>
+
+          <p
+            v-if="pending"
+            class="font-sans text-[0.65rem] uppercase tracking-[0.4em] text-editorial-charcoal/40"
+          >
+            {{ t('catalog.loading') }}
+          </p>
+          <p
+            v-else-if="error"
+            class="font-sans text-sm text-editorial-charcoal/70"
+          >
+            {{ t('catalog.error') }}
+          </p>
+
+          <div v-else class="flex flex-col gap-24 lg:flex-row lg:gap-32">
+
+            <!-- Category sidebar -->
+            <aside class="shrink-0 lg:w-56" :aria-label="t('catalog.category_label')">
+              <div
+                v-motion
+                :initial="{ opacity: 0, x: -20 }"
+                :enter="{ opacity: 1, x: 0, transition: { delay: 400, duration: 800 } }"
               >
-                <figure class="m-0">
-                  <div class="overflow-hidden bg-editorial-charcoal/[0.03]">
-                    <img
-                      :src="stone.src"
-                      :alt="stone.name"
-                      class="aspect-square w-full object-cover transition duration-700 ease-out group-hover:scale-[1.02] group-hover:opacity-[0.92]"
-                      width="600"
-                      height="750"
-                      loading="lazy"
-                      decoding="async"
-                    >
-                  </div>
-                  <figcaption
-                    class="mt-6 font-sans text-xs font-normal uppercase tracking-widest text-editorial-charcoal/55 transition-colors duration-500 group-hover:text-editorial-charcoal"
+                <!-- Mobile: horizontal scroll pills -->
+                <div class="flex gap-4 overflow-x-auto pb-4 lg:hidden">
+                  <button
+                    type="button"
+                    class="shrink-0 border-b-2 px-1 pb-2 font-sans text-[0.6rem] uppercase tracking-[0.3em] transition-all duration-300"
+                    :class="selectedCategory === null
+                      ? 'border-editorial-charcoal text-editorial-charcoal'
+                      : 'border-transparent text-editorial-charcoal/40 hover:text-editorial-charcoal'"
+                    @click="selectedCategory = null"
                   >
-                    {{ stone.name }}
-                  </figcaption>
-                </figure>
-              </NuxtLink>
-            </article>
+                    {{ t('catalog.all') }}
+                  </button>
+                  <button
+                    v-for="cat in categories"
+                    :key="cat.slug"
+                    type="button"
+                    class="shrink-0 border-b-2 px-1 pb-2 font-sans text-[0.6rem] uppercase tracking-[0.3em] transition-all duration-300"
+                    :class="selectedCategory === cat.slug
+                      ? 'border-editorial-charcoal text-editorial-charcoal'
+                      : 'border-transparent text-editorial-charcoal/40 hover:text-editorial-charcoal'"
+                    @click="selectedCategory = cat.slug"
+                  >
+                    {{ cat.name }}
+                  </button>
+                </div>
+
+                <!-- Desktop: vertical sticky list -->
+                <nav class="sticky top-32 hidden lg:block" :aria-label="t('catalog.category_label')">
+                  <p class="mb-10 font-sans text-[0.55rem] uppercase tracking-[0.5em] text-editorial-charcoal/30">
+                    {{ t('catalog.category_label') }}
+                  </p>
+                  <ul class="space-y-6">
+                    <li>
+                      <button
+                        type="button"
+                        class="group flex items-center gap-4 font-sans text-[0.65rem] uppercase tracking-[0.4em] transition-all duration-300"
+                        :class="selectedCategory === null ? 'text-editorial-charcoal' : 'text-editorial-charcoal/40 hover:text-editorial-charcoal'"
+                        @click="selectedCategory = null"
+                      >
+                        <span
+                          class="block h-px transition-all duration-300"
+                          :class="selectedCategory === null ? 'w-8 bg-editorial-charcoal' : 'w-0 bg-transparent group-hover:w-4 group-hover:bg-editorial-charcoal/30'"
+                          aria-hidden="true"
+                        />
+                        <span>{{ t('catalog.all') }}</span>
+                      </button>
+                    </li>
+                    <li v-for="cat in categories" :key="cat.slug">
+                      <button
+                        type="button"
+                        class="group flex items-center gap-4 font-sans text-[0.65rem] uppercase tracking-[0.4em] transition-all duration-300"
+                        :class="selectedCategory === cat.slug ? 'text-editorial-charcoal' : 'text-editorial-charcoal/40 hover:text-editorial-charcoal'"
+                        @click="selectedCategory = cat.slug"
+                      >
+                        <span
+                          class="block h-px transition-all duration-300"
+                          :class="selectedCategory === cat.slug ? 'w-8 bg-editorial-charcoal' : 'w-0 bg-transparent group-hover:w-4 group-hover:bg-editorial-charcoal/30'"
+                          aria-hidden="true"
+                        />
+                        <span>{{ cat.name }}</span>
+                      </button>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </aside>
+
+            <!-- Stone grid -->
+            <div class="min-w-0 flex-1">
+              <p
+                v-if="filteredStones.length === 0"
+                class="font-sans text-[0.65rem] uppercase tracking-[0.4em] text-editorial-charcoal/40"
+              >
+                {{ t('catalog.empty') }}
+              </p>
+              <div
+                v-else
+                class="grid grid-cols-2 gap-x-8 gap-y-20 sm:grid-cols-3 md:gap-x-12 md:gap-y-24 xl:grid-cols-4"
+              >
+                <article
+                  v-for="(stone, index) in filteredStones"
+                  :key="stone.slug"
+                  v-motion
+                  :initial="{ opacity: 0, y: 20 }"
+                  :enter="{ opacity: 1, y: 0, transition: { delay: 400 + (index % 5) * 100, duration: 800 } }"
+                  class="group"
+                >
+                  <NuxtLink
+                    :to="localePath(`/catalog/${stone.slug}`)"
+                    class="block"
+                  >
+                    <figure class="m-0">
+                      <div class="relative overflow-hidden bg-editorial-charcoal/[0.03]">
+                        <img
+                          :src="pickMediaUrl(stone.image, 'medium')"
+                          :alt="stone.image?.alternativeText ?? stone.name"
+                          class="aspect-[4/5] w-full object-cover transition duration-1000 ease-out group-hover:scale-110"
+                          width="600"
+                          height="750"
+                          loading="lazy"
+                          decoding="async"
+                        >
+                        <div class="absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/10" />
+                      </div>
+                      <figcaption
+                        class="mt-8 font-sans text-[0.6rem] uppercase tracking-[0.3em] text-editorial-charcoal/50 transition-colors duration-500 group-hover:text-editorial-charcoal"
+                      >
+                        {{ stone.name }}
+                      </figcaption>
+                    </figure>
+                  </NuxtLink>
+                </article>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
     </main>
 
-    <EditorialFooter secondary-href="/" secondary-label="Back to studio" />
+    <EditorialFooter secondary-href="/" :secondary-label="t('footer.back_to_studio')" />
   </div>
 </template>
 
 <script setup lang="ts">
-const signatureStones = useSignatureStones()
+import { pickMediaUrl, type StrapiStone, type StrapiStoneCategory } from '~/composables/useSignatureStones'
+import { buildBreadcrumbSchema, useSiteUrl } from '~/composables/useSchema'
+
+const { t } = useI18n()
+const localePath = useLocalePath()
+const { find } = useStrapi()
+
+const [{ data: catData }, { data, pending, error }] = await Promise.all([
+  useAsyncData('catalog-categories', () =>
+    find<StrapiStoneCategory>('stone-categories', { sort: ['name:asc'] }),
+  ),
+  useAsyncData('catalog-stones', () =>
+    find<StrapiStone>('stones', {
+      sort: ['name:asc'],
+      populate: ['image', 'category'],
+      pagination: { pageSize: 100 },
+    }),
+  ),
+])
+
+const categories = computed<StrapiStoneCategory[]>(() => {
+  const raw = catData.value?.data
+  return Array.isArray(raw) ? raw : []
+})
+
+const stones = computed<StrapiStone[]>(() => {
+  const raw = data.value?.data
+  return Array.isArray(raw) ? raw : []
+})
+
+const selectedCategory = ref<string | null>(null)
+
+const filteredStones = computed<StrapiStone[]>(() => {
+  if (!selectedCategory.value) return stones.value
+  return stones.value.filter(s => s.category?.slug === selectedCategory.value)
+})
+
+const siteUrl = useSiteUrl()
+
+const catalogSchema = computed(() => ({
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: t('catalog.page_title'),
+  description: t('seo.catalog.description'),
+  url: `${siteUrl}/catalog`,
+  breadcrumb: buildBreadcrumbSchema(siteUrl, [
+    { name: 'Home', path: '/' },
+    { name: 'Catalog', path: '/catalog' },
+  ]),
+  isPartOf: { '@type': 'WebSite', url: siteUrl },
+}))
 
 useHead({
-  title: 'Catalog — The Signature Gallery',
-  meta: [
+  title: t('seo.catalog.title'),
+  script: [
     {
-      name: 'description',
-      content: 'Museum-style survey of signature stones from Culture Stone.',
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify(catalogSchema.value),
     },
   ],
+})
+
+useSeoMeta({
+  description: t('seo.catalog.description'),
+  ogTitle: t('seo.catalog.title'),
+  ogDescription: t('seo.catalog.description'),
+  ogImage: `${siteUrl}/img/ai-hero-marble-interior.jpg`,
+  ogUrl: `${siteUrl}/catalog`,
+  ogType: 'website',
+  twitterTitle: t('seo.catalog.title'),
+  twitterDescription: t('seo.catalog.description'),
+  twitterImage: `${siteUrl}/img/ai-hero-marble-interior.jpg`,
 })
 </script>

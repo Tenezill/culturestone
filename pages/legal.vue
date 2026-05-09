@@ -1,24 +1,35 @@
 <template>
   <main>
-    <section class="px-4 py-24 md:px-8 md:py-32 lg:px-12 lg:py-36" aria-labelledby="legal-heading">
-      <div class="mx-auto max-w-3xl">
-        <p class="font-sans text-[0.7rem] uppercase tracking-[0.3em] text-editorial-charcoal/50">Legal</p>
-        <h1 id="legal-heading" class="mt-6 font-serif text-4xl tracking-tight sm:text-5xl md:text-6xl">
-          Legal notice
-        </h1>
-        <p class="mt-8 max-w-2xl text-base leading-relaxed text-editorial-charcoal/75 md:text-lg">
-          Information about the operator of this website.
-        </p>
+    <section class="px-6 py-32 md:px-12 md:py-48 lg:px-20 lg:py-56" aria-labelledby="legal-heading">
+      <div class="mx-auto max-w-4xl">
+        <div
+          v-motion
+          :initial="{ y: 20, opacity: 0 }"
+          :enter="{ y: 0, opacity: 1, transition: { duration: 800 } }"
+        >
+          <p class="font-sans text-[0.65rem] uppercase tracking-[0.4em] text-editorial-charcoal/40">{{ t('legal.nav_label') }}</p>
+          <h1 id="legal-heading" class="mt-8 font-serif text-5xl tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
+            {{ t('legal.page_title') }}
+          </h1>
+          <p class="mt-10 max-w-2xl font-sans text-lg font-light leading-relaxed text-editorial-charcoal/60 md:text-xl">
+            {{ t('legal.subtitle') }}
+          </p>
+        </div>
 
-        <div class="mt-16 space-y-12 text-base leading-relaxed text-editorial-charcoal/80">
+        <div
+          v-motion
+          :initial="{ opacity: 0 }"
+          :enter="{ opacity: 1, transition: { delay: 400, duration: 1000 } }"
+          class="mt-24 space-y-20 text-base leading-relaxed text-editorial-charcoal/70"
+        >
           <section>
             <h2 class="font-sans text-[0.7rem] uppercase tracking-[0.28em] text-editorial-charcoal/55">
               Website operator
             </h2>
             <p class="mt-4">
-              [Company Legal Name, in English and 中文]<br />
-              [Street Address]<br />
-              [District], [City] [Postal Code]<br />
+              Sichuan Zishu Chengfeng Building Materials Co., Ltd.<br />
+              No. 54-1, South Third Section of Second Ring Road, High-tech Zone<br />
+              Chengdu, Sichuan 610066<br />
               People&rsquo;s Republic of China
             </p>
           </section>
@@ -28,7 +39,7 @@
               Legal representative
             </h2>
             <p class="mt-4">
-              [Full Name of Legal Representative / 法定代表人]
+              Luo Shasha (骆沙沙)
             </p>
           </section>
 
@@ -37,8 +48,8 @@
               Business registration
             </h2>
             <p class="mt-4">
-              Unified Social Credit Code (统一社会信用代码): [18-character code]<br />
-              Registration authority: [Administration for Market Regulation of …]
+              Unified Social Credit Code (统一社会信用代码): 91510100MA6CN9DD81<br />
+              Registration authority: Administration for Market Regulation of Chengdu High-tech Zone
             </p>
           </section>
 
@@ -47,12 +58,12 @@
               Contact
             </h2>
             <p class="mt-4">
-              Phone: [+86 000 0000 0000]<br />
+              Phone: +86 151 9626 6588<br />
               Email:
               <a
                 class="underline decoration-editorial-charcoal/30 underline-offset-4 transition hover:decoration-editorial-charcoal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-editorial-charcoal"
-                href="mailto:studio@culturestone.example"
-              >studio@culturestone.example</a>
+                href="mailto:inquiries@culturestone.eu"
+              >inquiries@culturestone.eu</a>
             </p>
           </section>
 
@@ -61,14 +72,15 @@
               Hosting
             </h2>
             <p class="mt-4">
-              The public website is hosted in the European Union by [Hosting Provider Name], [Provider Address].
+              The public website is hosted by Netlify, Inc., 44 Montgomery Street, Suite 300, San Francisco,
+              CA 94104, USA.
             </p>
             <p class="mt-4">
               The content management system (Strapi) that supplies product data and imagery is operated by us on a
-              virtual private server in the Hong Kong Special Administrative Region of the People&rsquo;s Republic of
-              China, hosted by [VPS Provider Name]. Further information on the resulting data flows is available in our
+              virtual private server. Product images are delivered via Cloudinary, Inc., 101 Spear Street,
+              Floor 5, San Francisco, CA 94105, USA. Further information on the resulting data flows is available in our
               <NuxtLink
-                to="/privacy"
+                :to="localePath('/privacy')"
                 class="underline decoration-editorial-charcoal/30 underline-offset-4 transition hover:decoration-editorial-charcoal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-editorial-charcoal"
               >Privacy Policy</NuxtLink>.
             </p>
@@ -83,10 +95,14 @@
               representative under Article 27 of Regulation (EU) 2016/679 is:
             </p>
             <p class="mt-4">
-              [EU Representative Name / Company]<br />
-              [Street Address]<br />
-              [Postal Code] [City], [EU Member State]<br />
-              Email: [rep@example.eu]
+              Synertrade FR SAS<br />
+              9 rue du Bat d&rsquo;Argent<br />
+              69001 Lyon, France<br />
+              Email:
+              <a
+                class="underline decoration-editorial-charcoal/30 underline-offset-4 transition hover:decoration-editorial-charcoal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-editorial-charcoal"
+                href="mailto:info@syner-sarl.cn"
+              >info@syner-sarl.cn</a>
             </p>
           </section>
 
@@ -120,27 +136,29 @@
             <p class="mt-4">
               For information on how personal data is processed on this website, please refer to our
               <NuxtLink
-                to="/privacy"
+                :to="localePath('/privacy')"
                 class="underline decoration-editorial-charcoal/30 underline-offset-4 transition hover:decoration-editorial-charcoal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-editorial-charcoal"
               >Privacy Policy</NuxtLink>.
             </p>
           </section>
         </div>
-
-        <p class="mt-20 font-sans text-[0.7rem] uppercase tracking-[0.28em] text-editorial-charcoal/40">
-          Placeholder notice: replace all bracketed values with verified information before publishing.
-        </p>
       </div>
     </section>
   </main>
 </template>
 
 <script setup lang="ts">
+const { t } = useI18n()
+const localePath = useLocalePath()
+
 useHead({
-  title: 'Legal Notice — Culture Stone',
-  meta: [
-    { name: 'description', content: 'Legal notice and operator information for the Culture Stone website.' },
-    { name: 'robots', content: 'index, follow' },
-  ],
+  title: t('seo.legal.title'),
+  meta: [{ name: 'robots', content: 'index, follow' }],
+})
+
+useSeoMeta({
+  description: t('seo.legal.description'),
+  ogTitle: t('seo.legal.title'),
+  ogDescription: t('seo.legal.description'),
 })
 </script>

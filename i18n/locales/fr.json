@@ -1,0 +1,164 @@
+{
+  "nav": {
+    "menu": "Menu",
+    "close": "Fermer",
+    "home": "Accueil",
+    "catalog": "Catalogue",
+    "contact": "Contact",
+    "inquire": "Demander une spécification",
+    "language_switcher_label": "Langue",
+    "locations": {
+      "new_york": "Chengdu",
+      "london": "Lyon"
+    }
+  },
+  "home": {
+    "hero": {
+      "headline": "La pierre, pensée.",
+      "subhead": "Dalles sur mesure et surfaces architecturales pour les studios exigeants."
+    },
+    "editors_letter": {
+      "label": "L'éditorial",
+      "pull_quote": "« Nous croyons que la vérité du matériau commence dans la carrière — et s'achève dans la confiance tranquille d'une pièce parfaitement résolue. »",
+      "body_1": "Depuis plus d'une génération, nous collaborons avec des architectes et des designers d'intérieur qui considèrent la pierre non comme une décoration, mais comme structure, atmosphère et pérennité. Notre mission est unique : sourcer et façonner les marbres, calcaires et granits les plus exceptionnels du monde — avec une traçabilité que vous pouvez prescrire et un caractère qui ne peut être reproduit.",
+      "body_2": "Chaque relation commence par l'écoute. Nous nous rendons dans les carrières, documentons les veinages et les tons sous la lumière naturelle, et sélectionnons des lots qui honorent votre intention. Ce qui arrive sur le chantier n'est pas un stock ; c'est une extension réfléchie de votre vision."
+    },
+    "sourcing": {
+      "label": "Authenticité & approvisionnement",
+      "subhead": "Du socle au projet",
+      "body": "Nous travaillons directement avec des partenaires carriers à travers l'Europe et au-delà, traçant chaque bloc de l'extraction à la fabrication. Documentation, photographies de lots et échantillons physiques garantissent que ce que vous prescrivez est ce que votre projet reçoit — sans compromis."
+    },
+    "lookbook": {
+      "label": "Collection signature",
+      "heading": "Le lookbook",
+      "nero_marquina": {
+        "label": "I — Nero Marquina",
+        "heading": "Profondeur en monochrome",
+        "body": "Un fond sombre avec une veine blanche retenue. Convient aux cheminées, aux plans d'accent et aux éléments de mobilier où l'ombre et le poli parlent d'eux-mêmes."
+      },
+      "calacatta_oro": {
+        "label": "II — Calacatta Oro",
+        "heading": "Veinages lumineux",
+        "body": "Fond blanc chaud avec des mouvements de graphite et de miel. Idéal pour les cuisines, les salles de bain galerie et les halls de réception où la lumière du jour révèle le caractère de la pierre."
+      },
+      "caledonia": {
+        "label": "III — Caledonia",
+        "heading": "Force tranquille",
+        "body": "Grain sel et poivre d'une densité durable. À prescrire pour les sols, les parements et les intérieurs à fort trafic qui exigent une matérialité apaisante et une longévité sans faille."
+      }
+    }
+  },
+  "catalog": {
+    "page_title": "La Galerie Signature",
+    "category_label": "Catégorie",
+    "all": "Tout",
+    "loading": "Chargement de la collection…",
+    "error": "Le catalogue est temporairement indisponible. Veuillez réessayer sous peu.",
+    "empty": "Aucune pierre dans cette catégorie pour l'instant.",
+    "back": "← Retour au catalogue",
+    "return": "Retour au catalogue",
+    "not_found": {
+      "heading": "Pierre introuvable",
+      "body": "Ce matériau ne figure pas dans la Galerie Signature ou le lien a peut-être changé."
+    },
+    "stone": {
+      "origin_prefix": "Origine —",
+      "inquire": "Demander",
+      "spec_heading": "Spécifications",
+      "finish": "Finition",
+      "thickness": "Épaisseur",
+      "applications": "Applications",
+      "gallery_heading": "En Situation"
+    }
+  },
+  "contact": {
+    "page_label": "Contact",
+    "heading": "Spécifions ensemble quelque chose de durable",
+    "body": "Partagez les délais de votre projet, vos intentions matérielles et vos quantités. Nous vous proposerons une sélection de dalles, des conseils techniques et une stratégie d'échantillonnage.",
+    "info": {
+      "email_label": "E-mail",
+      "phone_label": "Téléphone",
+      "studios_label": "Bureaux"
+    },
+    "form": {
+      "name": "Nom",
+      "studio": "Studio / Agence",
+      "email": "E-mail",
+      "project_type": "Type de projet",
+      "project_type_placeholder": "Sélectionner",
+      "project_types": {
+        "residential": "Résidentiel",
+        "commercial": "Commercial",
+        "hospitality": "Hôtellerie",
+        "public": "Public / Civique"
+      },
+      "timeline": "Calendrier",
+      "timeline_placeholder": "ex. T3 2025",
+      "stone": "Pierre(s) souhaitée(s)",
+      "stone_placeholder": "ex. Nero Marquina, Calacatta Oro",
+      "brief": "Description du projet",
+      "brief_placeholder": "Décrivez votre projet, les quantités, les finitions souhaitées et toute exigence particulière…",
+      "submit": "Envoyer la demande",
+      "submitting": "Envoi en cours…",
+      "error_name": "Veuillez indiquer votre nom.",
+      "error_email_required": "Veuillez indiquer votre adresse e-mail.",
+      "error_email_invalid": "Veuillez indiquer une adresse e-mail valide.",
+      "privacy_note_before": "Nous répondons généralement sous deux jours ouvrés. Vos informations sont traitées conformément à notre ",
+      "privacy_link_text": "politique de confidentialité",
+      "privacy_note_after": ".",
+      "email_alternative_before": "Préférez-vous l’e-mail ? Écrivez à ",
+      "email_alternative_after": "."
+    },
+    "success": {
+      "label": "Demande reçue",
+      "heading": "Nous reviendrons vers vous.",
+      "body": "Votre brief a été transmis à notre studio. Attendez-vous à une réponse personnalisée sous deux jours ouvrés.",
+      "reset": "Soumettre une autre demande"
+    }
+  },
+  "footer": {
+    "inquire": "Demander une spécification",
+    "browse_catalog": "Parcourir le catalogue",
+    "contact": "Contact",
+    "back_to_studio": "Retour au studio",
+    "copyright": "© {year} Culture Stone. Tous droits réservés.",
+    "legal_notice": "Mentions légales",
+    "privacy": "Confidentialité",
+    "locations": {
+      "new_york": "Chengdu",
+      "london": "Lyon"
+    }
+  },
+  "legal": {
+    "nav_label": "Juridique",
+    "page_title": "Mentions légales",
+    "subtitle": "Informations sur l'exploitant de ce site web."
+  },
+  "privacy": {
+    "nav_label": "Juridique",
+    "page_title": "Politique de confidentialité",
+    "subtitle": "Comment nous traitons les données personnelles lorsque vous visitez ce site, conformément au Règlement (UE) 2016/679 (RGPD) et à la loi de la République populaire de Chine sur la protection des informations personnelles (PIPL)."
+  },
+  "seo": {
+    "home": {
+      "title": "Culture Stone — Marbre de Luxe & Pierre Naturelle",
+      "description": "Culture Stone fournit des dalles sur mesure en marbre, calcaire et granit pour architectes et designers d'intérieur du monde entier. Siège à Chengdu, Chine."
+    },
+    "catalog": {
+      "title": "Catalogue de Pierre — La Galerie Signature | Culture Stone",
+      "description": "Marbre, calcaire et granit haut de gamme sourcés directement dans des carrières européennes : Nero Marquina, Calacatta Oro, Caledonia et plus encore."
+    },
+    "contact": {
+      "title": "Contact — Culture Stone",
+      "description": "Spécifiez la pierre naturelle pour votre projet avec Culture Stone. Au service des architectes, designers et groupes hôteliers du monde entier."
+    },
+    "legal": {
+      "title": "Mentions légales — Culture Stone",
+      "description": "Mentions légales et informations sur l'exploitant du site Culture Stone."
+    },
+    "privacy": {
+      "title": "Politique de confidentialité — Culture Stone",
+      "description": "Informations sur le traitement des données personnelles par Culture Stone selon le RGPD et le PIPL."
+    }
+  }
+}

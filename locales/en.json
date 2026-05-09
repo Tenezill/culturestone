@@ -1,0 +1,164 @@
+{
+  "nav": {
+    "menu": "Menu",
+    "close": "Close",
+    "home": "Home",
+    "catalog": "Catalog",
+    "contact": "Contact",
+    "inquire": "Inquire for specifications",
+    "language_switcher_label": "Language",
+    "locations": {
+      "new_york": "Chengdu",
+      "london": "Lyon"
+    }
+  },
+  "home": {
+    "hero": {
+      "headline": "Stone, considered.",
+      "subhead": "Bespoke slabs and architectural surfaces for discerning studios."
+    },
+    "editors_letter": {
+      "label": "The editor's letter",
+      "pull_quote": "“We believe material truth begins in the quarry—and ends in the quiet confidence of a room perfectly resolved.”",
+      "body_1": "For over a generation, we have partnered with architects and interior designers who treat stone not as decoration, but as structure, atmosphere, and permanence. Our mandate is singular: to source and finish the world’s most exceptional marbles, limestones, and granites—with provenance you can specify and character that cannot be replicated.",
+      "body_2": "Each relationship begins with listening. We travel to quarries, document veining and tone under natural light, and curate lots that honor your intent. What arrives on site is not inventory; it is a considered extension of your vision."
+    },
+    "sourcing": {
+      "label": "Authenticity & sourcing",
+      "subhead": "From bedrock to brief",
+      "body": "We work directly with quarry partners across Europe and beyond, tracing each block from extraction through fabrication. Documentation, lot photography, and physical samples ensure what you specify is what your project receives—without compromise."
+    },
+    "lookbook": {
+      "label": "Signature collection",
+      "heading": "The lookbook",
+      "nero_marquina": {
+        "label": "I — Nero Marquina",
+        "heading": "Depth in monochrome",
+        "body": "A deep field with restrained white lightning. Suited to hearths, feature planes, and furniture elements where shadow and polish do the speaking."
+      },
+      "calacatta_oro": {
+        "label": "II — Calacatta Oro",
+        "heading": "Luminous veining",
+        "body": "Warm white ground with graphite and honey movement. Ideal for kitchens, gallery baths, and reception volumes where daylight reveals the stone’s character."
+      },
+      "caledonia": {
+        "label": "III — Caledonia",
+        "heading": "Quiet strength",
+        "body": "Salt-and-pepper grain with enduring density. Specify for flooring, cladding, and high-traffic interiors that demand calm materiality and long service."
+      }
+    }
+  },
+  "catalog": {
+    "page_title": "The Signature Gallery",
+    "category_label": "Category",
+    "all": "All",
+    "loading": "Loading the collection…",
+    "error": "The catalog is temporarily unavailable. Please try again shortly.",
+    "empty": "No stones in this category yet.",
+    "back": "← Back to Catalog",
+    "return": "Return to catalog",
+    "not_found": {
+      "heading": "Stone not found",
+      "body": "This material is not in the Signature Gallery or the link may have changed"
+    },
+    "stone": {
+      "origin_prefix": "Origin —",
+      "inquire": "Inquire",
+      "spec_heading": "Specifications",
+      "finish": "Finish",
+      "thickness": "Thickness",
+      "applications": "Applications",
+      "gallery_heading": "In Situ"
+    }
+  },
+  "contact": {
+    "page_label": "Contact",
+    "heading": "Let’s specify something enduring",
+    "body": "Share project timelines, material intent, and quantities. We will return a curated slab recommendation, technical guidance, and sample strategy.",
+    "info": {
+      "email_label": "Email",
+      "phone_label": "Telephone",
+      "studios_label": "Offices"
+    },
+    "form": {
+      "name": "Name",
+      "studio": "Studio / Practice",
+      "email": "Email",
+      "project_type": "Project Type",
+      "project_type_placeholder": "Select",
+      "project_types": {
+        "residential": "Residential",
+        "commercial": "Commercial",
+        "hospitality": "Hospitality",
+        "public": "Public / Civic"
+      },
+      "timeline": "Timeline",
+      "timeline_placeholder": "e.g. Q3 2025",
+      "stone": "Stone(s) of Interest",
+      "stone_placeholder": "e.g. Nero Marquina, Calacatta Oro",
+      "brief": "Project Brief",
+      "brief_placeholder": "Describe your project, quantities, finish preferences, and any particular requirements…",
+      "submit": "Submit Inquiry",
+      "submitting": "Sending…",
+      "error_name": "Please enter your name.",
+      "error_email_required": "Please enter your email address.",
+      "error_email_invalid": "Please enter a valid email address.",
+      "privacy_note_before": "We typically respond within two business days. Your information is handled according to our ",
+      "privacy_link_text": "privacy policy",
+      "privacy_note_after": ".",
+      "email_alternative_before": "Prefer email? Write to ",
+      "email_alternative_after": "."
+    },
+    "success": {
+      "label": "Inquiry received",
+      "heading": "We’ll be in touch.",
+      "body": "Your brief has been forwarded to our studio. Expect a curated response within two business days.",
+      "reset": "Submit another inquiry"
+    }
+  },
+  "footer": {
+    "inquire": "Inquire for specifications",
+    "browse_catalog": "Browse Catalog",
+    "contact": "Contact",
+    "back_to_studio": "Back to studio",
+    "copyright": "© {year} Culture Stone. All rights reserved.",
+    "legal_notice": "Legal notice",
+    "privacy": "Privacy",
+    "locations": {
+      "new_york": "Chengdu",
+      "london": "Lyon"
+    }
+  },
+  "legal": {
+    "nav_label": "Legal",
+    "page_title": "Legal notice",
+    "subtitle": "Information about the operator of this website."
+  },
+  "privacy": {
+    "nav_label": "Legal",
+    "page_title": "Privacy policy",
+    "subtitle": "How we handle personal data when you visit this website, in accordance with Regulation (EU) 2016/679 (GDPR) and the Personal Information Protection Law of the People’s Republic of China (PIPL)."
+  },
+  "seo": {
+    "home": {
+      "title": "Culture Stone — Luxury Marble & Stone Supplier",
+      "description": "Culture Stone supplies bespoke marble, limestone, and granite slabs for architects and interior designers worldwide. Headquartered in Chengdu, China."
+    },
+    "catalog": {
+      "title": "Stone Catalog — The Signature Gallery | Culture Stone",
+      "description": "Browse premium marble, limestone, and granite surfaces sourced directly from European quarries. Nero Marquina, Calacatta Oro, Caledonia, and more."
+    },
+    "contact": {
+      "title": "Contact — Culture Stone",
+      "description": "Specify natural stone for your project with Culture Stone. Serving architects, designers, and hospitality groups worldwide."
+    },
+    "legal": {
+      "title": "Legal Notice — Culture Stone",
+      "description": "Legal notice and operator information for the Culture Stone website."
+    },
+    "privacy": {
+      "title": "Privacy Policy — Culture Stone",
+      "description": "Information on how Culture Stone processes personal data under the GDPR and PIPL."
+    }
+  }
+}
