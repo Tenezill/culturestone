@@ -54,7 +54,7 @@ Track all major changes here: new dependencies, routing changes, API contract ch
 ## 2026-04-29 — Reset stone categories to correct product lines
 
 - Rewrote `scripts/migrate-catalog.mjs`: now deletes all existing stones + stone-categories, then creates 9 new category shells
-- New categories: Marble, Extravagante Stone, Granite, Artificial Stone, Slate, PC Brick, Culture Stone, Flexible Stone, PU Cultured Stone
+- New categories: Marble, Extravagante Stone, Granite, Artificial Stone, Sintered Stone, PC Brick, Culture Stone, Ceramic Tile, PU Cultured Stone
 - Stones will be added manually via Strapi admin panel
 - Run with: `STRAPI_API_TOKEN=<token> node scripts/migrate-catalog.mjs` (Strapi must be running)
 

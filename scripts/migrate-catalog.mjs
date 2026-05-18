@@ -49,10 +49,10 @@ const CATEGORIES = [
   { name: 'Extravagante Stone', slug: 'extravagante-stone' },
   { name: 'Granite',           slug: 'granite' },
   { name: 'Artificial Stone',  slug: 'artificial-stone' },
-  { name: 'Slate',             slug: 'slate' },
+  { name: 'Sintered Stone',    slug: 'sintered-stone' },
   { name: 'PC Brick',          slug: 'pc-brick' },
   { name: 'Culture Stone',     slug: 'culture-stone' },
-  { name: 'Flexible Stone',    slug: 'flexible-stone' },
+  { name: 'Ceramic Tile',      slug: 'ceramic-tile' },
   { name: 'PU Cultured Stone', slug: 'pu-cultured-stone' },
 ]
 
