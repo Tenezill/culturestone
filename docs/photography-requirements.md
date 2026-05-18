@@ -54,10 +54,15 @@ The following types of images will be rejected and must be reshot:
 
 ### Good example from the current batch
 
-**Culture Stone3 / hero.jpeg** is a good reference for the hero image.
+**Culture Stone3 / hero.jpeg** is a good reference for **composition and lighting only**.
 The installed stone wall fills the entire frame, the lighting is even with no hotspots,
-there is no visible background, and the texture depth is clearly visible.
-Please use this image as a guide for all hero shots.
+there is no visible background, and the texture depth is clearly visible — this is the
+correct approach.
+
+However, this specific image is only 953 × 855 px and does not meet the resolution
+requirement. The new photo must be taken in the same style but at the minimum resolution
+of 3000 × 2000 px. Think of Culture Stone3 as showing the right framing and lighting,
+not as a finished deliverable.
 
 ---
 
