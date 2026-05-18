@@ -52,7 +52,7 @@ const CATEGORIES = [
   { name: 'Sintered Stone',    slug: 'sintered-stone' },
   { name: 'PC Brick',          slug: 'pc-brick' },
   { name: 'Culture Stone',     slug: 'culture-stone' },
-  { name: 'Ceramic Tile',      slug: 'ceramic-tile' },
+  { name: 'Ceramic Tile',      slug: 'ceramic_tile' },
   { name: 'PU Cultured Stone', slug: 'pu-cultured-stone' },
 ]
 

@@ -11,6 +11,12 @@ Track all major changes here: new dependencies, routing changes, API contract ch
 
 ---
 
+## 2026-05-19 — Rename Slate / Flexible Stone categories in Strapi
+
+- Renamed CMS categories on production: **Slate** → **Sintered Stone** (`sintered_stone`), **Flexible Stone** → **Ceramic Tile** (`ceramic_tile`)
+- Added `scripts/rename-categories.mjs` for non-destructive Strapi renames (handles underscore/hyphen slug variants)
+- Catalog sidebar uses `cat.name` from Strapi; `pages/catalog/index.vue` now refetches categories on each visit (`getCachedData: () => undefined`)
+
 ## 2026-05-05 — Catalog refresh and detail page upgrade
 
 - Removed redundant secondary header from `pages/catalog/index.vue` (top nav already covers navigation)

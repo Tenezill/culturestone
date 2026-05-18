@@ -171,8 +171,10 @@ const localePath = useLocalePath()
 const { find } = useStrapi()
 
 const [{ data: catData }, { data, pending, error }] = await Promise.all([
-  useAsyncData('catalog-categories', () =>
-    find<StrapiStoneCategory>('stone-categories', { sort: ['name:asc'] }),
+  useAsyncData(
+    'catalog-categories',
+    () => find<StrapiStoneCategory>('stone-categories', { sort: ['name:asc'] }),
+    { getCachedData: () => undefined },
   ),
   useAsyncData('catalog-stones', () =>
     find<StrapiStone>('stones', {
