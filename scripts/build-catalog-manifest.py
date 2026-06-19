@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Build scripts/catalog.json from the two client Excel sheets + image folders.
+"""Build scripts/catalog.json from the client Excel sheets + image folders.
 
 Reads:  <repo-parent>/images/stones_data.xlsx     (+ stone folders)
         <repo-parent>/images_2/stones_data.xlsx   (+ stone folders)
+        <repo-parent>/images_3/stones_data3.xlsx  (+ stone folders)
 Writes: culturestone/scripts/catalog.json
 
 Run once; the JSON is the human review checkpoint before importing.
@@ -19,7 +20,12 @@ import openpyxl
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_PARENT = os.path.abspath(os.path.join(SCRIPT_DIR, "..", ".."))
 OUT_PATH = os.path.join(SCRIPT_DIR, "catalog.json")
-SOURCES = ["images", "images_2"]
+# (folder, excel filename) — batch 3's sheet is named differently
+SOURCES = [
+    ("images", "stones_data.xlsx"),
+    ("images_2", "stones_data.xlsx"),
+    ("images_3", "stones_data3.xlsx"),
+]
 
 # Header label (row 1) -> manifest key
 COLS = {
@@ -73,8 +79,8 @@ def gallery_sorted(files):
 def main():
     out = []
     warnings = []
-    for src in SOURCES:
-        xlsx = os.path.join(REPO_PARENT, src, "stones_data.xlsx")
+    for src, xlsx_name in SOURCES:
+        xlsx = os.path.join(REPO_PARENT, src, xlsx_name)
         wb = openpyxl.load_workbook(xlsx, data_only=True)
         ws = wb.worksheets[0]
         rows = list(ws.iter_rows(values_only=True))

@@ -445,5 +445,226 @@
       "gallery2.JPG",
       "gallery3.JPG"
     ]
+  },
+  {
+    "slug": "rainbow-impression",
+    "name": "Rainbow Impression",
+    "alias": "",
+    "category": "Marble",
+    "subhead": "Rainbow Impression Marble",
+    "description": "Rainbow Marble is a remarkable natural stone celebrated for its vibrant palette of colors, artistic veining and dramatic visual movement. Inspired by the beauty of natural landscapes and abstract artwork, each slab presents a unique composition that transforms architectural spaces into extraordinary design statements.",
+    "origin": "Turkey",
+    "finish": "Polished / Honed / Leathered",
+    "thickness": "18mm",
+    "applications": "Dining Table / Kitchen Island / Feature Wall / Stair Treads",
+    "price": "1500-2500",
+    "sourceDir": "images_3/Rainbow Impression",
+    "hero": "hero.JPG",
+    "gallery": [
+      "gallery1.JPG",
+      "gallery2.JPG",
+      "gallery3.JPG"
+    ]
+  },
+  {
+    "slug": "emerald-green",
+    "name": "Emerald Green",
+    "alias": "",
+    "category": "Marble",
+    "subhead": "Emerald Green Marble",
+    "description": "Emerald Green Marble is a premium natural stone distinguished by its rich emerald-green background, elegant white veining and remarkable visual depth. Inspired by the timeless beauty of precious gemstones, it creates a luxurious architectural statement for contemporary interior environments.",
+    "origin": "India",
+    "finish": "Polished / Honed / Leathered",
+    "thickness": "18mm",
+    "applications": "Dining Table / Kitchen Island / Feature Wall / Stair Treads",
+    "price": "2200-4600",
+    "sourceDir": "images_3/Emerald Green",
+    "hero": "hero.JPG",
+    "gallery": [
+      "gallery1.JPG",
+      "gallery2.JPG",
+      "gallery3.JPG",
+      "gallery4.JPG"
+    ]
+  },
+  {
+    "slug": "victoria-green",
+    "name": "Victoria Green",
+    "alias": "",
+    "category": "Marble",
+    "subhead": "Victoria Green Marble",
+    "description": "Victoria Green Marble is a premium natural stone distinguished by its rich green background, flowing mineral textures and elegant gold-accented veining. Inspired by the beauty of natural landscapes, each slab presents a unique artistic composition that brings sophistication and exclusivity to luxury architectural environments.",
+    "origin": "China",
+    "finish": "Polished / Honed / Leathered",
+    "thickness": "18mm",
+    "applications": "Dining Table / Kitchen Island / Feature Wall / Stair Treads",
+    "price": "2000-3800",
+    "sourceDir": "images_3/Victoria Green",
+    "hero": "hero.JPG",
+    "gallery": [
+      "gallery1.JPG",
+      "gallery2.JPG",
+      "gallery3.JPG",
+      "gallery4.JPG"
+    ]
+  },
+  {
+    "slug": "fendi-white",
+    "name": "Fendi White",
+    "alias": "",
+    "category": "Marble",
+    "subhead": "Fendi White Marble",
+    "description": "Fendi White Marble is a premium Italian natural stone renowned for its pure white background, delicate crystal textures and elegant artistic patterns. The unique combination of soft grey and white mineral formations creates a sophisticated visual effect that perfectly balances luxury and contemporary design.",
+    "origin": "Italy",
+    "finish": "Polished / Honed / Leathered",
+    "thickness": "18mm",
+    "applications": "Dining Table / Kitchen Island / Feature Wall / Stair Treads",
+    "price": "1500-3200",
+    "sourceDir": "images_3/Fendi White",
+    "hero": "hero.JPG",
+    "gallery": [
+      "gallery1.JPG",
+      "gallery2.JPG",
+      "gallery3.JPG",
+      "gallery4.JPG"
+    ]
+  },
+  {
+    "slug": "blue-tears",
+    "name": "Blue Tears",
+    "alias": "",
+    "category": "Marble",
+    "subhead": "Blue Tears Marble",
+    "description": "Blue Tears Marble is a luxurious natural stone distinguished by its captivating blue background, flowing mineral patterns and remarkable visual depth. Inspired by the beauty of ocean waves and crystalline formations, each slab showcases a unique artistic composition that delivers exceptional elegance and exclusivity.",
+    "origin": "Brazil",
+    "finish": "Polished / Honed / Leathered",
+    "thickness": "18mm",
+    "applications": "Dining Table / Kitchen Island / Feature Wall / Stair Treads",
+    "price": "1400-2800",
+    "sourceDir": "images_3/Blue Tears",
+    "hero": "hero.JPG",
+    "gallery": [
+      "gallery1.JPG",
+      "gallery2.JPG",
+      "gallery3.JPG",
+      "gallery4.JPG"
+    ]
+  },
+  {
+    "slug": "rainbow-stripe",
+    "name": "Rainbow Stripe",
+    "alias": "",
+    "category": "Marble",
+    "subhead": "Rainbow Stripe Marble",
+    "description": "Rainbow Stripe Marble is a remarkable natural stone featuring flowing bands of color, layered mineral textures and striking linear movement. Inspired by natural geological formations, each slab displays a harmonious blend of warm and cool tones that create a visually captivating architectural surface.",
+    "origin": "Turkey",
+    "finish": "Polished / Honed / Leathered",
+    "thickness": "18mm",
+    "applications": "Dining Table / Kitchen Island / Feature Wall / Stair Treads",
+    "price": "1300-2400",
+    "sourceDir": "images_3/Rainbow Stripe",
+    "hero": "hero.JPG",
+    "gallery": [
+      "gallery1.JPG",
+      "gallery2.JPG"
+    ]
+  },
+  {
+    "slug": "pink-crystal-pandora",
+    "name": "Pink Crystal Pandora",
+    "alias": "",
+    "category": "Marble",
+    "subhead": "Pink Crystal Pandora Marble",
+    "description": "Pink Crystal Pandora Marble is an exclusive natural stone distinguished by its delicate pink background, crystalline textures and artistic mineral formations. Inspired by the elegance of precious gemstones, this luxury marble combines soft feminine tones with dramatic natural movement, creating a sophisticated architectural statement for premium interior spaces.",
+    "origin": "Greece",
+    "finish": "Polished / Honed / Leathered",
+    "thickness": "18mm",
+    "applications": "Dining Table / Kitchen Island / Feature Wall / Stair Treads",
+    "price": "1500-2300",
+    "sourceDir": "images_3/Pink Crystal Pandora",
+    "hero": "hero.JPG",
+    "gallery": [
+      "gallery1.JPG",
+      "gallery2.JPG",
+      "gallery3.JPG"
+    ]
+  },
+  {
+    "slug": "hermes-grey",
+    "name": "Hermes Grey",
+    "alias": "",
+    "category": "Marble",
+    "subhead": "Hermes Grey Marble",
+    "description": "Hermes Grey Marble is a premium Turkish natural stone renowned for its sophisticated grey background and distinctive white spider-web veining. The balanced contrast between the deep grey base and elegant natural patterns creates a refined and contemporary appearance suitable for luxury architectural projects.",
+    "origin": "Turkey",
+    "finish": "Polished / Honed / Leathered",
+    "thickness": "18mm",
+    "applications": "Dining Table / Kitchen Island / Feature Wall / Stair Treads",
+    "price": "260-360",
+    "sourceDir": "images_3/Hermes Grey",
+    "hero": "hero.JPG",
+    "gallery": [
+      "gallery1.JPG",
+      "gallery2.JPG",
+      "gallery3.JPG"
+    ]
+  },
+  {
+    "slug": "china-arabescato",
+    "name": "China Arabescato",
+    "alias": "Big Flower White Marble i",
+    "category": "Marble",
+    "subhead": "China Arabescato Marble",
+    "description": "Big Flower White Marble is a premium Chinese natural marble distinguished by its clean white background and dramatic grey veining. Often marketed internationally as China Arabescato Marble, it offers a luxurious appearance comparable to premium European white marbles while providing excellent value for large-scale architectural projects.",
+    "origin": "",
+    "finish": "Polished / Honed / Leathered",
+    "thickness": "18mm",
+    "applications": "Dining Table / Kitchen Island / Feature Wall / Stair Treads",
+    "price": "800-1600",
+    "sourceDir": "images_3/China Arabescato",
+    "hero": "hero.JPG",
+    "gallery": [
+      "gallery1.JPG",
+      "gallery2.JPG"
+    ]
+  },
+  {
+    "slug": "versace-black",
+    "name": "Versace Black",
+    "alias": "Matrix Black Granite",
+    "category": "Marble",
+    "subhead": "Versace Black Marble",
+    "description": "Versace Black Marble is a luxurious natural stone celebrated for its dramatic black background, elegant mineral textures and sophisticated veining patterns. Inspired by the timeless aesthetics of luxury fashion and architectural design, this premium material creates an unforgettable visual statement in contemporary interiors.",
+    "origin": "Brazil",
+    "finish": "Polished / Honed / Leathered",
+    "thickness": "18mm",
+    "applications": "Dining Table / Kitchen Island / Feature Wall / Stair Treads",
+    "price": "600-1200",
+    "sourceDir": "images_3/Versace Black",
+    "hero": "hero.JPG",
+    "gallery": [
+      "gallery1.JPG",
+      "gallery2.JPG",
+      "gallery3.JPG"
+    ]
+  },
+  {
+    "slug": "honey-onyx",
+    "name": "Honey Onyx",
+    "alias": "Jade Onyx",
+    "category": "Marble",
+    "subhead": "Honey Onyx Marble",
+    "description": "Honey Onyx Marble, internationally known as Song Xiang Jade, is a luxurious translucent natural stone distinguished by its warm golden tones, flowing amber patterns and remarkable light-transmitting properties.",
+    "origin": "China",
+    "finish": "Polished / Honed / Leathered",
+    "thickness": "18mm",
+    "applications": "Dining Table / Kitchen Island / Feature Wall / Stair Treads",
+    "price": "800-1600",
+    "sourceDir": "images_3/Honey Onyx",
+    "hero": "hero.JPG",
+    "gallery": [
+      "gallery1.JPG",
+      "gallery2.JPG"
+    ]
   }
 ]
