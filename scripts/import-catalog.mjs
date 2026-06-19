@@ -2,18 +2,19 @@
 // Batch import: scripts/catalog.json -> Strapi v5 `stones` (en locale, published).
 //
 // DESTRUCTIVE: deletes ALL existing stones and the media attached to them,
-// then recreates the 21 stones from the manifest. Photos upload via Strapi's
+// then recreates every stone from the manifest. Photos upload via Strapi's
 // upload API, which offloads to Cloudinary (the configured provider).
 //
 // Dry-run by default — prints the full plan without writing. Pass --confirm to
-// actually mutate. Targets STRAPI_URL (default http://localhost:1337).
+// actually mutate. Targets NUXT_PUBLIC_STRAPI_URL / STRAPI_URL (default
+// http://localhost:1337) — currently production https://cms.culturestone.eu.
 //
 // Usage:
 //   node scripts/import-catalog.mjs            # dry-run
 //   node scripts/import-catalog.mjs --confirm  # execute
 //
-// Env (.env): STRAPI_URL, STRAPI_API_TOKEN (find/create/delete on stone,
-// stone-category, upload).
+// Env (.env): STRAPI_API_IMPORT_TOKEN (preferred) or STRAPI_API_TOKEN —
+// needs find/create/delete on stone, stone-category, upload.
 
 import { readFileSync } from 'node:fs'
 import { readFile as readFileP } from 'node:fs/promises'
@@ -42,7 +43,7 @@ function loadDotEnv() {
 loadDotEnv()
 
 const STRAPI_URL = (process.env.NUXT_PUBLIC_STRAPI_URL || process.env.STRAPI_URL || 'http://localhost:1337').replace(/\/$/, '')
-const TOKEN = process.env.STRAPI_API_TOKEN
+const TOKEN = process.env.STRAPI_API_IMPORT_TOKEN || process.env.STRAPI_API_TOKEN
 const CONFIRM = process.argv.includes('--confirm')
 const LOCALE = 'en'
 const REPO_PARENT = resolve(__dirname, '..', '..')
