@@ -11,6 +11,14 @@ Track all major changes here: new dependencies, routing changes, API contract ch
 
 ---
 
+## 2026-06-19 — Real catalogue import (32 stones, 3 batches)
+
+- Added `scripts/build-catalog-manifest.py` — reads the client Excel sheets + photo folders in the repo parent (`images/`, `images_2/`, `images_3/`; batch 3's sheet is `stones_data3.xlsx`) and writes a reviewable `scripts/catalog.json`
+- Added `scripts/import-catalog.mjs` — dry-run by default; `--confirm` deletes ALL stones + their attached media and recreates from the manifest, uploading photos (hero → `image`, `galleryN` → `gallery`) and publishing to the `en` locale. Targets `NUXT_PUBLIC_STRAPI_URL`; auth via `STRAPI_API_IMPORT_TOKEN` (falls back to `STRAPI_API_TOKEN`)
+- Imported **32 stones** (17 Sintered Stone, 15 Marble) into production; all photos stored on Cloudinary
+- Data handling: dropped the duplicate images_2 "Prada Green" (Marble); auto-fixed the "Exotic Green" description; normalized price ranges and `thickness` (`9mm`/`18mm`). Flagged (not fixed): `china-arabescato` has empty origin + alias typo "Big Flower White Marble i"
+- Requires `STRAPI_API_IMPORT_TOKEN` with find/create/delete on stone, stone-category, and upload
+
 ## 2026-05-19 — Rename Slate / Flexible Stone categories in Strapi
 
 - Renamed CMS categories on production: **Slate** → **Sintered Stone** (`sintered_stone`), **Flexible Stone** → **Ceramic Tile** (`ceramic_tile`)
