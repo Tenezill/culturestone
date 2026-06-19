@@ -63,7 +63,8 @@ function sanitizeName(name) {
 async function api(path, opts = {}) {
   const res = await fetch(`${STRAPI_URL}${path}`, opts)
   if (!res.ok) throw new Error(`${opts.method || 'GET'} ${path} -> ${res.status}: ${await res.text()}`)
-  return res.json()
+  const text = await res.text() // DELETE returns 204 / empty body
+  return text ? JSON.parse(text) : null
 }
 
 // --- delete phase -----------------------------------------------------------
