@@ -185,14 +185,19 @@ const [{ data: catData }, { data, pending, error }] = await Promise.all([
   ),
 ])
 
-const categories = computed<StrapiStoneCategory[]>(() => {
-  const raw = catData.value?.data
-  return Array.isArray(raw) ? raw : []
-})
-
 const stones = computed<StrapiStone[]>(() => {
   const raw = data.value?.data
   return Array.isArray(raw) ? raw : []
+})
+
+const categories = computed<StrapiStoneCategory[]>(() => {
+  const raw = catData.value?.data
+  const all = Array.isArray(raw) ? raw : []
+  // Only show categories that have at least one stone in the catalog yet.
+  const usedSlugs = new Set(
+    stones.value.map(s => s.category?.slug).filter(Boolean),
+  )
+  return all.filter(c => usedSlugs.has(c.slug))
 })
 
 const selectedCategory = ref<string | null>(null)
