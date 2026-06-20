@@ -31,20 +31,20 @@
     "lookbook": {
       "label": "Collection signature",
       "heading": "Le lookbook",
-      "nero_marquina": {
-        "label": "I — Nero Marquina",
+      "versace_black": {
+        "label": "I — Versace Black",
         "heading": "Profondeur en monochrome",
-        "body": "Un fond sombre avec une veine blanche retenue. Convient aux cheminées, aux plans d'accent et aux éléments de mobilier où l'ombre et le poli parlent d'eux-mêmes."
+        "body": "Un fond noir dramatique parcouru de veinages minéraux raffinés. Convient aux cheminées, aux plans d'accent et aux éléments de mobilier où l'ombre et le poli parlent d'eux-mêmes."
       },
-      "calacatta_oro": {
-        "label": "II — Calacatta Oro",
+      "china_arabescato": {
+        "label": "II — China Arabescato",
         "heading": "Veinages lumineux",
-        "body": "Fond blanc chaud avec des mouvements de graphite et de miel. Idéal pour les cuisines, les salles de bain galerie et les halls de réception où la lumière du jour révèle le caractère de la pierre."
+        "body": "Un fond blanc pur traversé de mouvements gris spectaculaires — une réponse luxueuse aux marbres blancs européens haut de gamme. Idéal pour les cuisines, les salles de bain galerie et les halls de réception où la lumière du jour révèle le caractère de la pierre."
       },
-      "caledonia": {
-        "label": "III — Caledonia",
+      "hermes_grey": {
+        "label": "III — Hermes Grey",
         "heading": "Force tranquille",
-        "body": "Grain sel et poivre d'une densité durable. À prescrire pour les sols, les parements et les intérieurs à fort trafic qui exigent une matérialité apaisante et une longévité sans faille."
+        "body": "Une base grise raffinée au veinage blanc en toile d'araignée caractéristique. À prescrire pour les sols, les parements et les intérieurs à fort trafic qui exigent une matérialité apaisante et une longévité sans faille."
       }
     }
   },

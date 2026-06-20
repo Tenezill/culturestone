@@ -31,20 +31,20 @@
     "lookbook": {
       "label": "Colección signature",
       "heading": "El lookbook",
-      "nero_marquina": {
-        "label": "I — Nero Marquina",
+      "versace_black": {
+        "label": "I — Versace Black",
         "heading": "Profundidad en monocromo",
-        "body": "Un fondo oscuro con relámpagos blancos contenidos. Adecuado para chimeneas, planos de acento y elementos de mobiliario donde la sombra y el pulido hablan por sí solos."
+        "body": "Un fondo negro dramático recorrido por un refinado vetado mineral. Adecuado para chimeneas, planos de acento y elementos de mobiliario donde la sombra y el pulido hablan por sí solos."
       },
-      "calacatta_oro": {
-        "label": "II — Calacatta Oro",
+      "china_arabescato": {
+        "label": "II — China Arabescato",
         "heading": "Vetado luminoso",
-        "body": "Fondo blanco cálido con movimientos de grafito y miel. Ideal para cocinas, baños galería y vestíbulos de recepción donde la luz del día revela el carácter de la piedra."
+        "body": "Un fondo blanco puro con un espectacular movimiento gris, una respuesta lujosa a los mármoles blancos europeos premium. Ideal para cocinas, baños galería y vestíbulos de recepción donde la luz del día revela el carácter de la piedra."
       },
-      "caledonia": {
-        "label": "III — Caledonia",
+      "hermes_grey": {
+        "label": "III — Hermes Grey",
         "heading": "Fuerza tranquila",
-        "body": "Grano sal y pimienta con densidad duradera. Especifíquelo para suelos, revestimientos e interiores de alto tráfico que exigen una materialidad serena y larga vida útil."
+        "body": "Una base gris refinada con un característico vetado blanco en telaraña. Especifíquelo para suelos, revestimientos e interiores de alto tráfico que exigen una materialidad serena y larga vida útil."
       }
     }
   },

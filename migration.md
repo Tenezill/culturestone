@@ -11,6 +11,12 @@ Track all major changes here: new dependencies, routing changes, API contract ch
 
 ---
 
+## 2026-06-20 — Homepage: real catalogue photos replace AI placeholders
+
+- `pages/index.vue` now fetches 5 featured stones by slug from Strapi (`blue-emerald`, `honey-onyx`, `versace-black`, `china-arabescato`, `hermes-grey`, `populate: image`, `locale: en`) and renders their Cloudinary hero images in the Feature Spread (Blue Emerald grayscale→colour, Honey Onyx detail) and Lookbook. **Hero image unchanged** (local `/img/ai-hero-marble-interior.jpg`, also still og/twitter image).
+- Lookbook now features 3 real stones with links to their catalogue pages. i18n keys renamed in en/de/fr/es: `nero_marquina`→`versace_black`, `calacatta_oro`→`china_arabescato`, `caledonia`→`hermes_grey`, with copy rewritten to match the real stones (also fixed a stray `zurückhalt endem` typo in de).
+- Stones are referenced by **slug** so the homepage survives catalogue re-imports (Cloudinary URLs change on re-upload, slugs don't). Adds a build-time Strapi dependency to the homepage (was fully static).
+
 ## 2026-06-20 — EUR prices on stone detail page + Product schema + privacy fixes
 
 - **Prices in EUR.** Source catalogue prices are CNY/m² ranges (Excel header `价格（￥/㎡）`). Now converted to whole-euro `priceFrom`/`priceTo` (see CMS migration log) at a fixed `CNY_EUR = 0.13` (spot ~0.129 + small buffer).

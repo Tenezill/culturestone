@@ -115,11 +115,11 @@
             >
               <figure class="overflow-hidden">
                 <img
-                  src="/img/ai-rock-formation.jpg"
-                  alt="Raw stone formation with dramatic strata"
+                  :src="featuredImg('blue-emerald')"
+                  alt="Blue Emerald sintered stone — sapphire tones with dynamic veining"
                   class="h-[85vh] w-full object-cover grayscale transition-all duration-700 hover:grayscale-0"
-                  width="1376"
-                  height="768"
+                  width="1500"
+                  height="1000"
                   loading="lazy"
                 >
               </figure>
@@ -135,11 +135,11 @@
                 class="overflow-hidden"
               >
                 <img
-                  src="/img/ai-veined-stone.jpg"
-                  alt="Polished interior stone detail"
+                  :src="featuredImg('honey-onyx')"
+                  alt="Honey Onyx — warm translucent stone with flowing amber patterns"
                   class="h-[45vh] w-full object-cover transition-transform duration-1000 hover:scale-105"
-                  width="1376"
-                  height="768"
+                  width="1500"
+                  height="1000"
                   loading="lazy"
                 >
               </figure>
@@ -190,17 +190,17 @@
                 :visible-once="{ opacity: 1, x: 0, transition: { duration: 1000 } }"
                 class="lg:col-span-8"
               >
-                <figure class="group relative overflow-hidden">
+                <NuxtLink :to="localePath('/catalog/versace-black')" class="group relative block overflow-hidden">
                   <img
-                    src="/img/ai-dark-marble.jpg"
-                    alt="Dark marble surface with fine veining"
+                    :src="featuredImg('versace-black')"
+                    alt="Versace Black marble — dramatic black ground with mineral veining"
                     class="aspect-[16/10] w-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                    width="1376"
-                    height="768"
+                    width="1500"
+                    height="1000"
                     loading="lazy"
                   >
                   <div class="absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/10" />
-                </figure>
+                </NuxtLink>
               </div>
               <div
                 v-motion
@@ -209,13 +209,13 @@
                 class="max-w-xl lg:col-span-4"
               >
                 <p class="font-sans text-[0.65rem] uppercase tracking-[0.3em] text-editorial-charcoal/40">
-                  {{ t('home.lookbook.nero_marquina.label') }}
+                  {{ t('home.lookbook.versace_black.label') }}
                 </p>
                 <h3 class="mt-6 font-serif text-3xl font-normal md:text-4xl">
-                  {{ t('home.lookbook.nero_marquina.heading') }}
+                  {{ t('home.lookbook.versace_black.heading') }}
                 </h3>
                 <p class="mt-10 font-sans text-sm font-light leading-[1.9] text-editorial-charcoal/70 sm:text-base">
-                  {{ t('home.lookbook.nero_marquina.body') }}
+                  {{ t('home.lookbook.versace_black.body') }}
                 </p>
               </div>
             </div>
@@ -229,13 +229,13 @@
                 class="order-2 max-w-xl lg:order-1 lg:col-span-4 lg:col-start-2"
               >
                 <p class="font-sans text-[0.65rem] uppercase tracking-[0.3em] text-editorial-charcoal/40">
-                  {{ t('home.lookbook.calacatta_oro.label') }}
+                  {{ t('home.lookbook.china_arabescato.label') }}
                 </p>
                 <h3 class="mt-6 font-serif text-3xl font-normal md:text-4xl">
-                  {{ t('home.lookbook.calacatta_oro.heading') }}
+                  {{ t('home.lookbook.china_arabescato.heading') }}
                 </h3>
                 <p class="mt-10 font-sans text-sm font-light leading-[1.9] text-editorial-charcoal/70 sm:text-base">
-                  {{ t('home.lookbook.calacatta_oro.body') }}
+                  {{ t('home.lookbook.china_arabescato.body') }}
                 </p>
               </div>
               <div
@@ -244,17 +244,17 @@
                 :visible-once="{ opacity: 1, x: 0, transition: { duration: 1000 } }"
                 class="order-1 lg:order-2 lg:col-span-7 lg:col-start-6"
               >
-                <figure class="group relative overflow-hidden">
+                <NuxtLink :to="localePath('/catalog/china-arabescato')" class="group relative block overflow-hidden">
                   <img
-                    src="/img/ai-light-marble.jpg"
-                    alt="White marble with gold and grey veining"
+                    :src="featuredImg('china-arabescato')"
+                    alt="China Arabescato marble — clean white ground with dramatic grey veining"
                     class="aspect-[4/5] w-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                    width="1376"
-                    height="768"
+                    width="1500"
+                    height="1000"
                     loading="lazy"
                   >
                   <div class="absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/10" />
-                </figure>
+                </NuxtLink>
               </div>
             </div>
 
@@ -266,17 +266,17 @@
                 :visible-once="{ opacity: 1, scale: 1, transition: { duration: 1000 } }"
                 class="lg:col-span-8 lg:col-start-3"
               >
-                <figure class="group relative overflow-hidden">
+                <NuxtLink :to="localePath('/catalog/hermes-grey')" class="group relative block overflow-hidden">
                   <img
-                    src="/img/ai-blue-green.jpg"
-                    alt="Textured grey granite surface"
+                    :src="featuredImg('hermes-grey')"
+                    alt="Hermes Grey marble — grey ground with white spider-web veining"
                     class="aspect-[16/9] w-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                    width="1376"
-                    height="768"
+                    width="1500"
+                    height="1000"
                     loading="lazy"
                   >
                   <div class="absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/10" />
-                </figure>
+                </NuxtLink>
                 <div
                   v-motion
                   :initial="{ opacity: 0, y: 20 }"
@@ -284,13 +284,13 @@
                   class="mt-16 max-w-2xl"
                 >
                   <p class="font-sans text-[0.65rem] uppercase tracking-[0.3em] text-editorial-charcoal/40">
-                    {{ t('home.lookbook.caledonia.label') }}
+                    {{ t('home.lookbook.hermes_grey.label') }}
                   </p>
                   <h3 class="mt-6 font-serif text-3xl font-normal md:text-4xl">
-                    {{ t('home.lookbook.caledonia.heading') }}
+                    {{ t('home.lookbook.hermes_grey.heading') }}
                   </h3>
                   <p class="mt-10 font-sans text-sm font-light leading-[1.9] text-editorial-charcoal/70 sm:text-base">
-                    {{ t('home.lookbook.caledonia.body') }}
+                    {{ t('home.lookbook.hermes_grey.body') }}
                   </p>
                 </div>
               </div>
@@ -306,10 +306,35 @@
 
 <script setup lang="ts">
 import { buildBreadcrumbSchema, useSiteUrl } from '~/composables/useSchema'
+import { pickMediaUrl, type StrapiStone } from '~/composables/useSignatureStones'
 
 const { t } = useI18n()
 const localePath = useLocalePath()
 const siteUrl = useSiteUrl()
+
+// Real catalogue photos for the homepage editorial sections (the hero stays a
+// curated local asset). Stones are fetched by slug from Strapi so the images
+// survive catalogue re-imports — only the slugs need to stay stable. Content
+// (image, name) is locale-independent here, so we always request `en`.
+const featuredSlugs = ['blue-emerald', 'honey-onyx', 'versace-black', 'china-arabescato', 'hermes-grey']
+const { find } = useStrapi()
+const { data: featuredData } = await useAsyncData('home-featured-stones', () =>
+  find<StrapiStone>('stones', {
+    filters: { slug: { $in: featuredSlugs } },
+    populate: ['image'],
+    fields: ['slug', 'name'],
+    locale: 'en',
+    pagination: { pageSize: 50 },
+  }),
+)
+
+const stonesBySlug = computed<Record<string, StrapiStone>>(() => {
+  const map: Record<string, StrapiStone> = {}
+  for (const s of (featuredData.value?.data ?? []) as StrapiStone[]) map[s.slug] = s
+  return map
+})
+
+const featuredImg = (slug: string) => pickMediaUrl(stonesBySlug.value[slug]?.image, 'large')
 
 const webPageSchema = computed(() => ({
   '@context': 'https://schema.org',

@@ -31,20 +31,20 @@
     "lookbook": {
       "label": "Signature collection",
       "heading": "The lookbook",
-      "nero_marquina": {
-        "label": "I — Nero Marquina",
+      "versace_black": {
+        "label": "I — Versace Black",
         "heading": "Depth in monochrome",
-        "body": "A deep field with restrained white lightning. Suited to hearths, feature planes, and furniture elements where shadow and polish do the speaking."
+        "body": "A dramatic black ground crossed by sophisticated mineral veining. Suited to hearths, feature planes, and furniture elements where shadow and polish do the speaking."
       },
-      "calacatta_oro": {
-        "label": "II — Calacatta Oro",
+      "china_arabescato": {
+        "label": "II — China Arabescato",
         "heading": "Luminous veining",
-        "body": "Warm white ground with graphite and honey movement. Ideal for kitchens, gallery baths, and reception volumes where daylight reveals the stone’s character."
+        "body": "A clean white ground with dramatic grey movement — a luxurious answer to premium European whites. Ideal for kitchens, gallery baths, and reception volumes where daylight reveals the stone’s character."
       },
-      "caledonia": {
-        "label": "III — Caledonia",
+      "hermes_grey": {
+        "label": "III — Hermes Grey",
         "heading": "Quiet strength",
-        "body": "Salt-and-pepper grain with enduring density. Specify for flooring, cladding, and high-traffic interiors that demand calm materiality and long service."
+        "body": "A sophisticated grey base with distinctive white spider-web veining. Specify for flooring, cladding, and high-traffic interiors that demand calm materiality and long service."
       }
     }
   },
