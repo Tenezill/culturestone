@@ -11,6 +11,20 @@ Track all major changes here: new dependencies, routing changes, API contract ch
 
 ---
 
+## 2026-06-20 — EUR prices on stone detail page + Product schema + privacy fixes
+
+- **Prices in EUR.** Source catalogue prices are CNY/m² ranges (Excel header `价格（￥/㎡）`). Now converted to whole-euro `priceFrom`/`priceTo` (see CMS migration log) at a fixed `CNY_EUR = 0.13` (spot ~0.129 + small buffer).
+  - `composables/useSignatureStones.ts`: `StrapiStone` now has `priceFrom: number | null` + `priceTo: number | null` (replaced the old `price: string`).
+  - `pages/catalog/[slug].vue`: Specifications row shows **"from {priceFrom} €/m²"** (lower bound only), shown only when `priceFrom != null`.
+  - i18n: added `catalog.stone.price_from` (interpolated) to en/de/fr/es — `from {value} €/m²` / `ab …` / `à partir de …` / `desde …`. (`catalog.stone.price` label retained as the spec `dt`.)
+- **Product JSON-LD** (`composables/useSchema.ts`): replaced the empty USD `Offer` with an `AggregateOffer` — `priceCurrency: EUR`, `lowPrice: priceFrom`, `highPrice: priceTo`; emitted only when `priceFrom` is set, so the structured data is always valid.
+- **New script** `scripts/update-prices.mjs`: non-destructive, matches stones by slug and PUTs only `priceFrom`/`priceTo` (draft + published). Dry-run by default; `--confirm` to apply. Does NOT touch media (unlike `import-catalog.mjs`). Requires the CMS schema deployed first.
+- **Privacy page** (`pages/privacy.vue`):
+  - §9: fixed the Cloudinary self-contradiction (claimed Cloudinary delivery then "no third-party CDN is used") — now consistently states imagery loads from Cloudinary (US), Strapi CMS self-hosted, matching §10(a).
+  - §7: now discloses the contact form is processed by Netlify Forms (US processor, Art. 28 DPA, transfer per §10(a)) — previously only mentioned email/telephone links.
+  - §8: fixed the inaccurate "fonts self-hosted on our servers within the European Union" (site is hosted on Netlify/US) → "served from the same origin as the website (see Section 5)".
+  - Bumped "Last updated" to June 20, 2026.
+
 ## 2026-06-19 — Real catalogue import (32 stones, 3 batches)
 
 - Added `scripts/build-catalog-manifest.py` — reads the client Excel sheets + photo folders in the repo parent (`images/`, `images_2/`, `images_3/`; batch 3's sheet is `stones_data3.xlsx`) and writes a reviewable `scripts/catalog.json`

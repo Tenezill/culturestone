@@ -131,15 +131,21 @@ export function buildProductSchema(siteUrl: string, stone: StrapiStone) {
         }
       : {}),
     material: 'Natural stone',
-    offers: {
-      '@type': 'Offer',
-      availability: 'https://schema.org/InStock',
-      priceCurrency: 'USD',
-      seller: {
-        '@type': 'Organization',
-        name: 'Culture Stone',
-        url: siteUrl,
-      },
-    },
+    ...(stone.priceFrom != null
+      ? {
+          offers: {
+            '@type': 'AggregateOffer',
+            availability: 'https://schema.org/InStock',
+            priceCurrency: 'EUR',
+            lowPrice: stone.priceFrom,
+            highPrice: stone.priceTo ?? stone.priceFrom,
+            seller: {
+              '@type': 'Organization',
+              name: 'Culture Stone',
+              url: siteUrl,
+            },
+          },
+        }
+      : {}),
   }
 }

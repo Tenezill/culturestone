@@ -68,6 +68,8 @@
       "finish": "Finition",
       "thickness": "Épaisseur",
       "applications": "Applications",
+      "price": "Prix",
+      "price_from": "à partir de {value} €/m²",
       "gallery_heading": "En Situation"
     }
   },

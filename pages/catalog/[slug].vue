@@ -108,6 +108,14 @@
                         {{ page.applications }}
                       </dd>
                     </div>
+                    <div v-if="page.priceFrom != null" class="grid grid-cols-1 gap-4 py-8 sm:grid-cols-2 lg:grid-cols-[1fr_2fr]">
+                      <dt class="font-sans text-[0.6rem] uppercase tracking-[0.3em] text-editorial-charcoal/60">
+                        {{ t('catalog.stone.price') }}
+                      </dt>
+                      <dd class="font-sans text-base font-light text-editorial-charcoal/90">
+                        {{ t('catalog.stone.price_from', { value: page.priceFrom }) }}
+                      </dd>
+                    </div>
                   </dl>
                 </div>
               </div>

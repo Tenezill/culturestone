@@ -68,6 +68,8 @@
       "finish": "Finish",
       "thickness": "Thickness",
       "applications": "Applications",
+      "price": "Price",
+      "price_from": "from {value} €/m²",
       "gallery_heading": "In Situ"
     }
   },

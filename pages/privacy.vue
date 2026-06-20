@@ -15,7 +15,7 @@
             {{ t('privacy.subtitle') }}
           </p>
           <p class="mt-8 font-sans text-[0.55rem] uppercase tracking-[0.4em] text-editorial-charcoal/30">
-            Last updated: May 7, 2026
+            Last updated: June 20, 2026
           </p>
         </div>
 
@@ -144,12 +144,18 @@
 
           <section>
             <h2 class="font-sans text-[0.7rem] uppercase tracking-[0.28em] text-editorial-charcoal/55">
-              7. Contact by email or telephone
+              7. Contact (inquiry form, email, and telephone)
             </h2>
             <p class="mt-4">
-              If you contact us via the email or telephone links provided on this site, the personal data you transmit
-              (e.g. your name, contact details, and the content of your message) will be stored and processed solely for
-              the purpose of handling your inquiry.
+              If you contact us &mdash; whether via the inquiry form on our contact page or via the email or telephone
+              links provided on this site &mdash; the personal data you transmit (e.g. your name, contact details, and
+              the content of your message) will be stored and processed solely for the purpose of handling your inquiry.
+            </p>
+            <p class="mt-4">
+              Submissions made through the inquiry form are received and processed on our behalf by Netlify, Inc.
+              (see Section 5) under a Data Processing Agreement pursuant to Art. 28 GDPR. As Netlify is established in
+              the United States, this involves a transfer of the data you submit to the United States (see
+              Section 10 (a)).
             </p>
             <p class="mt-4">
               <strong>Legal basis:</strong> Art. 6 (1) (b) GDPR where your inquiry relates to the performance of a
@@ -165,9 +171,9 @@
               8. Web fonts
             </h2>
             <p class="mt-4">
-              All web fonts used on this site are self-hosted on our servers within the European Union. No connection
-              to Google Fonts or any similar third-party font service is established when you load a page, and no
-              font-related data is transmitted to third parties.
+              All web fonts used on this site are self-hosted and served from the same origin as the website
+              (see Section 5 on hosting). No connection to Google Fonts or any similar third-party font service is
+              established when you load a page, and no font-related data is transmitted to third parties.
             </p>
           </section>
 
@@ -181,9 +187,10 @@
               which manages the catalogue data, is operated by us on a separate virtual private server.
             </p>
             <p class="mt-4">
-              When your browser loads an image, your IP address and standard HTTP request metadata (browser type,
-              referrer, timestamp) are transmitted to that server. We operate this server ourselves; no third-party
-              image CDN is used.
+              When your browser loads a product image, your IP address and standard HTTP request metadata (browser
+              type, referrer, timestamp) are transmitted to Cloudinary&rsquo;s servers in the United States. The Strapi
+              content management system, which holds the underlying catalogue data, is operated by us on our own
+              virtual private server and is not accessed directly by your browser when you view the site.
             </p>
             <p class="mt-4">
               <strong>Legal basis:</strong> Art. 6 (1) (f) GDPR — our legitimate interest in delivering product imagery

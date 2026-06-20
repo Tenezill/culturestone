@@ -68,6 +68,8 @@
       "finish": "Acabado",
       "thickness": "Grosor",
       "applications": "Aplicaciones",
+      "price": "Precio",
+      "price_from": "desde {value} €/m²",
       "gallery_heading": "En Uso"
     }
   },

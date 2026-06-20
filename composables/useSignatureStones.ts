@@ -53,6 +53,8 @@ export type StrapiStone = {
   finish: string
   thickness: string
   applications: string
+  priceFrom: number | null
+  priceTo: number | null
   alias: string | null
   category: StrapiStoneCategory | null
   image: StrapiMedia | null
