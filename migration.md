@@ -11,6 +11,14 @@ Track all major changes here: new dependencies, routing changes, API contract ch
 
 ---
 
+## 2026-06-21 — Homepage tweaks: Bulgari Black, Red Travertine, China sourcing
+
+- Lookbook item 1: swapped **Versace Black → Bulgari Black** (image, `/catalog` link, alt, and i18n key `versace_black`→`bulgari_black` with rewritten copy in en/de/fr/es).
+- Feature Spread smaller image: swapped **Honey Onyx → Red Travertine** (hero image). `featuredSlugs` now `['blue-emerald', 'red-travertine', 'bulgari-black', 'china-arabescato', 'hermes-grey']`.
+- Sourcing body (`home.sourcing.body`) now states quarry partners are **across China** (was "across Europe and beyond") in all four locales — the quarries are all in China.
+- Also corrected the catalogue SEO meta (`seo.catalog.description`, all locales): "European quarries" → "quarries across China", and replaced the leftover fake stone names (Nero Marquina / Calacatta Oro / Caledonia) with real catalogue stones (Blue Emerald, China Arabescato, Hermes Grey).
+- All homepage stones still use hero images, referenced by slug.
+
 ## 2026-06-20 — Homepage: real catalogue photos replace AI placeholders
 
 - `pages/index.vue` now fetches 5 featured stones by slug from Strapi (`blue-emerald`, `honey-onyx`, `versace-black`, `china-arabescato`, `hermes-grey`, `populate: image`, `locale: en`) and renders their Cloudinary hero images in the Feature Spread (Blue Emerald grayscale→colour, Honey Onyx detail) and Lookbook. **Hero image unchanged** (local `/img/ai-hero-marble-interior.jpg`, also still og/twitter image).

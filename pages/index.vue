@@ -135,8 +135,8 @@
                 class="overflow-hidden"
               >
                 <img
-                  :src="featuredImg('honey-onyx')"
-                  alt="Honey Onyx — warm translucent stone with flowing amber patterns"
+                  :src="featuredImg('red-travertine')"
+                  alt="Red Travertine sintered stone — warm russet tones with linear movement"
                   class="h-[45vh] w-full object-cover transition-transform duration-1000 hover:scale-105"
                   width="1500"
                   height="1000"
@@ -190,10 +190,10 @@
                 :visible-once="{ opacity: 1, x: 0, transition: { duration: 1000 } }"
                 class="lg:col-span-8"
               >
-                <NuxtLink :to="localePath('/catalog/versace-black')" class="group relative block overflow-hidden">
+                <NuxtLink :to="localePath('/catalog/bulgari-black')" class="group relative block overflow-hidden">
                   <img
-                    :src="featuredImg('versace-black')"
-                    alt="Versace Black marble — dramatic black ground with mineral veining"
+                    :src="featuredImg('bulgari-black')"
+                    alt="Bulgari Black sintered stone — deep black ground with dramatic white veining"
                     class="aspect-[16/10] w-full object-cover transition-transform duration-1000 group-hover:scale-105"
                     width="1500"
                     height="1000"
@@ -209,13 +209,13 @@
                 class="max-w-xl lg:col-span-4"
               >
                 <p class="font-sans text-[0.65rem] uppercase tracking-[0.3em] text-editorial-charcoal/40">
-                  {{ t('home.lookbook.versace_black.label') }}
+                  {{ t('home.lookbook.bulgari_black.label') }}
                 </p>
                 <h3 class="mt-6 font-serif text-3xl font-normal md:text-4xl">
-                  {{ t('home.lookbook.versace_black.heading') }}
+                  {{ t('home.lookbook.bulgari_black.heading') }}
                 </h3>
                 <p class="mt-10 font-sans text-sm font-light leading-[1.9] text-editorial-charcoal/70 sm:text-base">
-                  {{ t('home.lookbook.versace_black.body') }}
+                  {{ t('home.lookbook.bulgari_black.body') }}
                 </p>
               </div>
             </div>
@@ -316,7 +316,7 @@ const siteUrl = useSiteUrl()
 // curated local asset). Stones are fetched by slug from Strapi so the images
 // survive catalogue re-imports — only the slugs need to stay stable. Content
 // (image, name) is locale-independent here, so we always request `en`.
-const featuredSlugs = ['blue-emerald', 'honey-onyx', 'versace-black', 'china-arabescato', 'hermes-grey']
+const featuredSlugs = ['blue-emerald', 'red-travertine', 'bulgari-black', 'china-arabescato', 'hermes-grey']
 const { find } = useStrapi()
 const { data: featuredData } = await useAsyncData('home-featured-stones', () =>
   find<StrapiStone>('stones', {
