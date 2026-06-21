@@ -266,10 +266,10 @@
                 :visible-once="{ opacity: 1, scale: 1, transition: { duration: 1000 } }"
                 class="lg:col-span-8 lg:col-start-3"
               >
-                <NuxtLink :to="localePath('/catalog/hermes-grey')" class="group relative block overflow-hidden">
+                <NuxtLink :to="localePath('/catalog/victoria-green')" class="group relative block overflow-hidden">
                   <img
-                    :src="featuredImg('hermes-grey')"
-                    alt="Hermes Grey marble — grey ground with white spider-web veining"
+                    :src="featuredImg('victoria-green')"
+                    alt="Victoria Green marble — rich green ground with gold-accented veining"
                     class="aspect-[16/9] w-full object-cover transition-transform duration-1000 group-hover:scale-105"
                     width="1500"
                     height="1000"
@@ -284,13 +284,13 @@
                   class="mt-16 max-w-2xl"
                 >
                   <p class="font-sans text-[0.65rem] uppercase tracking-[0.3em] text-editorial-charcoal/40">
-                    {{ t('home.lookbook.hermes_grey.label') }}
+                    {{ t('home.lookbook.victoria_green.label') }}
                   </p>
                   <h3 class="mt-6 font-serif text-3xl font-normal md:text-4xl">
-                    {{ t('home.lookbook.hermes_grey.heading') }}
+                    {{ t('home.lookbook.victoria_green.heading') }}
                   </h3>
                   <p class="mt-10 font-sans text-sm font-light leading-[1.9] text-editorial-charcoal/70 sm:text-base">
-                    {{ t('home.lookbook.hermes_grey.body') }}
+                    {{ t('home.lookbook.victoria_green.body') }}
                   </p>
                 </div>
               </div>
@@ -316,7 +316,7 @@ const siteUrl = useSiteUrl()
 // curated local asset). Stones are fetched by slug from Strapi so the images
 // survive catalogue re-imports — only the slugs need to stay stable. Content
 // (image, name) is locale-independent here, so we always request `en`.
-const featuredSlugs = ['blue-emerald', 'red-travertine', 'bulgari-black', 'china-arabescato', 'hermes-grey']
+const featuredSlugs = ['blue-emerald', 'red-travertine', 'bulgari-black', 'china-arabescato', 'victoria-green']
 const { find } = useStrapi()
 const { data: featuredData } = await useAsyncData('home-featured-stones', () =>
   find<StrapiStone>('stones', {

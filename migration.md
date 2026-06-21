@@ -11,6 +11,10 @@ Track all major changes here: new dependencies, routing changes, API contract ch
 
 ---
 
+## 2026-06-21 — Homepage Lookbook item 3: Hermes Grey → Victoria Green
+
+- Lookbook item 3: swapped **Hermes Grey → Victoria Green** (image, `/catalog/victoria-green` link, alt, and i18n key `hermes_grey`→`victoria_green` with rewritten copy in en/de/fr/es — heading "Living colour"; rich green ground with gold-accented veining). `featuredSlugs` now ends with `victoria-green`.
+
 ## 2026-06-21 — Homepage tweaks: Bulgari Black, Red Travertine, China sourcing
 
 - Lookbook item 1: swapped **Versace Black → Bulgari Black** (image, `/catalog` link, alt, and i18n key `versace_black`→`bulgari_black` with rewritten copy in en/de/fr/es).
