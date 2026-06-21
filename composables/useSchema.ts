@@ -23,7 +23,7 @@ export function buildOrganizationSchema(siteUrl: string) {
       height: 192,
     },
     description:
-      'Bespoke marble, limestone, and granite slabs and architectural surfaces for architects and interior designers.',
+      'Bespoke marble and sintered stone slabs and architectural surfaces for architects and interior designers.',
     email: 'inquiries@culturestone.eu',
     telephone: '+8615196266588',
     contactPoint: {
@@ -68,7 +68,7 @@ export function buildWebSiteSchema(siteUrl: string) {
     name: 'Culture Stone',
     url: siteUrl,
     description:
-      'Bespoke marble, limestone, and granite slabs for architects and interior designers.',
+      'Bespoke marble and sintered stone slabs for architects and interior designers.',
     inLanguage: ['en', 'de', 'fr', 'es'],
   }
 }

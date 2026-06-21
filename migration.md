@@ -11,6 +11,11 @@ Track all major changes here: new dependencies, routing changes, API contract ch
 
 ---
 
+## 2026-06-21 — Copy: "limestone & granite" → "sintered stone" (accuracy)
+
+- Catalogue is **Marble + Sintered Stone**, but copy described "marble, limestone, and granite". Corrected all 14 occurrences: `seo.home.description`, `seo.catalog.description`, and `editors_letter.body_1` across en/de/fr/es (12), plus the Organization + WebSite schema descriptions in `composables/useSchema.ts` (2).
+- Terms used: EN "sintered stone", DE "Sinterstein", FR "pierre frittée", ES "piedra sinterizada".
+
 ## 2026-06-21 — Homepage Lookbook item 3: Hermes Grey → Victoria Green
 
 - Lookbook item 3: swapped **Hermes Grey → Victoria Green** (image, `/catalog/victoria-green` link, alt, and i18n key `hermes_grey`→`victoria_green` with rewritten copy in en/de/fr/es — heading "Living colour"; rich green ground with gold-accented veining). `featuredSlugs` now ends with `victoria-green`.
