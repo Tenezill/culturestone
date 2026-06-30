@@ -1,20 +1,24 @@
 #!/usr/bin/env node
-// Batch import: scripts/catalog.json -> Strapi v5 `stones` (en locale, published).
+// Append import: scripts/catalog.json -> Strapi v5 `stones` (en locale, published).
 //
-// DESTRUCTIVE: deletes ALL existing stones and the media attached to them,
-// then recreates every stone from the manifest. Photos upload via Strapi's
-// upload API, which offloads to Cloudinary (the configured provider).
+// NON-DESTRUCTIVE. Unlike import-catalog.mjs, this NEVER deletes or modifies
+// existing data. It looks up which stone slugs already live in the CMS and
+// creates ONLY the ones that are missing, uploading just their media. Stones a
+// customer has edited in the Strapi admin are left completely untouched.
 //
-// Dry-run by default — prints the full plan without writing. Pass --confirm to
-// actually mutate. Targets NUXT_PUBLIC_STRAPI_URL / STRAPI_URL (default
-// http://localhost:1337) — currently production https://cms.culturestone.eu.
+// Use this for adding new batches. Use import-catalog.mjs only for a full
+// from-scratch rebuild (it wipes everything first).
+//
+// Dry-run by default — prints exactly what would be created without writing.
+// Pass --confirm to actually create. Targets NUXT_PUBLIC_STRAPI_URL / STRAPI_URL
+// (default http://localhost:1337) — currently production https://cms.culturestone.eu.
 //
 // Usage:
-//   node scripts/import-catalog.mjs            # dry-run
-//   node scripts/import-catalog.mjs --confirm  # execute
+//   node scripts/append-catalog.mjs            # dry-run
+//   node scripts/append-catalog.mjs --confirm  # execute
 //
 // Env (.env): STRAPI_API_IMPORT_TOKEN (preferred) or STRAPI_API_TOKEN —
-// needs find/create/delete on stone, stone-category, upload.
+// needs find/create on stone, find/create on stone-category, and upload.
 
 import { readFileSync } from 'node:fs'
 import { readFile as readFileP } from 'node:fs/promises'
@@ -75,45 +79,27 @@ function sanitizeName(name) {
 async function api(path, opts = {}) {
   const res = await fetch(`${STRAPI_URL}${path}`, opts)
   if (!res.ok) throw new Error(`${opts.method || 'GET'} ${path} -> ${res.status}: ${await res.text()}`)
-  const text = await res.text() // DELETE returns 204 / empty body
+  const text = await res.text()
   return text ? JSON.parse(text) : null
 }
 
-// --- delete phase -----------------------------------------------------------
+// --- discovery phase --------------------------------------------------------
 
-async function listAllStones() {
-  // status=draft lists every document (published docs also have a draft version).
-  const items = []
+async function existingSlugs() {
+  // status=draft lists every document (published docs also have a draft version),
+  // so a stone the customer has unpublished still counts as "already present".
+  const slugs = new Set()
   let page = 1
   for (;;) {
-    const url = `/api/stones?status=draft&populate[0]=image&populate[1]=gallery` +
+    const url = `/api/stones?status=draft&fields[0]=slug` +
       `&pagination[page]=${page}&pagination[pageSize]=100`
     const body = await api(url, { headers: authHeader })
-    items.push(...(body.data || []))
+    for (const s of body.data || []) if (s.slug) slugs.add(s.slug)
     const pc = body.meta?.pagination?.pageCount ?? 1
     if (page >= pc) break
     page++
   }
-  return items
-}
-
-async function deleteAllStones() {
-  const stones = await listAllStones()
-  const mediaIds = new Set()
-  for (const s of stones) {
-    if (s.image?.id) mediaIds.add(s.image.id)
-    for (const g of s.gallery || []) if (g?.id) mediaIds.add(g.id)
-  }
-  console.log(`${tag}delete ${stones.length} stones, ${mediaIds.size} attached media files`)
-  if (!CONFIRM) return
-  for (const s of stones) {
-    await api(`/api/stones/${s.documentId}`, { method: 'DELETE', headers: authHeader })
-    console.log(`  - stone ${s.documentId} deleted`)
-  }
-  for (const id of mediaIds) {
-    await api(`/api/upload/files/${id}`, { method: 'DELETE', headers: authHeader })
-    console.log(`  - media #${id} deleted`)
-  }
+  return slugs
 }
 
 // --- category phase ---------------------------------------------------------
@@ -136,7 +122,7 @@ async function ensureCategory(name) {
   return created.data.id
 }
 
-// --- import phase -----------------------------------------------------------
+// --- create phase -----------------------------------------------------------
 
 async function uploadOne(absPath, targetName) {
   const buf = await readFileP(absPath)
@@ -147,9 +133,9 @@ async function uploadOne(absPath, targetName) {
   return (await res.json())[0]
 }
 
-async function importStone(entry, categoryId) {
+async function createStone(entry, categoryId) {
   const dir = join(REPO_PARENT, entry.sourceDir)
-  console.log(`${tag}stone ${entry.slug}: hero=${entry.hero} gallery=${entry.gallery.length} cat='${entry.category}'`)
+  console.log(`${tag}+ stone ${entry.slug}: hero=${entry.hero} gallery=${entry.gallery.length} cat='${entry.category}'`)
   if (!CONFIRM) return
 
   const heroUp = await uploadOne(join(dir, entry.hero), `${entry.slug}-hero.jpg`)
@@ -180,16 +166,28 @@ async function importStone(entry, categoryId) {
 async function main() {
   const manifest = JSON.parse(readFileSync(MANIFEST, 'utf8'))
   console.log(`${tag}target ${STRAPI_URL} — ${manifest.length} stones in manifest\n`)
-  console.log('== delete phase ==')
-  await deleteAllStones()
+
+  console.log('== discovery phase ==')
+  const present = await existingSlugs()
+  const toCreate = manifest.filter((e) => !present.has(e.slug))
+  const skipped = manifest.filter((e) => present.has(e.slug))
+  console.log(`${tag}${present.size} stones already in CMS — ${skipped.length} manifest entries already present, ${toCreate.length} new to create`)
+  for (const e of skipped) console.log(`  = skip (exists, untouched): ${e.slug}`)
+  if (!toCreate.length) {
+    console.log(`\n${tag}nothing new to add. Done.`)
+    return
+  }
+
   console.log('\n== category phase ==')
   const catIds = {}
-  for (const name of [...new Set(manifest.map((e) => e.category))]) {
+  for (const name of [...new Set(toCreate.map((e) => e.category))]) {
     catIds[name] = await ensureCategory(name)
   }
-  console.log('\n== import phase ==')
-  for (const entry of manifest) await importStone(entry, catIds[entry.category])
-  console.log(`\n${tag}done.${CONFIRM ? '' : ' Re-run with --confirm to apply.'}`)
+
+  console.log('\n== create phase ==')
+  for (const entry of toCreate) await createStone(entry, catIds[entry.category])
+
+  console.log(`\n${tag}done — ${toCreate.length} stone(s) ${CONFIRM ? 'created' : 'would be created'}.${CONFIRM ? '' : ' Re-run with --confirm to apply.'}`)
 }
 
-main().catch((err) => { console.error('\nImport failed:', err); process.exit(1) })
+main().catch((err) => { console.error('\nAppend failed:', err); process.exit(1) })

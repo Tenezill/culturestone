@@ -666,5 +666,545 @@
       "gallery1.JPG",
       "gallery2.JPG"
     ]
+  },
+  {
+    "slug": "cristallo-tiffany",
+    "name": "Cristallo Tiffany",
+    "alias": "Tiffany Green",
+    "category": "Marble",
+    "subhead": "Cristallo Tiffany Marble",
+    "description": "Tiffany Green Quartzite, also known as Cristallo Tiffany Quartzite, is an exclusive Brazilian natural stone celebrated for its elegant Tiffany-green background, crystalline texture and translucent beauty.",
+    "origin": "Brazil",
+    "finish": "Polished / Honed / Leathered",
+    "thickness": "18mm",
+    "applications": "Dining Table / Kitchen Island / Feature Wall / Stair Treads",
+    "price": "1400-2800",
+    "sourceDir": "images_4/Cristallo Tiffany",
+    "hero": "hero.jpg",
+    "gallery": [
+      "gallery1.jpg",
+      "gallery2.jpg",
+      "gallery3.jpg",
+      "gallery4.jpg",
+      "gallery5.jpg",
+      "gallery6.jpg"
+    ]
+  },
+  {
+    "slug": "white-peacock",
+    "name": "White Peacock",
+    "alias": "",
+    "category": "Marble",
+    "subhead": "White Peacock Marble",
+    "description": "White Peacock Marble is an extraordinary Brazilian natural quartzite celebrated for its dramatic crystal textures, shimmering mineral composition and breathtaking bookmatch potential. Inspired by the elegance of a peacock displaying its feathers, the stone reveals striking patterns that create a powerful visual centerpiece in luxury interiors.",
+    "origin": "Brazil",
+    "finish": "Polished / Honed / Leathered",
+    "thickness": "18mm",
+    "applications": "Dining Table / Kitchen Island / Feature Wall / Stair Treads",
+    "price": "1300-2000",
+    "sourceDir": "images_4/White Peacock",
+    "hero": "hero.JPG",
+    "gallery": [
+      "gallery1.JPG"
+    ]
+  },
+  {
+    "slug": "pandora",
+    "name": "Pandora",
+    "alias": "",
+    "category": "Marble",
+    "subhead": "Pandora Marble",
+    "description": "Pandora Marble is a luxurious Brazilian natural stone celebrated for its dramatic movement, crystalline texture and sophisticated blend of white, grey, gold and dark mineral accents. Each slab showcases nature’s artistry through layered patterns and striking visual depth, making it a preferred choice for premium architectural projects.",
+    "origin": "Brazil",
+    "finish": "Polished / Honed / Leathered",
+    "thickness": "18mm",
+    "applications": "Dining Table / Kitchen Island / Feature Wall / Stair Treads",
+    "price": "1100-2200",
+    "sourceDir": "images_4/Pandora",
+    "hero": "hero.JPG",
+    "gallery": [
+      "gallery1.JPG",
+      "gallery2.JPG"
+    ]
+  },
+  {
+    "slug": "snow-mountain-flying-fox",
+    "name": "Snow Mountain Flying Fox",
+    "alias": "",
+    "category": "Marble",
+    "subhead": "Snow Mountain Flying Fox Marble",
+    "description": "Snow Mountain Flying Fox Marble is a luxurious Brazilian natural stone renowned for its dramatic blend of snow-white crystalline textures, flowing grey mineral patterns and artistic visual movement. Inspired by the elegance of a silver fox crossing a snow-covered landscape, each slab presents a unique composition created by nature over millions of years.",
+    "origin": "Brazil",
+    "finish": "Polished / Honed / Leathered",
+    "thickness": "18mm",
+    "applications": "Dining Table / Kitchen Island / Feature Wall / Stair Treads",
+    "price": "1300-2500",
+    "sourceDir": "images_4/Snow Mountain Flying Fox",
+    "hero": "hero.JPG",
+    "gallery": [
+      "gallery1.JPG",
+      "gallery2.JPG",
+      "gallery3.JPG",
+      "gallery4.JPG",
+      "gallery5.JPG",
+      "gallery6.JPG"
+    ]
+  },
+  {
+    "slug": "snow-mountain-silver-fox-marble",
+    "name": "Snow Mountain Silver Fox Marble",
+    "alias": "",
+    "category": "Marble",
+    "subhead": "Snow Mountain Silver Fox Marble",
+    "description": "Snow Mountain Silver Fox Marble is an exclusive luxury natural stone celebrated for its snow-white crystalline background, flowing grey mineral movement and dramatic artistic texture. Inspired by the elegance of a silver fox crossing a snow-covered landscape, each slab presents a unique natural composition with remarkable visual depth.",
+    "origin": "Brazil",
+    "finish": "Polished / Honed / Leathered",
+    "thickness": "18mm",
+    "applications": "Dining Table / Kitchen Island / Feature Wall / Stair Treads",
+    "price": "1000-1800",
+    "sourceDir": "images_4/Snow Mountain Silver Fox",
+    "hero": "hero.JPG",
+    "gallery": [
+      "gallery1.JPG",
+      "gallery2.JPG",
+      "gallery3.JPG",
+      "gallery4.JPG"
+    ]
+  },
+  {
+    "slug": "prada-green-marble",
+    "name": "Prada Green Marble",
+    "alias": "Verde Prada",
+    "category": "Marble",
+    "subhead": "Prada Green Marble",
+    "description": "Prada Green Marble is an iconic Italian natural marble renowned for its deep emerald-green background, dramatic white veining and sophisticated luxury appeal. Originating from the Alpine regions of northern Italy, this remarkable stone has become a symbol of contemporary elegance and high-end architectural design.",
+    "origin": "Italy",
+    "finish": "Polished / Honed / Leathered",
+    "thickness": "18mm",
+    "applications": "Dining Table / Kitchen Island / Feature Wall / Stair Treads",
+    "price": "1400-3000",
+    "sourceDir": "images_4/Prada Green",
+    "hero": "hero.JPG",
+    "gallery": [
+      "gallery1.JPG"
+    ]
+  },
+  {
+    "slug": "medium-flower-white",
+    "name": "Medium Flower White",
+    "alias": "Venato Carrara",
+    "category": "Marble",
+    "subhead": "Medium Flower White Marble",
+    "description": "Medium Flower White Marble is a refined Chinese natural marble distinguished by its elegant white background and balanced grey veining. Positioned between fine-vein white marble and dramatic large-vein marble, it offers an ideal combination of sophistication, consistency and architectural versatility.",
+    "origin": "China",
+    "finish": "Polished / Honed / Leathered",
+    "thickness": "18mm",
+    "applications": "Dining Table / Kitchen Island / Feature Wall / Stair Treads",
+    "price": "900-1600",
+    "sourceDir": "images_4/Medium Flower White",
+    "hero": "hero.JPG",
+    "gallery": [
+      "gallery1.JPG",
+      "gallery2.JPG",
+      "gallery3.JPG"
+    ]
+  },
+  {
+    "slug": "pandora-white",
+    "name": "Pandora White",
+    "alias": "",
+    "category": "Marble",
+    "subhead": "Pandora White Marble",
+    "description": "Pandora White Marble is a sophisticated natural marble distinguished by its elegant white background, fragmented breccia structure and soft grey mineral movement. The stone presents a refined balance between contemporary minimalism and natural artistic expression, making it a preferred material for premium architectural and interior design projects.",
+    "origin": "China",
+    "finish": "Polished / Honed / Leathered",
+    "thickness": "18mm",
+    "applications": "Dining Table / Kitchen Island / Feature Wall / Stair Treads",
+    "price": "900-1700",
+    "sourceDir": "images_4/Pandora White",
+    "hero": "hero.JPG",
+    "gallery": [
+      "gallery1.JPG",
+      "gallery2.JPG",
+      "gallery3.JPG",
+      "gallery4.JPG",
+      "gallery5.JPG"
+    ]
+  },
+  {
+    "slug": "fireworks",
+    "name": "Fireworks",
+    "alias": "Fire Tree Silver Flower",
+    "category": "Marble",
+    "subhead": "Fireworks Marble",
+    "description": "Fireworks Marble is a striking natural marble distinguished by its dramatic veining, explosive mineral formations and artistic visual movement. Inspired by the spectacular image of fireworks illuminating the night sky, each slab showcases unique natural patterns that create exceptional depth, contrast and character.",
+    "origin": "China",
+    "finish": "Polished / Honed / Leathered",
+    "thickness": "18mm",
+    "applications": "Dining Table / Kitchen Island / Feature Wall / Stair Treads",
+    "price": "1200-2000",
+    "sourceDir": "images_4/Fireworks",
+    "hero": "hero.JPG",
+    "gallery": [
+      "gallery1.JPG",
+      "gallery2.JPG",
+      "gallery3.JPG"
+    ]
+  },
+  {
+    "slug": "pandora-1",
+    "name": "Pandora 1",
+    "alias": "",
+    "category": "Pandora Marble",
+    "subhead": "Pandora Marble",
+    "description": "Pandora Marble is an exclusive Brazilian natural marble renowned for its crystalline texture, dramatic brecciated structure and luxurious visual appeal. Featuring a sophisticated combination of white, grey, gold and dark mineral accents, each slab presents a unique artistic composition formed by nature over millions of years.",
+    "origin": "Brazil",
+    "finish": "Polished / Honed / Leathered",
+    "thickness": "18mm",
+    "applications": "Dining Table / Kitchen Island / Feature Wall / Stair Treads",
+    "price": "1200-1800",
+    "sourceDir": "images_5/Pandora1",
+    "hero": "hero.JPG",
+    "gallery": [
+      "gallery1.JPG",
+      "gallery2.JPG",
+      "gallery3.JPG",
+      "gallery4.JPG",
+      "gallery5.JPG",
+      "gallery6.JPG"
+    ]
+  },
+  {
+    "slug": "pandora-2",
+    "name": "Pandora 2",
+    "alias": "",
+    "category": "Pandora Marble",
+    "subhead": "Pandora Marble",
+    "description": "Pandora Marble is a luxury natural stone from Brazil, distinguished by its crystalline white background, dramatic gold veining and bold black mineral formations. The striking contrast between light and dark elements creates a powerful visual statement, while the natural brecciated structure adds depth and exclusivity to every slab. Selected slabs feature semi-translucent crystal areas that enhance their beauty under architectural lighting.",
+    "origin": "Brazil",
+    "finish": "Polished / Honed / Leathered",
+    "thickness": "18mm",
+    "applications": "Dining Table / Kitchen Island / Feature Wall / Stair Treads",
+    "price": "1300-2400",
+    "sourceDir": "images_5/Pandora2",
+    "hero": "hero.JPG",
+    "gallery": [
+      "gallery1.JPG",
+      "gallery2.JPG",
+      "gallery3.JPG",
+      "gallery4.JPG"
+    ]
+  },
+  {
+    "slug": "pandora-3",
+    "name": "Pandora 3",
+    "alias": "",
+    "category": "Pandora Marble",
+    "subhead": "Pandora Marble",
+    "description": "Pandora Marble is a luxury natural stone from Brazil, distinguished by its crystalline white background, dramatic gold veining and bold black mineral formations. The striking contrast between light and dark elements creates a powerful visual statement, while the natural brecciated structure adds depth and exclusivity to every slab. Selected slabs feature semi-translucent crystal areas that enhance their beauty under architectural lighting.",
+    "origin": "Brazil",
+    "finish": "Polished / Honed / Leathered",
+    "thickness": "18mm",
+    "applications": "Dining Table / Kitchen Island / Feature Wall / Stair Treads",
+    "price": "1000-1700",
+    "sourceDir": "images_5/Pandora3",
+    "hero": "hero.JPG",
+    "gallery": [
+      "gallery1.JPG",
+      "gallery2.JPG",
+      "gallery3.JPG",
+      "gallery4.JPG"
+    ]
+  },
+  {
+    "slug": "pandora-4",
+    "name": "Pandora 4",
+    "alias": "",
+    "category": "Pandora Marble",
+    "subhead": "Pandora Marble",
+    "description": "Pandora Marble is a luxury natural stone from Brazil, distinguished by its crystalline white background, dramatic gold veining and bold black mineral formations. The striking contrast between light and dark elements creates a powerful visual statement, while the natural brecciated structure adds depth and exclusivity to every slab. Selected slabs feature semi-translucent crystal areas that enhance their beauty under architectural lighting.",
+    "origin": "Brazil",
+    "finish": "Polished / Honed / Leathered",
+    "thickness": "18mm",
+    "applications": "Dining Table / Kitchen Island / Feature Wall / Stair Treads",
+    "price": "1100-2100",
+    "sourceDir": "images_5/Pandora4",
+    "hero": "hero.JPG",
+    "gallery": [
+      "gallery1.JPG",
+      "gallery2.JPG",
+      "gallery3.JPG"
+    ]
+  },
+  {
+    "slug": "pandora-5",
+    "name": "Pandora 5",
+    "alias": "",
+    "category": "Pandora Marble",
+    "subhead": "Pandora Marble",
+    "description": "Pandora Marble is a luxury natural stone from Brazil, distinguished by its crystalline white background, dramatic gold veining and bold black mineral formations. The striking contrast between light and dark elements creates a powerful visual statement, while the natural brecciated structure adds depth and exclusivity to every slab. Selected slabs feature semi-translucent crystal areas that enhance their beauty under architectural lighting.",
+    "origin": "Brazil",
+    "finish": "Polished / Honed / Leathered",
+    "thickness": "18mm",
+    "applications": "Dining Table / Kitchen Island / Feature Wall / Stair Treads",
+    "price": "900-1500",
+    "sourceDir": "images_5/Pandora5",
+    "hero": "hero.JPG",
+    "gallery": [
+      "gallery1.JPG",
+      "gallery2.JPG",
+      "gallery3.JPG"
+    ]
+  },
+  {
+    "slug": "pandora-6",
+    "name": "Pandora 6",
+    "alias": "",
+    "category": "Pandora Marble",
+    "subhead": "Pandora Marble",
+    "description": "Pandora Marble is a luxury natural stone from Brazil, distinguished by its crystalline white background, dramatic gold veining and bold black mineral formations. The striking contrast between light and dark elements creates a powerful visual statement, while the natural brecciated structure adds depth and exclusivity to every slab. Selected slabs feature semi-translucent crystal areas that enhance their beauty under architectural lighting.",
+    "origin": "Brazil",
+    "finish": "Polished / Honed / Leathered",
+    "thickness": "18mm",
+    "applications": "Dining Table / Kitchen Island / Feature Wall / Stair Treads",
+    "price": "1200-1900",
+    "sourceDir": "images_5/Pandora6",
+    "hero": "hero.JPG",
+    "gallery": [
+      "gallery1.JPG",
+      "gallery2.JPG",
+      "gallery3.JPG"
+    ]
+  },
+  {
+    "slug": "pandora-7",
+    "name": "Pandora 7",
+    "alias": "",
+    "category": "Pandora Marble",
+    "subhead": "Pandora Marble",
+    "description": "Pandora Marble is a luxury natural stone from Brazil, distinguished by its crystalline white background, dramatic gold veining and bold black mineral formations. The striking contrast between light and dark elements creates a powerful visual statement, while the natural brecciated structure adds depth and exclusivity to every slab. Selected slabs feature semi-translucent crystal areas that enhance their beauty under architectural lighting.",
+    "origin": "Brazil",
+    "finish": "Polished / Honed / Leathered",
+    "thickness": "18mm",
+    "applications": "Dining Table / Kitchen Island / Feature Wall / Stair Treads",
+    "price": "800-1700",
+    "sourceDir": "images_5/Pandora7",
+    "hero": "hero.JPG",
+    "gallery": [
+      "gallery1.JPG",
+      "gallery2.JPG",
+      "gallery3.JPG"
+    ]
+  },
+  {
+    "slug": "pandora-8",
+    "name": "Pandora 8",
+    "alias": "",
+    "category": "Pandora Marble",
+    "subhead": "Pandora Marble",
+    "description": "Pandora Marble is a luxury natural stone from Brazil, distinguished by its crystalline white background, dramatic gold veining and bold black mineral formations. The striking contrast between light and dark elements creates a powerful visual statement, while the natural brecciated structure adds depth and exclusivity to every slab. Selected slabs feature semi-translucent crystal areas that enhance their beauty under architectural lighting.",
+    "origin": "Brazil",
+    "finish": "Polished / Honed / Leathered",
+    "thickness": "18mm",
+    "applications": "Dining Table / Kitchen Island / Feature Wall / Stair Treads",
+    "price": "900-1600",
+    "sourceDir": "images_5/Pandora8",
+    "hero": "hero.JPG",
+    "gallery": [
+      "gallery1.JPG",
+      "gallery2.JPG",
+      "gallery3.JPG"
+    ]
+  },
+  {
+    "slug": "pandora-9",
+    "name": "Pandora 9",
+    "alias": "",
+    "category": "Pandora Marble",
+    "subhead": "Pandora Marble",
+    "description": "Pandora Marble is a luxury natural stone from Brazil, distinguished by its crystalline white background, dramatic gold veining and bold black mineral formations. The striking contrast between light and dark elements creates a powerful visual statement, while the natural brecciated structure adds depth and exclusivity to every slab. Selected slabs feature semi-translucent crystal areas that enhance their beauty under architectural lighting.",
+    "origin": "Brazil",
+    "finish": "Polished / Honed / Leathered",
+    "thickness": "18mm",
+    "applications": "Dining Table / Kitchen Island / Feature Wall / Stair Treads",
+    "price": "1000-1600",
+    "sourceDir": "images_5/Pandora9",
+    "hero": "hero.JPG",
+    "gallery": [
+      "gallery1.JPG",
+      "gallery2.JPG",
+      "gallery3.JPG",
+      "gallery4.JPG",
+      "gallery5.JPG",
+      "gallery6.JPG"
+    ]
+  },
+  {
+    "slug": "pandora-10",
+    "name": "Pandora 10",
+    "alias": "",
+    "category": "Pandora Marble",
+    "subhead": "Pandora Marble",
+    "description": "Pandora Marble is a luxury natural stone from Brazil, distinguished by its crystalline white background, dramatic gold veining and bold black mineral formations. The striking contrast between light and dark elements creates a powerful visual statement, while the natural brecciated structure adds depth and exclusivity to every slab. Selected slabs feature semi-translucent crystal areas that enhance their beauty under architectural lighting.",
+    "origin": "Brazil",
+    "finish": "Polished / Honed / Leathered",
+    "thickness": "18mm",
+    "applications": "Dining Table / Kitchen Island / Feature Wall / Stair Treads",
+    "price": "800-1900",
+    "sourceDir": "images_5/Pandora10",
+    "hero": "hero.JPG",
+    "gallery": [
+      "gallery1.JPG",
+      "gallery2.JPG",
+      "gallery3.JPG"
+    ]
+  },
+  {
+    "slug": "pandora-11",
+    "name": "Pandora 11",
+    "alias": "",
+    "category": "Pandora Marble",
+    "subhead": "Pandora Marble",
+    "description": "Pandora Marble is a luxury natural stone from Brazil, distinguished by its crystalline white background, dramatic gold veining and bold black mineral formations. The striking contrast between light and dark elements creates a powerful visual statement, while the natural brecciated structure adds depth and exclusivity to every slab. Selected slabs feature semi-translucent crystal areas that enhance their beauty under architectural lighting.",
+    "origin": "Brazil",
+    "finish": "Polished / Honed / Leathered",
+    "thickness": "18mm",
+    "applications": "Dining Table / Kitchen Island / Feature Wall / Stair Treads",
+    "price": "1000-1600",
+    "sourceDir": "images_5/Pandora11",
+    "hero": "hero.JPG",
+    "gallery": [
+      "gallery1.JPG",
+      "gallery2.JPG",
+      "gallery3.JPG",
+      "gallery4.JPG",
+      "gallery5.JPG",
+      "gallery6.JPG",
+      "gallery7.JPG"
+    ]
+  },
+  {
+    "slug": "pandora-12",
+    "name": "Pandora 12",
+    "alias": "",
+    "category": "Pandora Marble",
+    "subhead": "Pandora Marble",
+    "description": "Pandora Marble is a luxury natural stone from Brazil, distinguished by its crystalline white background, dramatic gold veining and bold black mineral formations. The striking contrast between light and dark elements creates a powerful visual statement, while the natural brecciated structure adds depth and exclusivity to every slab. Selected slabs feature semi-translucent crystal areas that enhance their beauty under architectural lighting.",
+    "origin": "Brazil",
+    "finish": "Polished / Honed / Leathered",
+    "thickness": "18mm",
+    "applications": "Dining Table / Kitchen Island / Feature Wall / Stair Treads",
+    "price": "900-1500",
+    "sourceDir": "images_5/Pandora12",
+    "hero": "hero.JPG",
+    "gallery": [
+      "gallery1.JPG",
+      "gallery2.JPG",
+      "gallery3.JPG",
+      "gallery4.JPG"
+    ]
+  },
+  {
+    "slug": "pandora-13",
+    "name": "Pandora 13",
+    "alias": "",
+    "category": "Pandora Marble",
+    "subhead": "Pandora Marble",
+    "description": "Pandora Marble is a luxury natural stone from Brazil, distinguished by its crystalline white background, dramatic gold veining and bold black mineral formations. The striking contrast between light and dark elements creates a powerful visual statement, while the natural brecciated structure adds depth and exclusivity to every slab. Selected slabs feature semi-translucent crystal areas that enhance their beauty under architectural lighting.",
+    "origin": "Brazil",
+    "finish": "Polished / Honed / Leathered",
+    "thickness": "18mm",
+    "applications": "Dining Table / Kitchen Island / Feature Wall / Stair Treads",
+    "price": "1100-1900",
+    "sourceDir": "images_5/Pandora13",
+    "hero": "hero.JPG",
+    "gallery": [
+      "gallery1.JPG",
+      "gallery2.JPG",
+      "gallery3.JPG"
+    ]
+  },
+  {
+    "slug": "pandora-14",
+    "name": "Pandora 14",
+    "alias": "",
+    "category": "Pandora Marble",
+    "subhead": "Pandora Marble",
+    "description": "Pandora Marble is a luxury natural stone from Brazil, distinguished by its crystalline white background, dramatic gold veining and bold black mineral formations. The striking contrast between light and dark elements creates a powerful visual statement, while the natural brecciated structure adds depth and exclusivity to every slab. Selected slabs feature semi-translucent crystal areas that enhance their beauty under architectural lighting.",
+    "origin": "Brazil",
+    "finish": "Polished / Honed / Leathered",
+    "thickness": "18mm",
+    "applications": "Dining Table / Kitchen Island / Feature Wall / Stair Treads",
+    "price": "1200-2200",
+    "sourceDir": "images_5/Pandora14",
+    "hero": "hero.JPG",
+    "gallery": [
+      "gallery1.JPG",
+      "gallery2.JPG",
+      "gallery3.JPG",
+      "gallery4.JPG"
+    ]
+  },
+  {
+    "slug": "pandora-15",
+    "name": "Pandora 15",
+    "alias": "",
+    "category": "Pandora Marble",
+    "subhead": "Pandora Marble",
+    "description": "Pandora Marble is a luxury natural stone from Brazil, distinguished by its crystalline white background, dramatic gold veining and bold black mineral formations. The striking contrast between light and dark elements creates a powerful visual statement, while the natural brecciated structure adds depth and exclusivity to every slab. Selected slabs feature semi-translucent crystal areas that enhance their beauty under architectural lighting.",
+    "origin": "Brazil",
+    "finish": "Polished / Honed / Leathered",
+    "thickness": "18mm",
+    "applications": "Dining Table / Kitchen Island / Feature Wall / Stair Treads",
+    "price": "1100-2300",
+    "sourceDir": "images_5/Pandora15",
+    "hero": "hero.JPG",
+    "gallery": [
+      "gallery1.JPG",
+      "gallery2.JPG",
+      "gallery3.JPG"
+    ]
+  },
+  {
+    "slug": "pandora-16",
+    "name": "Pandora 16",
+    "alias": "",
+    "category": "Pandora Marble",
+    "subhead": "Pandora Marble",
+    "description": "Pandora Marble is a luxury natural stone from Brazil, distinguished by its crystalline white background, dramatic gold veining and bold black mineral formations. The striking contrast between light and dark elements creates a powerful visual statement, while the natural brecciated structure adds depth and exclusivity to every slab. Selected slabs feature semi-translucent crystal areas that enhance their beauty under architectural lighting.",
+    "origin": "Brazil",
+    "finish": "Polished / Honed / Leathered",
+    "thickness": "18mm",
+    "applications": "Dining Table / Kitchen Island / Feature Wall / Stair Treads",
+    "price": "1000-1900",
+    "sourceDir": "images_5/Pandora16",
+    "hero": "hero.JPG",
+    "gallery": [
+      "gallery1.JPG",
+      "gallery2.JPG",
+      "gallery3.JPG",
+      "gallery4.JPG"
+    ]
+  },
+  {
+    "slug": "pandora-17",
+    "name": "Pandora 17",
+    "alias": "",
+    "category": "Pandora Marble",
+    "subhead": "Pandora Marble",
+    "description": "Pandora Marble is a luxury natural stone from Brazil, distinguished by its crystalline white background, dramatic gold veining and bold black mineral formations. The striking contrast between light and dark elements creates a powerful visual statement, while the natural brecciated structure adds depth and exclusivity to every slab. Selected slabs feature semi-translucent crystal areas that enhance their beauty under architectural lighting.",
+    "origin": "Brazil",
+    "finish": "Polished / Honed / Leathered",
+    "thickness": "18mm",
+    "applications": "Dining Table / Kitchen Island / Feature Wall / Stair Treads",
+    "price": "1100-1800",
+    "sourceDir": "images_5/Pandora17",
+    "hero": "hero.JPG",
+    "gallery": [
+      "gallery1.JPG",
+      "gallery2.JPG",
+      "gallery3.JPG",
+      "gallery4.JPG"
+    ]
   }
 ]

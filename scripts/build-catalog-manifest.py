@@ -20,11 +20,13 @@ import openpyxl
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_PARENT = os.path.abspath(os.path.join(SCRIPT_DIR, "..", ".."))
 OUT_PATH = os.path.join(SCRIPT_DIR, "catalog.json")
-# (folder, excel filename) — batch 3's sheet is named differently
+# (folder, excel filename) — later batches name their sheets differently
 SOURCES = [
     ("images", "stones_data.xlsx"),
     ("images_2", "stones_data.xlsx"),
     ("images_3", "stones_data3.xlsx"),
+    ("images_4", "stones_data4.xlsx"),
+    ("images_5", "stones_data5.xlsx"),
 ]
 
 # Header label (row 1) -> manifest key
@@ -104,6 +106,25 @@ def main():
             if name == "Prada Green" and src == "images_2":
                 warnings.append(f"DROPPED duplicate: {src}/{folder} (Prada Green Marble)")
                 continue
+
+            # Batch 4: marble re-issues of batch-1 sintered stones. Prada Green and
+            # Snow Mountain Silver Fox are genuinely distinct (marble 18mm vs the
+            # existing sintered 9mm) -> keep both, suffix the new ones. Fendi White
+            # is the same marble already imported in batch 3 -> drop the re-shoot.
+            if src == "images_4":
+                if name == "Fendi White":
+                    warnings.append(f"DROPPED duplicate: {src}/{folder} (Fendi White — keeping Images_3 marble)")
+                    continue
+                if name in ("Prada Green", "Snow Mountain Silver Fox"):
+                    name = f"{name} Marble"
+
+            # Batch 5: 17 distinct Pandora variants. Give them readable names
+            # ("Pandora 1") and their own category so they don't flood Marble.
+            if src == "images_5":
+                m = re.match(r"(?i)pandora\s*(\d+)", name)
+                if m:
+                    name = f"Pandora {m.group(1)}"
+                category = "Pandora Marble"
 
             folder_path = os.path.join(REPO_PARENT, src, folder)
             if not os.path.isdir(folder_path):

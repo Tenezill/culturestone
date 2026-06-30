@@ -11,6 +11,13 @@ Track all major changes here: new dependencies, routing changes, API contract ch
 
 ---
 
+## 2026-06-30 — Import batches Images_4 + Images_5; fix price field; add append importer
+- **New stones**: imported batch 4 (`Images_4/`, `stones_data4.xlsx`) and batch 5 (`Images_5/`, `stones_data5.xlsx`). Catalog now 58 published stones: Sintered Stone 17, Marble 24, **Pandora Marble 17** (new category, auto-created as `#12`).
+- **`scripts/build-catalog-manifest.py`**: added `images_4`/`images_5` sources. Batch-4 dedup vs earlier batches — `Prada Green` and `Snow Mountain Silver Fox` are genuine marble (18mm) re-issues of the existing sintered (9mm) stones, kept as `… Marble` suffixed names; `Fendi White` is the same marble already in batch 3, so the batch-4 re-shoot is dropped. Batch-5 `Pandora1…Pandora17` renamed to readable `Pandora 1…17` and assigned the new `Pandora Marble` category (instead of `Marble`) so they don't flood the marble section.
+- **Bug fix — `scripts/import-catalog.mjs`**: schema had migrated `price` (string) → `priceFrom`/`priceTo` (integer EUR) but the importer still sent `price`, causing a `400 Invalid key price`. The full importer ran its destructive **delete phase first**, wiping all 32 stones + ~200 media, then failed on the first create — leaving the live catalog **empty**. Fixed the importer to convert the manifest's raw CNY range → EUR `priceFrom`/`priceTo` (rate `0.13`, matching `update-prices.mjs`) so it no longer needs the separate price-update pass.
+- **New `scripts/append-catalog.mjs`**: non-destructive importer. Looks up existing slugs and creates ONLY missing stones; never deletes or updates, so customer edits in the Strapi admin survive re-imports. Same dry-run/`--confirm` + token model. Use this for future batches; reserve `import-catalog.mjs` for full from-scratch rebuilds. Catalog was restored from empty using this script.
+- **Caveat**: append matches by slug — a renamed stone is treated as new (old one remains), and edits to existing stones are not pushed (add-only by design). CNY→EUR rate is hardcoded at `0.13` in both `import-catalog.mjs` and `append-catalog.mjs`; bump in both if re-pricing.
+
 ## 2026-06-21 — Copy: "limestone & granite" → "sintered stone" (accuracy)
 
 - Catalogue is **Marble + Sintered Stone**, but copy described "marble, limestone, and granite". Corrected all 14 occurrences: `seo.home.description`, `seo.catalog.description`, and `editors_letter.body_1` across en/de/fr/es (12), plus the Organization + WebSite schema descriptions in `composables/useSchema.ts` (2).
