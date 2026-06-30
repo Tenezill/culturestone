@@ -35,6 +35,7 @@
             <aside class="shrink-0 lg:w-56" :aria-label="t('catalog.category_label')">
               <div
                 v-motion
+                class="lg:h-full"
                 :initial="{ opacity: 0, x: -20 }"
                 :enter="{ opacity: 1, x: 0, transition: { delay: 400, duration: 800 } }"
               >
